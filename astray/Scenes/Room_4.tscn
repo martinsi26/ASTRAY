@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dcfvvbd610sdj"]
+
+[node name="Room4" type="Node2D"]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+
+[node name="Plants" type="TileMapLayer" parent="."]
