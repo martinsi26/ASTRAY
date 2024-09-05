@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://gi3wxwtpygrq"]
 
-[ext_resource type="Script" path="res://Rooms/Room8.gd" id="1_l1vbl"]
-[ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_mub3k"]
+[ext_resource type="Script" path="res://Rooms/RoomScript/Room8.gd" id="1_r1kpx"]
+[ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_ew8jx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5fy4"]
-texture = ExtResource("1_mub3k")
+texture = ExtResource("2_ew8jx")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -270,7 +270,7 @@ sources/0 = SubResource("TileSetAtlasSource_r5fy4")
 size = Vector2(19, 84)
 
 [node name="Room8" type="Node2D"]
-script = ExtResource("1_l1vbl")
+script = ExtResource("1_r1kpx")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_obd1h")
