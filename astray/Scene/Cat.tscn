@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Script/Cat.gd" id="1_k6c7m"]
 [ext_resource type="Texture2D" uid="uid://dq6kbb1pt7si1" path="res://Art/Images/Cat.webp" id="2_xglfj"]
-[ext_resource type="PackedScene" uid="uid://b1n4lnlhtxpm5" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
+[ext_resource type="PackedScene" uid="uid://bdaex6esj5e4b" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
 
 [sub_resource type="Resource" id="Resource_uo2uu"]
 metadata/__load_path__ = "res://Inventory/Player_inv.tres"
