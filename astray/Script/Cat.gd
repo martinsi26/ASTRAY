@@ -1,37 +1,28 @@
 extends CharacterBody2D
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
+
+@onready var key_path: NodePath = "Room6/Key"
+@onready var key_chest_path: NodePath = "Room6/KeyChest"
+
 # character speed
 var speed = 500
 
 # items
 @export var inv: Inv
 @export var key: InvItem
+@export var axe: InvItem
 @export var puzzle_piece1: InvItem
 
 # pushing items
 var push_force = 40
 
-# item variables
-var collected_key = false
-var found_key = false
-var on_key = false
-var on_chest = false
-var key_used = false
-
-# dialogue variables
-var current_dialogue
-var found_key_dialogue
-var found_chest_dialogue
-var open_chest_dialgoue
-
-# room signals
-signal enter_room1
-signal enter_room2
+# signals
+signal start_dialogue
+signal has_pickedup_key(pickedup_key)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#connect("open_chest", open_chest)
 	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,13 +35,6 @@ func _physics_process(delta: float) -> void:
 	if direction.x != 0 or direction.y != 0:
 		# walking
 		pass
-	
-	if Input.is_action_pressed("Interact"):
-		if on_key == true:
-			pick_up()
-		elif on_chest == true and key_used == false and collected_key == true:
-			key_used = true
-			open_chest()
 		
 	velocity = direction * speed
 	move_and_slide()
@@ -60,73 +44,35 @@ func _physics_process(delta: float) -> void:
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	
-func pick_up():
+func pickup_key():
 	collect(key)
-	collected_key = true
-	get_parent().get_node("Room6/Key").visible = false
-	get_parent().get_node("Room6/Key").set_collision_layer(0)
-	get_parent().get_node("Room6/Key").set_collision_mask(0)
+	open_pickup_key_dialogue()
+
+func open_pickup_key_dialogue():
+	dialogue = [
+		"You Picked Up The Key!",
+		"Now Find The Chest!"
+	]
+	emit_signal("start_dialogue", dialogue)
 
 func open_chest():
-	if collected_key:
-		if current_dialogue != null:
-				current_dialogue.queue_free()
-		use(key)
-		open_chest_dialgoue = dialogue.instantiate()
-		open_chest_dialgoue.messages = [
-			"The Chest Is Open!",
-			"You Got An Item!"
-		]
-		get_parent().get_node("Room2/Chest").add_child(open_chest_dialgoue)
-		current_dialogue = open_chest_dialgoue
-		# open chest animation plays
-		# give the player an item
-		collect(puzzle_piece1)
-	
-func show_key():
-	if found_key == false:
-		get_parent().get_node("Room6/Key").visible = true
-		
-		if current_dialogue != null:
-			current_dialogue.queue_free()
-		found_key_dialogue = dialogue.instantiate()
-		found_key_dialogue.messages = [
-			"You Have Found A Key!", 
-			"Press 'E' To Pick It Up"
-		]
-		get_parent().get_node("Room6/Key").add_child(found_key_dialogue)
-		current_dialogue = found_key_dialogue
-		found_key = true
+	use(key)
+	open_key_chest_dialogue()
+	collect(axe)
 
-func chest_dialogue():
-	if current_dialogue != null:
-			current_dialogue.queue_free()
-	found_chest_dialogue = dialogue.instantiate()
-	found_chest_dialogue.messages = [
-		"You Found A Chest!",
-		"Press 'E' With The Key"
+func open_key_chest_dialogue():
+	dialogue = [
+		"The Chest Is Open!",
+		"You Got An Axe!"
 	]
-	get_parent().get_node("Room2/Chest").add_child(found_chest_dialogue)
-	current_dialogue = found_chest_dialogue
-	
-func _on_area_2d_body_entered(body):
-	if body.name == "Key":
-		on_key = true
-		show_key()
-	elif body.name == "Chest":
-		on_chest = true
-		if key_used == false:
-			chest_dialogue()
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.name == "Key":
-		on_key = false
-	elif body.name == "Chest":
-		on_chest = false
+	emit_signal("start_dialogue", dialogue)
 		
 func collect(item):
 	inv.insert(item)
 
 func use(item):
 	inv.remove(item)
+
+func key_room() -> void:
+	get_parent().get_node(key_path).connect("pickup_key", pickup_key)
+	get_parent().get_node(key_chest_path).connect("open_key_chest", open_chest)

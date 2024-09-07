@@ -17,7 +17,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if on_chest and Input.is_action_pressed("Interact"):
-			emit_signal("open_number_code")
+		emit_signal("open_number_code")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if !chest_opened:

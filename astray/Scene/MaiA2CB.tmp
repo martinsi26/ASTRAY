@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Script/Main.gd" id="1_aj2xg"]
 [ext_resource type="PackedScene" uid="uid://b6typvjb3thmd" path="res://Scene/Cat.tscn" id="2_rjy8c"]
-[ext_resource type="Resource" uid="uid://cdkihtnkttrio" path="res://Inventory/Player_inv.tres" id="3_dib7u"]
+[ext_resource type="Resource" uid="uid://cdkihtnkttrio" path="res://Inventory/Items/Player_inv.tres" id="3_dib7u"]
 [ext_resource type="Resource" uid="uid://b2e2yoi01wscf" path="res://Inventory/Items/Key.tres" id="4_qpg8r"]
 [ext_resource type="Resource" uid="uid://b22qq0t2mkg3e" path="res://Inventory/Items/Puzzle_Piece1.tres" id="5_2dq8l"]
 
@@ -14,6 +14,3 @@ top_level = true
 inv = ExtResource("3_dib7u")
 key = ExtResource("4_qpg8r")
 puzzle_piece1 = ExtResource("5_2dq8l")
-
-[connection signal="key_room" from="." to="Cat" method="key_room"]
-[connection signal="start_dialogue" from="Cat" to="Cat/Dialogue" method="start_dialogue"]

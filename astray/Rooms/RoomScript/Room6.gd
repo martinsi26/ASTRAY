@@ -10,11 +10,8 @@ func _ready():
 func _on_to_room_7_area_entered(area: Area2D) -> void:
 	emit_signal("enter_room7", 6)
 
-
 func _on_to_room_8_area_entered(area: Area2D) -> void:
 	emit_signal("enter_room8", 6)
 
-
 func _on_to_room_5_area_entered(area: Area2D) -> void:
 	emit_signal("enter_room5", 6)
-

@@ -16,4 +16,3 @@ key = ExtResource("4_qpg8r")
 puzzle_piece1 = ExtResource("5_2dq8l")
 
 [connection signal="key_room" from="." to="Cat" method="key_room"]
-[connection signal="start_dialogue" from="Cat" to="Cat/Dialogue" method="start_dialogue"]

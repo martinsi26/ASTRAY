@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6typvjb3thmd"]
+[gd_scene load_steps=11 format=3 uid="uid://b6typvjb3thmd"]
 
 [ext_resource type="Script" path="res://Script/Cat.gd" id="1_k6c7m"]
+[ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
+[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_ukpe8"]
 [ext_resource type="Texture2D" uid="uid://dq6kbb1pt7si1" path="res://Art/Images/Cat.webp" id="2_xglfj"]
 [ext_resource type="PackedScene" uid="uid://bdaex6esj5e4b" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
 
@@ -27,7 +29,10 @@ collision_mask = 113
 script = ExtResource("1_k6c7m")
 inv = SubResource("Resource_uo2uu")
 key = SubResource("Resource_pndes")
+axe = ExtResource("2_ak1yd")
 puzzle_piece1 = SubResource("Resource_x8mne")
+
+[node name="Dialogue" parent="." instance=ExtResource("2_ukpe8")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, 1.90735e-06)
@@ -52,5 +57,4 @@ offset_top = -167.0
 offset_right = 0.0
 offset_bottom = -103.0
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]

@@ -9,7 +9,7 @@
 size = Vector2(75, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iavg"]
-size = Vector2(85, 87)
+size = Vector2(85, 85)
 
 [node name="NumberCodeChest" type="StaticBody2D"]
 script = ExtResource("1_lcnsj")
@@ -28,6 +28,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_4iavg")
 
 [node name="Number_Code_UI" parent="." instance=ExtResource("3_m5b02")]

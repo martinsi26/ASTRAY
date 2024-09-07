@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://m2ccf743egca"]
+[gd_scene load_steps=42 format=4 uid="uid://m2ccf743egca"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://212t8rfhib28" path="res://Art/32x32 tileset/Tree Set #1/tree-set-preview.png" id="5_chgfo"]
 [ext_resource type="PackedScene" uid="uid://cc5pwr8xy41h5" path="res://Scene/Key.tscn" id="6_7xaqj"]
 [ext_resource type="PackedScene" uid="uid://b8ri8ee7q22by" path="res://NumberCodeChest/NumberCodeChest.tscn" id="7_1x06a"]
+[ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="8_sllbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ehu0"]
 texture = ExtResource("2_oduuf")
@@ -11656,6 +11657,8 @@ shape = SubResource("RectangleShape2D_sddfr")
 polygon = PackedVector2Array(686, 0, 688, 83, 658, 82, 656, 144, 626, 145, 624, 209, 594, 209, 592, 273, 562, 274, 559, 337, 530, 337, 528, 401, 499, 402, 496, 464, 465, 467, 464, 479, 623, 480, 623, 463, 653, 461, 656, 399, 686, 397, 687, 368, 717, 366, 720, 304, 750, 301, 751, 239, 781, 237, 783, 111, 813, 110, 815, 0, 1152, 0, 1152, 336, 1264, 336, 1264, 399, 1151, 399, 1152, 649, 1067, 648, 1067, 758, 957, 758, 957, 648, 528, 648, 527, 623, 558, 622, 560, 560, 576, 559, 399, 544, 400, 592, 369, 593, 368, 648, 0, 648, 0, 144, -124, 144, -124, 80, 0, 80, 0, 1, 686, 2, -153, -43, -153, 784, 1321, 784, 1319, -47, 813, 0)
 
 [node name="BlockPath" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlockPath"]
 polygon = PackedVector2Array(401, 544, 401, 528, 432, 528, 432, 496, 465, 496, 464, 479, 623, 480, 623, 495, 591, 495, 591, 544, 576, 544, 576, 559, 475, 551, 543, 536, 550, 513, 510, 509, 492, 520, 472, 551)
@@ -11667,9 +11670,14 @@ position = Vector2(128, 283)
 [node name="NumberCodeChest" parent="." instance=ExtResource("7_1x06a")]
 position = Vector2(519, 226)
 
+[node name="KeyChest" parent="." instance=ExtResource("8_sllbr")]
+position = Vector2(206, 519)
+
 [connection signal="area_entered" from="ToRoom7" to="." method="_on_to_room_7_area_entered"]
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]
+[connection signal="start_dialogue" from="Key" to="Key/Dialogue" method="start_dialogue"]
 [connection signal="close_number_code" from="NumberCodeChest" to="NumberCodeChest/Number_Code_UI" method="close_number_code"]
 [connection signal="open_number_code" from="NumberCodeChest" to="NumberCodeChest/Number_Code_UI" method="open_number_code"]
 [connection signal="start_dialogue" from="NumberCodeChest" to="NumberCodeChest/Dialogue" method="start_dialogue"]
+[connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]

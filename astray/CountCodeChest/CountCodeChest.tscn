@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cts1aukgpd0d5"]
+
+[ext_resource type="Texture2D" uid="uid://bj3a5p1257nch" path="res://Art/Images/icon.svg" id="1_2j8t7"]
+[ext_resource type="Script" path="res://CountCodeChest/CountCodeChest.gd" id="1_e5feu"]
+[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="1_s0gtt"]
+[ext_resource type="PackedScene" uid="uid://c6fa64daskbai" path="res://CountCodeChest/Count_Code_UI.tscn" id="3_4h2m5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irdbv"]
+size = Vector2(76, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhglc"]
+size = Vector2(86, 86)
+
+[node name="CountCodeChest" type="StaticBody2D"]
+script = ExtResource("1_e5feu")
+
+[node name="Dialogue" parent="." instance=ExtResource("1_s0gtt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_irdbv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.594, 0.594)
+texture = ExtResource("1_2j8t7")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_fhglc")
+
+[node name="Count_Code_UI" parent="." instance=ExtResource("3_4h2m5")]
+offset_left = -140.0
+offset_top = -221.0
+offset_right = -140.0
+offset_bottom = -221.0
+
+[connection signal="close_number_code" from="." to="Count_Code_UI" method="close_number_code"]
+[connection signal="open_number_code" from="." to="Count_Code_UI" method="open_number_code"]
+[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
