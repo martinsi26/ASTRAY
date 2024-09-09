@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://m2ccf743egca"]
+[gd_scene load_steps=41 format=4 uid="uid://c0iq13tjgy2om"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://212t8rfhib28" path="res://Art/32x32 tileset/Tree Set #1/tree-set-preview.png" id="5_chgfo"]
 [ext_resource type="PackedScene" uid="uid://cc5pwr8xy41h5" path="res://Scene/Key.tscn" id="6_7xaqj"]
 [ext_resource type="PackedScene" uid="uid://b8ri8ee7q22by" path="res://NumberCodeChest/NumberCodeChest.tscn" id="7_1x06a"]
-[ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="8_sllbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ehu0"]
 texture = ExtResource("2_oduuf")
@@ -274,7 +273,6 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b7uix"]
-load_path = "res://.godot/imported/part1.png-9a67275bdccdf5c2176dd18cc420e2b1.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gt2pa"]
 texture = SubResource("CompressedTexture2D_b7uix")
@@ -1020,7 +1018,6 @@ texture_region_size = Vector2i(32, 32)
 20:32/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_imn6l"]
-load_path = "res://.godot/imported/tree2.png-574dcdf74d04fcf0108c00b3b5af3ecd.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a15xa"]
 texture = SubResource("CompressedTexture2D_imn6l")
@@ -5641,7 +5638,6 @@ texture_region_size = Vector2i(32, 32)
 65:98/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8q2hg"]
-load_path = "res://.godot/imported/tree1.png-15917e8984b8a9c7e7dcf79c29a5de64.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0s74"]
 texture = SubResource("CompressedTexture2D_8q2hg")
@@ -10445,7 +10441,6 @@ texture_region_size = Vector2i(32, 32)
 7:11/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_br8y8"]
-load_path = "res://.godot/imported/Large Spruce Tree - GREEN - Spritesheet.png-7ad1117e7490730a1e1a0edce49e5e87.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5aj4k"]
 texture = SubResource("CompressedTexture2D_br8y8")
@@ -10671,7 +10666,6 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wk4vr"]
-load_path = "res://.godot/imported/Large Spruce Tree - GREEN_TEAL - Spritesheet.png-3487cf0a62c67df465d33a3022f004d2.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02lra"]
 texture = SubResource("CompressedTexture2D_wk4vr")
@@ -11670,8 +11664,18 @@ position = Vector2(128, 283)
 [node name="NumberCodeChest" parent="." instance=ExtResource("7_1x06a")]
 position = Vector2(519, 226)
 
-[node name="KeyChest" parent="." instance=ExtResource("8_sllbr")]
+[node name="KeyChest" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(206, 519)
+script = null
 
 [connection signal="area_entered" from="ToRoom7" to="." method="_on_to_room_7_area_entered"]
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]

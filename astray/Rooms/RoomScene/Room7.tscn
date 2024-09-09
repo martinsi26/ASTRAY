@@ -293,6 +293,3 @@ shape = SubResource("RectangleShape2D_ih4ft")
 position = Vector2(864, 535)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
-[connection signal="close_number_code" from="CountCodeChest" to="CountCodeChest/Count_Code_UI" method="close_number_code"]
-[connection signal="open_number_code" from="CountCodeChest" to="CountCodeChest/Count_Code_UI" method="open_number_code"]
-[connection signal="start_dialogue" from="CountCodeChest" to="CountCodeChest/Dialogue" method="start_dialogue"]
