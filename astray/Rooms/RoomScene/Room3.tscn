@@ -2,9 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_7g31s"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room3.gd" id="1_dxisv"]
-[ext_resource type="Texture2D" uid="uid://b8db6yn60edex" path="res://Resources/32x32 first tileset.png" id="1_r1fj4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yn1cg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oxkms"]
 texture = ExtResource("1_7g31s")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -265,10 +264,13 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_m2css"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_yn1cg")
+sources/1 = SubResource("TileSetAtlasSource_oxkms")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ey1h0"]
+load_path = "res://.godot/imported/32x32 first tileset.png-79e6f3b88c0bd1cc46ebd6cf6d0ef412.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocon0"]
-texture = ExtResource("1_r1fj4")
+texture = SubResource("CompressedTexture2D_ey1h0")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -531,7 +533,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ocon0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_selij"]
-texture = ExtResource("1_r1fj4")
+texture = SubResource("CompressedTexture2D_ey1h0")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
