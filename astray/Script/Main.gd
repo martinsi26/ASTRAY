@@ -11,7 +11,6 @@ var room7 = preload("res://Rooms/RoomScene/Room7.tscn")
 var room8 = preload("res://Rooms/RoomScene/Room8.tscn")
 var room9 = preload("res://Rooms/RoomScene/Room9.tscn")
 var room10 = preload("res://Rooms/RoomScene/Room10.tscn")
-var room11 = preload("res://Rooms/RoomScene/Room11.tscn")
 
 var instance0 = room0.instantiate()
 var instance1 = room1.instantiate()
@@ -24,7 +23,8 @@ var instance7 = room7.instantiate()
 var instance8 = room8.instantiate()
 var instance9 = room9.instantiate()
 var instance10 = room10.instantiate()
-var instance11 = room11.instantiate()
+
+signal key_room
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,6 +37,7 @@ func _ready() -> void:
 	instance6.connect("enter_room5", enter_room5)
 	instance6.connect("enter_room7", enter_room7)
 	instance6.connect("enter_room8", enter_room8)
+	emit_signal("key_room")
 
 func enter_room0(room_number):
 	pass
@@ -48,10 +49,32 @@ func enter_room2(room_number):
 	pass
 	
 func enter_room3(room_number):
-	pass
+	if room_number == 2:
+		instance2.queue_free()
+		instance2 = room2.instantiate()
+		add_child(instance3)
+		$Cat.position = instance3.get_node("FromR2").position
+	elif room_number == 4:
+		instance4.queue_free()
+		instance4 = room4.instantiate()
+		add_child(instance3)
+		$Cat.position = instance3.get_node("FromR4").position
+	elif room_number == 5:
+		instance5.queue_free()
+		instance5 = room5.instantiate()
+		add_child(instance3)
+		$Cat.position = instance3.get_node("FromR5").position
+	instance3.connect("enter_room2", enter_room2)
+	instance3.connect("enter_room4", enter_room4)
+	instance3.connect("enter_room5", enter_room5)
 	
 func enter_room4(room_number):
-	pass
+	if room_number == 3:
+		instance3.queue_free()
+		instance3 = room3.instantiate()
+		add_child(instance4)
+		$Cat.position = instance4.get_node("FromR3").position
+	instance4.connect("enter_room3", enter_room3)
 	
 func enter_room5(room_number):
 	if room_number == 6:
@@ -59,7 +82,13 @@ func enter_room5(room_number):
 		instance6 = room6.instantiate()
 		add_child(instance5)
 		$Cat.position = instance5.get_node("FromR6").position
-		instance5.connect("enter_room6", enter_room6)
+	elif room_number == 3:
+		instance3.queue_free()
+		instance3 = room3.instantiate()
+		add_child(instance5)
+		$Cat.position = instance5.get_node("FromR3").position
+	instance5.connect("enter_room6", enter_room6)
+	instance5.connect("enter_room3", enter_room3)
 	
 func enter_room6(room_number):
 	if room_number == 7:
@@ -80,6 +109,7 @@ func enter_room6(room_number):
 	instance6.connect("enter_room5", enter_room5)
 	instance6.connect("enter_room7", enter_room7)
 	instance6.connect("enter_room8", enter_room8)
+	emit_signal("key_room")
 	
 func enter_room7(room_number):
 	if room_number == 6:
@@ -101,9 +131,6 @@ func enter_room9(room_number):
 	pass
 
 func enter_room10(room_number):
-	pass
-	
-func enter_room11(room_number):
 	pass
 	
 #

@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc5pwr8xy41h5"]
+[gd_scene load_steps=6 format=3 uid="uid://cc5pwr8xy41h5"]
 
 [ext_resource type="Texture2D" uid="uid://bj3a5p1257nch" path="res://Art/Images/icon.svg" id="1_e3mbf"]
+[ext_resource type="Script" path="res://Script/Key.gd" id="1_pdxjq"]
+[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_fvrqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tybaa"]
 size = Vector2(63.75, 62.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8kbh"]
+size = Vector2(72, 71)
 
 [node name="Key" type="StaticBody2D"]
 position = Vector2(538, 262)
 collision_layer = 8
 collision_mask = 6
+script = ExtResource("1_pdxjq")
+
+[node name="Dialogue" parent="." instance=ExtResource("2_fvrqf")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tybaa")
@@ -17,3 +25,15 @@ shape = SubResource("RectangleShape2D_tybaa")
 position = Vector2(4.76837e-06, 4.76837e-06)
 scale = Vector2(0.503906, 0.503906)
 texture = ExtResource("1_e3mbf")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_w8kbh")
+
+[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

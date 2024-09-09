@@ -9,10 +9,12 @@ var current_message = 0
 var display = ""
 var current_char = 0
 
+
 func _ready():
-	start_dialogue()
+	pass
 	
-func start_dialogue():
+func start_dialogue(dialogue):
+	messages = dialogue
 	current_message = 0
 	display = ""
 	current_char = 0
@@ -21,8 +23,10 @@ func start_dialogue():
 	$NextChar.start()
 
 func stop_dialogue():
-	get_parent().remove_child(self)
-	queue_free()
+	display = ""
+	$Label.text = display
+	$NextChar.stop()
+	$NextMessage.stop()
 
 func _on_next_char_timeout():
 	if (current_char < len(messages[current_message])):
@@ -45,3 +49,11 @@ func _on_next_message_timeout():
 		display = ""
 		current_char = 0
 		$NextChar.start()
+
+
+func _on_count_code_chest_start_dialogue() -> void:
+	pass # Replace with function body.
+
+
+func _on_key_chest_start_dialogue() -> void:
+	pass # Replace with function body.
