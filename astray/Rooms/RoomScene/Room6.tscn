@@ -11676,8 +11676,3 @@ position = Vector2(206, 519)
 [connection signal="area_entered" from="ToRoom7" to="." method="_on_to_room_7_area_entered"]
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]
-[connection signal="start_dialogue" from="Key" to="Key/Dialogue" method="start_dialogue"]
-[connection signal="close_number_code" from="NumberCodeChest" to="NumberCodeChest/Number_Code_UI" method="close_number_code"]
-[connection signal="open_number_code" from="NumberCodeChest" to="NumberCodeChest/Number_Code_UI" method="open_number_code"]
-[connection signal="start_dialogue" from="NumberCodeChest" to="NumberCodeChest/Dialogue" method="start_dialogue"]
-[connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]

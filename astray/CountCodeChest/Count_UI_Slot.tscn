@@ -42,6 +42,7 @@ layout_mode = 0
 offset_left = -25.0
 offset_top = 32.0
 offset_bottom = 57.0
+rotation = 0.0174533
 theme = ExtResource("2_py36q")
 
 [node name="ButtonRight" type="Button" parent="CenterContainer/Panel"]
