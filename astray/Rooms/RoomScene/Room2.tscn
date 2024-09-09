@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5qkq3b2ovch"]
+[gd_scene load_steps=9 format=3 uid="uid://bf5qkq3b2ovch"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_6t7ay"]
+[ext_resource type="Script" path="res://Rooms/RoomScript/Room2.gd" id="1_rlsqt"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_b3rqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhmnr"]
@@ -405,6 +406,7 @@ size = Vector2(22, 126)
 size = Vector2(36.25, 128)
 
 [node name="Room2" type="Node2D"]
+script = ExtResource("1_rlsqt")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_spy4s")
@@ -413,20 +415,27 @@ layer_0/tile_data = PackedInt32Array(0, 196608, 2, 65536, 196608, 2, 131072, 196
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(65538, 1703936, 6, 131074, 1703936, 7, 65539, 1769472, 6, 131075, 1769472, 7, 12, 1703936, 6, 65548, 1703936, 7, 13, 1769472, 6, 65549, 1769472, 7, 327699, 1703936, 6, 393235, 1703936, 7, 327700, 1769472, 6, 393236, 1769472, 7, 655379, 1703936, 6, 720915, 1703936, 7, 655380, 1769472, 6, 720916, 1769472, 7, 458775, 1703936, 6, 524311, 1703936, 7, 458776, 1769472, 6, 524312, 1769472, 7, 720902, 1703936, 6, 786438, 1703936, 7, 720903, 1769472, 6, 786439, 1769472, 7, 1114129, 1703936, 6, 1179665, 1703936, 7, 1114130, 1769472, 6, 1179666, 1769472, 7, 1179677, 1703936, 6, 1245213, 1703936, 7, 1179678, 1769472, 6, 1245214, 1769472, 7, 524320, 1703936, 6, 589856, 1703936, 7, 524321, 1769472, 6, 589857, 1769472, 7, 29, 1703936, 6, 65565, 1703936, 7, 30, 1769472, 6, 65566, 1769472, 7, 589828, 720896, 2, 589827, 720896, 2, 589826, 720896, 2, 655362, 720896, 2, 720898, 720896, 2, 655363, 720896, 2, 1179656, 720896, 2, 1179657, 720896, 2, 1179654, 720896, 2, 1179655, 720896, 2, 524317, 720896, 2, 589853, 720896, 2, 655389, 720896, 2, 655388, 720896, 2, 589852, 720896, 2, 131088, 720896, 2, 131089, 720896, 2, 131090, 720896, 2, 131091, 720896, 2, 196627, 720896, 2, 196626, 720896, 2, 196641, 720896, 2, 262177, 720896, 2, 262176, 720896, 2, 327712, 720896, 2, 1114114, 720896, 2, 1179650, 720896, 2, 1245186, 720896, 2, 1114113, 720896, 2, 1048577, 720896, 2, 1048578, 720896, 2, 851971, 851968, 6, 1179662, 851968, 6, 327707, 851968, 6, 131096, 851968, 6, 131079, 851968, 6, 1310745, 917504, 5, 720930, 917504, 5, 589834, 917504, 5, 524305, 917504, 5, 1048582, 917504, 5, 262168, 131073, 0, 327704, 131073, 1, 393240, 131073, 2, 262169, 196609, 0, 327705, 196609, 1, 393241, 196609, 2, 786440, 131073, 0, 851976, 131073, 1, 917512, 131073, 2, 786441, 196609, 0, 851977, 196609, 1, 917513, 196609, 2, 1114144, 131073, 0, 1179680, 131073, 1, 1245216, 131073, 2, 1114145, 196609, 0, 1179681, 196609, 1, 1245217, 196609, 2, 9, 131073, 0, 65545, 131073, 1, 10, 196609, 0, 65546, 196609, 1, 131081, 131073, 2, 131082, 196609, 2)
 
-[node name="FromRoom1" type="Marker2D" parent="."]
-position = Vector2(25, 175)
+[node name="FromR1" type="Marker2D" parent="."]
+position = Vector2(49, 175)
 
-[node name="FromRoom3" type="Marker2D" parent="."]
-position = Vector2(1125, 528)
+[node name="FromR3" type="Marker2D" parent="."]
+position = Vector2(1099, 528)
 
 [node name="ToRoom1" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom1"]
-position = Vector2(-4, 176)
+position = Vector2(-10, 176)
 shape = SubResource("RectangleShape2D_bkp2i")
 
 [node name="ToRoom3" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom3"]
 position = Vector2(1154, 527)
 shape = SubResource("RectangleShape2D_asilk")
+
+[connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]
+[connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
