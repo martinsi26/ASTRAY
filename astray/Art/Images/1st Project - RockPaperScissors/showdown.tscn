@@ -1,0 +1,392 @@
+[gd_scene load_steps=38 format=3 uid="uid://rnbrk8kbpsgs"]
+
+[ext_resource type="Script" path="res://showdown.gd" id="1_qwgbp"]
+[ext_resource type="Texture2D" uid="uid://bi08ow3ssceeu" path="res://ScissorsBtn_Sprite.png" id="2_2fwji"]
+[ext_resource type="Texture2D" uid="uid://dakno8sv030s4" path="res://Mini_ReturnBtn_Sprite.png" id="2_eiown"]
+[ext_resource type="Texture2D" uid="uid://cdhrdvh50fhot" path="res://ScissorsBtnPressed_Sprite.png" id="3_8n7k8"]
+[ext_resource type="Texture2D" uid="uid://1hq6hjah1oam" path="res://Showdown_Table_Sprite.png" id="3_d456g"]
+[ext_resource type="Texture2D" uid="uid://co1er3skovoh7" path="res://Scissors_Sprite.png" id="3_h4no1"]
+[ext_resource type="Texture2D" uid="uid://egl0fxw3ew2o" path="res://Mini_ReturnBtnHover_Sprite.png" id="3_pyrek"]
+[ext_resource type="Texture2D" uid="uid://cpi6f4v5es730" path="res://ScissorsBtnHover_Sprite.png" id="4_nuaxy"]
+[ext_resource type="Texture2D" uid="uid://csg2x8e3pgeg5" path="res://StoneBtn_Sprite.png" id="5_1ycmx"]
+[ext_resource type="Texture2D" uid="uid://hggasj023uc5" path="res://PaperBtn_Sprite.png" id="5_jupak"]
+[ext_resource type="Texture2D" uid="uid://dt0t71htfea7t" path="res://PaperBtnPressed_Sprite.png" id="6_capfn"]
+[ext_resource type="Texture2D" uid="uid://bolgt4riy82lw" path="res://StoneBtnPressed_Sprite.png" id="6_comsu"]
+[ext_resource type="Texture2D" uid="uid://b8abp2r267d7j" path="res://PaperBtnHover_Sprite.png" id="7_n4r0b"]
+[ext_resource type="Texture2D" uid="uid://bf0g5ft7u3x8i" path="res://StoneBtnHover_Sprite.png" id="7_r5t1p"]
+[ext_resource type="Texture2D" uid="uid://b2k36b5yc7gcu" path="res://StoneBtnDisabled_Sprite.png" id="8_d7yrk"]
+[ext_resource type="Texture2D" uid="uid://cjg0exg0sgs6y" path="res://PaperBtnDisabled_Sprite.png" id="12_21rks"]
+[ext_resource type="Texture2D" uid="uid://bm0aigpihl10n" path="res://Stone_Sprite.png" id="12_ww3gs"]
+[ext_resource type="Texture2D" uid="uid://dr6levg1tac6d" path="res://Paper_Sprite.png" id="13_gtl5f"]
+[ext_resource type="AudioStream" uid="uid://c7ky2tjl5edrt" path="res://button_SFX.wav" id="15_op78r"]
+[ext_resource type="Texture2D" uid="uid://dbamfe5n0os1d" path="res://ScissorsBtnDisabled_Sprite.png" id="16_gs31u"]
+[ext_resource type="Texture2D" uid="uid://grsrvlv8eqde" path="res://Crown_Sprite.png" id="17_1277f"]
+[ext_resource type="Texture2D" uid="uid://c1wbhw12ohfuc" path="res://Score_Circles_1.png" id="21_i15ca"]
+[ext_resource type="Texture2D" uid="uid://cp2oet61fkhoo" path="res://Score_Circles_2.png" id="22_05v12"]
+[ext_resource type="Texture2D" uid="uid://bwukwr4nljc2" path="res://Score_Circles_3.png" id="23_bg84r"]
+[ext_resource type="Texture2D" uid="uid://5w0x6753m80l" path="res://WinScreen_Sprite.png" id="25_ekg0d"]
+[ext_resource type="Texture2D" uid="uid://nbwt32f45ocj" path="res://LooseScreen_Sprite.png" id="26_oe0u2"]
+[ext_resource type="Texture2D" uid="uid://brtx30tu54uge" path="res://End_ScreenRepeat_Sprite.png" id="27_ff71s"]
+[ext_resource type="Texture2D" uid="uid://h1cg5t0eus87" path="res://End_ScreenExit_Sprite.png" id="28_fgimu"]
+[ext_resource type="Texture2D" uid="uid://437qg3vdxt3s" path="res://End_ScreenRepeatPressed_Sprite.png" id="28_g4x8s"]
+[ext_resource type="Texture2D" uid="uid://b8fob4stams3m" path="res://End_ScreenRepeatHover_Sprite.png" id="29_dxjwi"]
+[ext_resource type="Texture2D" uid="uid://b3wo58tmb0xgx" path="res://End_ScreenExitPressed_Sprite.png" id="31_50ge4"]
+[ext_resource type="Texture2D" uid="uid://b2uy3y4dy7k2s" path="res://End_ScreenExitHover_Sprite.png" id="32_iua0g"]
+[ext_resource type="AudioStream" uid="uid://cw8nmnk0xab8t" path="res://Round_Win_Jingle.wav" id="33_1pibo"]
+[ext_resource type="AudioStream" uid="uid://hrnlfdwn3gy1" path="res://Round_Loose_Jingle.wav" id="34_jaut8"]
+[ext_resource type="AudioStream" uid="uid://dh273exp81irr" path="res://Game_Win_Jingle.wav" id="35_86vk5"]
+[ext_resource type="AudioStream" uid="uid://box6j1qb2ctjr" path="res://Game_Loose_Jingle.wav" id="36_gk137"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nw87v"]
+blend_mode = 3
+
+[node name="Showdown" type="Node2D"]
+script = ExtResource("1_qwgbp")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.552941, 0.541176, 0.560784, 1)
+
+[node name="returnButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("2_eiown")
+texture_hover = ExtResource("3_pyrek")
+
+[node name="player_Objects" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="p_Table" type="TextureRect" parent="player_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 481.0
+offset_right = 103.0
+offset_bottom = 521.0
+scale = Vector2(6, 6)
+texture = ExtResource("3_d456g")
+
+[node name="p_StoneBtn" type="TextureButton" parent="player_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 100.0
+offset_top = 575.0
+offset_right = 116.0
+offset_bottom = 591.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("5_1ycmx")
+texture_pressed = ExtResource("6_comsu")
+texture_hover = ExtResource("7_r5t1p")
+texture_disabled = ExtResource("8_d7yrk")
+
+[node name="p_PaperBtn" type="TextureButton" parent="player_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 575.0
+offset_right = 266.0
+offset_bottom = 591.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("5_jupak")
+texture_pressed = ExtResource("6_capfn")
+texture_hover = ExtResource("7_n4r0b")
+texture_disabled = ExtResource("12_21rks")
+
+[node name="p_ScissorsBtn" type="TextureButton" parent="player_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 400.0
+offset_top = 575.0
+offset_right = 416.0
+offset_bottom = 591.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("2_2fwji")
+texture_pressed = ExtResource("3_8n7k8")
+texture_hover = ExtResource("4_nuaxy")
+texture_disabled = ExtResource("16_gs31u")
+
+[node name="p_ColorRect" type="ColorRect" parent="player_Objects"]
+material = SubResource("CanvasItemMaterial_nw87v")
+layout_mode = 0
+offset_left = -4.0
+offset_top = 500.0
+offset_right = 597.0
+offset_bottom = 721.0
+mouse_filter = 2
+color = Color(1, 0.415686, 0.34902, 0.435294)
+
+[node name="p_Crown" type="TextureRect" parent="player_Objects"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 275.0
+offset_top = 100.0
+offset_right = 315.0
+offset_bottom = 140.0
+scale = Vector2(2, 2)
+texture = ExtResource("17_1277f")
+
+[node name="p_ChoiceSprites" type="Control" parent="player_Objects"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 240.0
+offset_bottom = 190.0
+scale = Vector2(6, 6)
+
+[node name="p_StoneSprite" type="TextureRect" parent="player_Objects/p_ChoiceSprites"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_ww3gs")
+
+[node name="p_PaperSprite" type="TextureRect" parent="player_Objects/p_ChoiceSprites"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("13_gtl5f")
+
+[node name="p_ScissorsSprite" type="TextureRect" parent="player_Objects/p_ChoiceSprites"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_h4no1")
+
+[node name="com_Objects" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 664.215
+offset_right = 704.215
+offset_bottom = 40.0
+
+[node name="c_Table" type="TextureRect" parent="com_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 481.0
+offset_right = 103.0
+offset_bottom = 521.0
+scale = Vector2(6, 6)
+texture = ExtResource("3_d456g")
+flip_h = true
+
+[node name="c_StoneBtn" type="TextureButton" parent="com_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 100.0
+offset_top = 575.0
+offset_right = 116.0
+offset_bottom = 591.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("5_1ycmx")
+texture_pressed = ExtResource("5_1ycmx")
+texture_hover = ExtResource("7_r5t1p")
+
+[node name="c_PaperBtn" type="TextureButton" parent="com_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 575.0
+offset_right = 266.0
+offset_bottom = 591.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("5_jupak")
+texture_pressed = ExtResource("5_jupak")
+texture_hover = ExtResource("7_n4r0b")
+
+[node name="c_ScissorsBtn" type="TextureButton" parent="com_Objects"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 400.0
+offset_top = 575.0
+offset_right = 416.0
+offset_bottom = 591.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("2_2fwji")
+texture_pressed = ExtResource("2_2fwji")
+texture_hover = ExtResource("4_nuaxy")
+
+[node name="c_ColorRect" type="ColorRect" parent="com_Objects"]
+material = SubResource("CanvasItemMaterial_nw87v")
+layout_mode = 0
+offset_left = 20.785
+offset_top = 500.0
+offset_right = 621.785
+offset_bottom = 721.0
+mouse_filter = 2
+color = Color(0.317647, 0.682353, 0.811765, 0.435294)
+
+[node name="c_Crown" type="TextureRect" parent="com_Objects"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 265.0
+offset_top = 100.0
+offset_right = 305.0
+offset_bottom = 140.0
+scale = Vector2(2, 2)
+texture = ExtResource("17_1277f")
+
+[node name="c_ChoiceSprites" type="Control" parent="com_Objects"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 240.0
+offset_bottom = 190.0
+scale = Vector2(6, 6)
+
+[node name="c_StoneSprite" type="TextureRect" parent="com_Objects/c_ChoiceSprites"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_ww3gs")
+flip_h = true
+
+[node name="c_PaperSprite" type="TextureRect" parent="com_Objects/c_ChoiceSprites"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("13_gtl5f")
+flip_h = true
+
+[node name="c_ScissorsSprite" type="TextureRect" parent="com_Objects/c_ChoiceSprites"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_h4no1")
+flip_h = true
+
+[node name="button_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_op78r")
+
+[node name="Scoreboard" type="Control" parent="."]
+texture_filter = 1
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="point1" type="TextureRect" parent="Scoreboard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("21_i15ca")
+
+[node name="point2" type="TextureRect" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 50.0
+offset_right = 90.0
+offset_bottom = 40.0
+texture = ExtResource("22_05v12")
+
+[node name="point3" type="TextureRect" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 40.0
+texture = ExtResource("23_bg84r")
+
+[node name="Endscreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GreyOut_Rect" type="ColorRect" parent="Endscreen"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.32549)
+
+[node name="Signs" type="Control" parent="Endscreen"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 400.0
+offset_bottom = 150.0
+scale = Vector2(6, 6)
+
+[node name="WinScreen" type="TextureRect" parent="Endscreen/Signs"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("25_ekg0d")
+
+[node name="LooseScreen" type="TextureRect" parent="Endscreen/Signs"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("26_oe0u2")
+
+[node name="Repeat" type="TextureButton" parent="Endscreen/Signs"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 66.0
+offset_bottom = 56.0
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("27_ff71s")
+texture_pressed = ExtResource("28_g4x8s")
+texture_hover = ExtResource("29_dxjwi")
+
+[node name="Exit" type="TextureButton" parent="Endscreen/Signs"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 26.0
+offset_bottom = 56.0
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("28_fgimu")
+texture_pressed = ExtResource("31_50ge4")
+texture_hover = ExtResource("32_iua0g")
+
+[node name="winRound" type="AudioStreamPlayer2D" parent="Endscreen"]
+stream = ExtResource("33_1pibo")
+
+[node name="looseRound" type="AudioStreamPlayer2D" parent="Endscreen"]
+stream = ExtResource("34_jaut8")
+
+[node name="winGame" type="AudioStreamPlayer2D" parent="Endscreen"]
+stream = ExtResource("35_86vk5")
+
+[node name="looseGame" type="AudioStreamPlayer2D" parent="Endscreen"]
+stream = ExtResource("36_gk137")
+
+[connection signal="pressed" from="returnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="player_Objects/p_StoneBtn" to="." method="_on_p_stone_btn_pressed"]
+[connection signal="pressed" from="player_Objects/p_PaperBtn" to="." method="_on_p_paper_btn_pressed"]
+[connection signal="pressed" from="player_Objects/p_ScissorsBtn" to="." method="_on_p_scissors_btn_pressed"]
+[connection signal="pressed" from="com_Objects/c_StoneBtn" to="." method="_on_c_stone_btn_pressed"]
+[connection signal="pressed" from="com_Objects/c_PaperBtn" to="." method="_on_c_paper_btn_pressed"]
+[connection signal="pressed" from="com_Objects/c_ScissorsBtn" to="." method="_on_c_scissors_btn_pressed"]
+[connection signal="pressed" from="Endscreen/Signs/Repeat" to="." method="_on_repeat_pressed"]
+[connection signal="pressed" from="Endscreen/Signs/Exit" to="." method="_on_exit_pressed"]

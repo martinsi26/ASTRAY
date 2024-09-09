@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://nhpuig8day3c"]
+
+[ext_resource type="AudioStream" uid="uid://c7ky2tjl5edrt" path="res://button_SFX.wav" id="1_i01vd"]
+[ext_resource type="Script" path="res://uisoundplayer.gd" id="2_opq8x"]
+
+[node name="button_SFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_i01vd")
+script = ExtResource("2_opq8x")
