@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://41p1226evq5y"]
+
+[ext_resource type="Texture2D" uid="uid://j0tcukj8q6db" path="res://Art/Images/puzzlepiece.png" id="1_n4qso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i7io"]
+size = Vector2(25, 30)
+
+[node name="PuzzlePiece1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.184444, 0.184444)
+texture = ExtResource("1_n4qso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_2i7io")
