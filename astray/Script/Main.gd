@@ -25,6 +25,7 @@ var instance9 = room9.instantiate()
 var instance10 = room10.instantiate()
 
 signal key_room
+signal yarn_room
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -93,6 +94,7 @@ func enter_room3(room_number):
 	instance3.connect("enter_room2", enter_room2)
 	instance3.connect("enter_room4", enter_room4)
 	instance3.connect("enter_room5", enter_room5)
+	emit_signal("yarn_room")
 	
 func enter_room4(room_number):
 	if room_number == 3:

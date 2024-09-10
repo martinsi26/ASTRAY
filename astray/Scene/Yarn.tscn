@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvqysjcl4lr2d"]
+[gd_scene load_steps=5 format=3 uid="uid://cvqysjcl4lr2d"]
 
 [ext_resource type="Texture2D" uid="uid://d33cksvicbqv0" path="res://Art/Images/Untitled design (1).png" id="1_3tnjc"]
+[ext_resource type="Script" path="res://Script/Yarn.gd" id="1_cjvee"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f011l"]
 radius = 27.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdx7i"]
+radius = 34.0
 
 [node name="Yarn" type="RigidBody2D"]
 collision_layer = 64
@@ -11,6 +15,7 @@ collision_mask = 19
 mass = 5.0
 gravity_scale = 0.0
 linear_damp = 2.0
+script = ExtResource("1_cjvee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -21,3 +26,13 @@ shape = SubResource("CircleShape2D_f011l")
 position = Vector2(2, 1)
 scale = Vector2(0.123355, 0.123355)
 texture = ExtResource("1_3tnjc")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_jdx7i")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

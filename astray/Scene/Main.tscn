@@ -14,3 +14,4 @@ inv = ExtResource("3_dib7u")
 puzzle_piece1 = ExtResource("5_2dq8l")
 
 [connection signal="key_room" from="." to="Cat" method="key_room"]
+[connection signal="yarn_room" from="." to="Cat" method="yarn_room"]

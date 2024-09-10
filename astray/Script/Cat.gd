@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
 
+@onready var yarn_path: NodePath = "Room3/Yarn"
 @onready var key_path: NodePath = "Room6/Key"
 @onready var key_chest_path: NodePath = "Room6/KeyChest"
 
@@ -12,6 +13,7 @@ var speed = 500
 @export var inv: Inv
 @export var key: InvItem
 @export var axe: InvItem
+@export var yarn: InvItem
 @export var puzzle_piece1: InvItem
 
 # pushing items
@@ -47,6 +49,9 @@ func _physics_process(delta: float) -> void:
 func pickup_key():
 	collect(key)
 	open_pickup_key_dialogue()
+	
+func pickup_yarn():
+	collect(yarn)
 
 func open_pickup_key_dialogue():
 	dialogue = [
@@ -76,3 +81,6 @@ func use(item):
 func key_room() -> void:
 	get_parent().get_node(key_path).connect("pickup_key", pickup_key)
 	get_parent().get_node(key_chest_path).connect("open_key_chest", open_chest)
+
+func yarn_room() -> void:
+	get_parent().get_node(yarn_path).connect("pickup_yarn", pickup_yarn)
