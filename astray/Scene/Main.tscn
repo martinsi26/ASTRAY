@@ -18,4 +18,3 @@ puzzle_piece1 = ExtResource("5_2dq8l")
 [connection signal="door_room" from="." to="Cat" method="door_room"]
 [connection signal="key_chest_room" from="." to="Cat" method="key_chest_room"]
 [connection signal="number_chest_room" from="." to="Cat" method="number_chest_room"]
-[connection signal="start_dialogue" from="Cat" to="Cat/Dialogue" method="start_dialogue"]
