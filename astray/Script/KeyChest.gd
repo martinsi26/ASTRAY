@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var inv: Inv = preload("res://Inventory/Player_inv.tres")
-@onready var key: InvItem = preload("res://Inventory/Items/Key.tres")
+@onready var key: InvItem = preload("res://Inventory/Items/Chest_Key.tres")
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
 

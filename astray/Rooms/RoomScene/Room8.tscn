@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://gi3wxwtpygrq"]
+[gd_scene load_steps=12 format=4 uid="uid://gi3wxwtpygrq"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room8.gd" id="1_r1kpx"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_ew8jx"]
@@ -794,7 +794,13 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_k53b3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d6dk7"]
-size = Vector2(19, 84)
+size = Vector2(19, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6rjs"]
+size = Vector2(160, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o70h"]
+size = Vector2(20, 125)
 
 [node name="Room8" type="Node2D"]
 script = ExtResource("1_r1kpx")
@@ -815,25 +821,38 @@ tile_map_data = PackedByteArray("AAAQAA0AAAAOAAQAAAATABAAAAAOAAQAAAAQABMAAAAOAAU
 tile_set = SubResource("TileSet_uully")
 
 [node name="FromR6" type="Marker2D" parent="."]
-visible = false
-position = Vector2(-8, 369)
+position = Vector2(67, 319)
+
+[node name="FromR9" type="Marker2D" parent="."]
+position = Vector2(681, 50)
+
+[node name="FromR10" type="Marker2D" parent="."]
+position = Vector2(1076, 325)
 
 [node name="ToRoom6" type="Area2D" parent="."]
-visible = false
 collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom6"]
-visible = false
-position = Vector2(-7, 369)
+position = Vector2(-7, 320)
 shape = SubResource("RectangleShape2D_d6dk7")
 
-[node name="PathwayCollision" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(-1, 240, 352, 243, 352, 290, 396, 280, 399, 465, 594, 466, 593, -1, 752, 0, 752, 624, 536, 623, 534, 612, 520, 623, 239, 622, 240, 597, 250, 598, 249, 607, 284, 607, 288, 516, 240, 517, 240, 398, 0, 399, 0, 238, -1, 239)
+[node name="ToRoom9" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 672, 0, 672, -2, 0, -4, -63, 196, -23, 1146, -395, 1309, 256, 1252, 1150, 627, 751, -221, 1115, -89, 388, -303, -698, -2, -64, -4, -63, -1, 0, -2, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom9"]
+position = Vector2(672, -8)
+shape = SubResource("RectangleShape2D_p6rjs")
+
+[node name="ToRoom10" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom10"]
+position = Vector2(1161, 324)
+shape = SubResource("RectangleShape2D_2o70h")
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
+[connection signal="area_entered" from="ToRoom9" to="." method="_on_to_room_9_area_entered"]
+[connection signal="area_entered" from="ToRoom10" to="." method="_on_to_room_10_area_entered"]

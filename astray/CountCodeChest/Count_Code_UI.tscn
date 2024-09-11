@@ -10,8 +10,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -842.0
-offset_bottom = -524.0
+offset_right = -872.0
+offset_bottom = -481.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hayxo")
@@ -38,7 +38,7 @@ offset_bottom = 69.0
 grow_horizontal = 2
 columns = 4
 
-[node name="Count_UI_Image" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+[node name="Count_UI_Image1" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
 layout_mode = 2
 
 [node name="Count_UI_Image2" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]

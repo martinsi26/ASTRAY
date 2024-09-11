@@ -1,12 +1,24 @@
 extends Control
 
+@onready var image1: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image1/CenterContainer/Panel/Sprite2D")
+@onready var texture1: Texture = preload("res://Art/Images/Cat.webp")
+@onready var image2: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image2/CenterContainer/Panel/Sprite2D")
+@onready var texture2: Texture = preload("res://Art/Images/icon.svg")
+
 @onready var digit: CountCode = preload("res://CountCodeChest/Count_Code.tres")
 @onready var slots: Array = $NinePatchRect/GridContainerNumbers.get_children()
+
+@onready var inv: Inv = preload("res://Inventory/Player_inv.tres")
+@onready var claw: InvItem = preload("res://Inventory/Items/Claw.tres")
 
 var is_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	image1.scale.x = 0.05
+	image1.scale.y = 0.05
+	image1.texture = texture1
+	image2.texture = texture2
 	digit.update.connect(update_slots)
 	update_slots()
 	close()

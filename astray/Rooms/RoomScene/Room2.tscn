@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5qkq3b2ovch"]
+[gd_scene load_steps=11 format=3 uid="uid://bf5qkq3b2ovch"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_6t7ay"]
+[ext_resource type="Script" path="res://Rooms/RoomScript/Room2.gd" id="1_rlsqt"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_b3rqx"]
+[ext_resource type="PackedScene" uid="uid://cvqysjcl4lr2d" path="res://Scene/Yarn.tscn" id="4_i7d03"]
+[ext_resource type="PackedScene" uid="uid://brnd7fyxnr11a" path="res://Scene/Door.tscn" id="5_8yyjk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhmnr"]
 texture = ExtResource("1_6t7ay")
@@ -402,9 +405,10 @@ sources/1 = SubResource("TileSetAtlasSource_hyqfj")
 size = Vector2(22, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asilk"]
-size = Vector2(36.25, 128)
+size = Vector2(36.25, 100)
 
 [node name="Room2" type="Node2D"]
+script = ExtResource("1_rlsqt")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_spy4s")
@@ -413,20 +417,33 @@ layer_0/tile_data = PackedInt32Array(0, 196608, 2, 65536, 196608, 2, 131072, 196
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(65538, 1703936, 6, 131074, 1703936, 7, 65539, 1769472, 6, 131075, 1769472, 7, 720902, 1835008, 6, 786438, 1835008, 7, 720903, 1900544, 6, 786439, 1900544, 7, 1114129, 1703936, 6, 1179665, 1703936, 7, 1114130, 1769472, 6, 1179666, 1769472, 7, 1179677, 1835008, 6, 1245213, 1835008, 7, 1179678, 1900544, 6, 1245214, 1900544, 7, 524320, 1835008, 6, 589856, 1835008, 7, 524321, 1900544, 6, 589857, 1900544, 7, 29, 1703936, 6, 65565, 1703936, 7, 30, 1769472, 6, 65566, 1769472, 7, 589828, 720896, 2, 589827, 917504, 4, 589826, 917504, 5, 655362, 720896, 2, 720898, 720896, 2, 655363, 720896, 2, 1179656, 720896, 2, 1179657, 720896, 2, 1179654, 720896, 2, 1179655, 720896, 2, 524317, 720896, 2, 589853, 720896, 2, 655389, 720896, 2, 655388, 720896, 2, 589852, 720896, 2, 131088, 720896, 2, 131090, 720896, 2, 131091, 720896, 2, 196627, 720896, 2, 196626, 1769472, 8, 196641, 1703936, 3, 262177, 1703936, 4, 262176, 720896, 2, 327712, 720896, 2, 1114114, 1835008, 2, 1179650, 720896, 2, 1245186, 720896, 2, 1114113, 1769472, 2, 1048577, 1769472, 1, 1048578, 1835008, 1, 851971, 851968, 6, 1179662, 851968, 6, 327707, 851968, 6, 131096, 1769472, 4, 131079, 851968, 6, 1310745, 917504, 5, 720930, 917504, 5, 589834, 917504, 5, 524305, 917504, 5, 1048582, 917504, 5, 9, 1703936, 0, 65545, 1703936, 1, 131081, 1703936, 2, 10, 1769472, 0, 65546, 1769472, 1, 131082, 1769472, 2, 11, 1835008, 0, 65547, 1835008, 1, 131083, 1835008, 2, 983040, 1703936, 0, 1048576, 1703936, 1, 1114112, 1703936, 2, 983041, 1769472, 0, 983042, 1835008, 0, 786457, 1703936, 0, 851993, 1703936, 1, 917529, 1703936, 2, 786458, 1769472, 0, 851994, 1769472, 1, 917530, 1769472, 2, 786459, 1835008, 0, 851995, 1835008, 1, 917531, 1835008, 2, 1114122, 1703936, 3, 1179658, 1703936, 4, 1245194, 1703936, 5, 1114123, 1769472, 3, 1179659, 1769472, 4, 1245195, 1769472, 5, 1114124, 1835008, 3, 1179660, 1835008, 4, 1245196, 1835008, 5, 589839, 1703936, 3, 655375, 1703936, 4, 720911, 1703936, 5, 589840, 1769472, 3, 655376, 1769472, 4, 720912, 1769472, 5, 589841, 1835008, 3, 655377, 1835008, 4, 720913, 1835008, 5, 327713, 1703936, 5, 196642, 1769472, 3, 262178, 1769472, 4, 327714, 1769472, 5, 196643, 1835008, 3, 262179, 1835008, 4, 327715, 1835008, 5, 65559, 1703936, 3, 131095, 1703936, 4, 196631, 1703936, 5, 65560, 1769472, 3, 196632, 1769472, 5, 65561, 1835008, 3, 131097, 1835008, 4, 196633, 1835008, 5, 524288, 1703936, 8, 589824, 1703936, 9, 524289, 1769472, 8, 589825, 1769472, 9, 1114115, 1703936, 8, 1179651, 1703936, 9, 1114116, 1769472, 8, 1179652, 1769472, 9, 196625, 1703936, 8, 262161, 1703936, 9, 262162, 1769472, 9, 458759, 1835008, 8, 524295, 1835008, 9, 458760, 1900544, 8, 524296, 1900544, 9, 524310, 1835008, 8, 589846, 1835008, 9, 524311, 1900544, 8, 589847, 1900544, 9, 19, 1835008, 8, 65555, 1835008, 9, 20, 1900544, 8, 65556, 1900544, 9, 1245218, 1835008, 8, 1310754, 1835008, 9, 1245219, 1900544, 8, 1310755, 1900544, 9, 262153, 917504, 4, 983053, 917504, 4, 983062, 917504, 4, 1114144, 917504, 4, 262146, 917504, 4, 327704, 917504, 4, 65568, 917504, 4, 65540, 917504, 4, 1245197, 851968, 5, 786453, 851968, 5, 65550, 851968, 5)
 
-[node name="FromRoom1" type="Marker2D" parent="."]
-position = Vector2(25, 175)
+[node name="FromR1" type="Marker2D" parent="."]
+position = Vector2(49, 175)
 
-[node name="FromRoom3" type="Marker2D" parent="."]
-position = Vector2(1125, 528)
+[node name="FromR3" type="Marker2D" parent="."]
+position = Vector2(1099, 528)
 
 [node name="ToRoom1" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom1"]
-position = Vector2(-4, 176)
+position = Vector2(-10, 176)
 shape = SubResource("RectangleShape2D_bkp2i")
 
 [node name="ToRoom3" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom3"]
-position = Vector2(1154, 527)
+position = Vector2(1177, 528)
 shape = SubResource("RectangleShape2D_asilk")
+
+[node name="Yarn" parent="." instance=ExtResource("4_i7d03")]
+position = Vector2(707, 78)
+
+[node name="Door" parent="." instance=ExtResource("5_8yyjk")]
+position = Vector2(1148, 472)
+
+[connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]
+[connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
