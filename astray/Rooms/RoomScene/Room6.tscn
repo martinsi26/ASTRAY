@@ -271,7 +271,6 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b7uix"]
-load_path = "res://.godot/imported/part1.png-9a67275bdccdf5c2176dd18cc420e2b1.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gt2pa"]
 texture = SubResource("CompressedTexture2D_b7uix")
@@ -1017,7 +1016,6 @@ texture_region_size = Vector2i(32, 32)
 20:32/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_imn6l"]
-load_path = "res://.godot/imported/tree2.png-574dcdf74d04fcf0108c00b3b5af3ecd.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a15xa"]
 texture = SubResource("CompressedTexture2D_imn6l")
@@ -5638,7 +5636,6 @@ texture_region_size = Vector2i(32, 32)
 65:98/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8q2hg"]
-load_path = "res://.godot/imported/tree1.png-15917e8984b8a9c7e7dcf79c29a5de64.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0s74"]
 texture = SubResource("CompressedTexture2D_8q2hg")
@@ -10442,7 +10439,6 @@ texture_region_size = Vector2i(32, 32)
 7:11/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_br8y8"]
-load_path = "res://.godot/imported/Large Spruce Tree - GREEN - Spritesheet.png-7ad1117e7490730a1e1a0edce49e5e87.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5aj4k"]
 texture = SubResource("CompressedTexture2D_br8y8")
@@ -10668,7 +10664,6 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wk4vr"]
-load_path = "res://.godot/imported/Large Spruce Tree - GREEN_TEAL - Spritesheet.png-3487cf0a62c67df465d33a3022f004d2.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02lra"]
 texture = SubResource("CompressedTexture2D_wk4vr")
