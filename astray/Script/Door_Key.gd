@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var inv: Inv = preload("res://Inventory/Player_inv.tres")
-@onready var key: InvItem = preload("res://Inventory/Items/Key.tres")
+@onready var door_key: InvItem = preload("res://Inventory/Items/Door_Key.tres")
 @onready var axe: InvItem = preload("res://Inventory/Items/Axe.tres")
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
@@ -30,7 +30,7 @@ func pickup():
 		
 func key_in_inv():
 	for i in inv.slots.size():
-		if inv.slots[i].item == key:
+		if inv.slots[i].item == door_key:
 			return true
 	return false
 

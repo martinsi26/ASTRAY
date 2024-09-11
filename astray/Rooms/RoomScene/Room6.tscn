@@ -1,13 +1,10 @@
-[gd_scene load_steps=42 format=4 uid="uid://m2ccf743egca"]
+[gd_scene load_steps=39 format=4 uid="uid://m2ccf743egca"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_nhsan"]
 [ext_resource type="Texture2D" uid="uid://b4cpsjq32r7o6" path="res://Art/32x32 tileset/Tree Set #1/tree-set.png" id="4_blvc5"]
 [ext_resource type="Texture2D" uid="uid://212t8rfhib28" path="res://Art/32x32 tileset/Tree Set #1/tree-set-preview.png" id="5_chgfo"]
-[ext_resource type="PackedScene" uid="uid://cc5pwr8xy41h5" path="res://Scene/Key.tscn" id="6_7xaqj"]
-[ext_resource type="PackedScene" uid="uid://b8ri8ee7q22by" path="res://NumberCodeChest/NumberCodeChest.tscn" id="7_1x06a"]
-[ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="8_sllbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ehu0"]
 texture = ExtResource("2_oduuf")
@@ -11662,16 +11659,6 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlockPath"]
 polygon = PackedVector2Array(401, 544, 401, 528, 432, 528, 432, 496, 465, 496, 464, 479, 623, 480, 623, 495, 591, 495, 591, 544, 576, 544, 576, 559, 475, 551, 543, 536, 550, 513, 510, 509, 492, 520, 472, 551)
-
-[node name="Key" parent="." instance=ExtResource("6_7xaqj")]
-visible = false
-position = Vector2(128, 283)
-
-[node name="NumberCodeChest" parent="." instance=ExtResource("7_1x06a")]
-position = Vector2(519, 226)
-
-[node name="KeyChest" parent="." instance=ExtResource("8_sllbr")]
-position = Vector2(206, 519)
 
 [connection signal="area_entered" from="ToRoom7" to="." method="_on_to_room_7_area_entered"]
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://kq1q1getjues"]
+[gd_scene load_steps=8 format=4 uid="uid://kq1q1getjues"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room5.gd" id="1_a5lqu"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_keafm"]
+[ext_resource type="PackedScene" uid="uid://b8ri8ee7q22by" path="res://NumberCodeChest/NumberCodeChest.tscn" id="3_274ca"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5ei2"]
 texture = ExtResource("1_keafm")
@@ -307,6 +308,9 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom6"]
 position = Vector2(1160, 145)
 shape = SubResource("RectangleShape2D_vwsl8")
+
+[node name="NumberCodeChest" parent="." instance=ExtResource("3_274ca")]
+position = Vector2(206, 154)
 
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
