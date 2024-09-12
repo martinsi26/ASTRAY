@@ -12,13 +12,17 @@ var dialogue = preload("res://Scene/Dialogue.tscn")
 # character speed
 var speed = 500
 
-# items
 @export var inv: Inv
+# items
 @export var chest_key: InvItem
 @export var axe: InvItem
 @export var yarn: InvItem
 @export var claw: InvItem
 @export var door_key: InvItem
+@export var code1: InvItem
+@export var code2: InvItem
+@export var code3: InvItem
+@export var code4: InvItem
 @export var puzzle_piece1: InvItem
 
 # pushing items
@@ -53,13 +57,16 @@ func _physics_process(delta: float) -> void:
 	
 func pickup_key():
 	collect(door_key)
+	Global.door_key_inv = true
 	open_pickup_key_dialogue()
 	
 func pickup_yarn():
 	collect(yarn)
+	Global.yarn_inv = true
 	
 func pickup_claw():
 	collect(claw)
+	Global.claw_inv = true
 
 func open_pickup_key_dialogue():
 	dialogue = [
@@ -70,15 +77,28 @@ func open_pickup_key_dialogue():
 
 func use_door_key():
 	use(door_key)
+	Global.door_open = true
+	Global.door_key_inv = false
+	
+func use_axe():
+	use(axe)
+	Global.axe_inv = false
+	Global.axe_used = true
 
 func open_number_chest():
-	print("pickup chest key")
 	collect(chest_key)
+	Global.chest_key_inv = true
 	
 func open_key_chest():
 	use(chest_key)
+	Global.used_chest_key = true
+	Global.chest_key_inv = false
+	
 	open_key_chest_dialogue()
+	
 	collect(axe)
+	Global.axe_inv = true
+	
 
 func open_key_chest_dialogue():
 	dialogue = [
@@ -108,3 +128,6 @@ func claw_room() -> void:
 func door_room() -> void:
 	get_parent().get_node(door_path).connect("use_door_key", use_door_key)
 	get_parent().get_node(yarn_path).connect("pickup_yarn", pickup_yarn)
+
+func tree_room() -> void:
+	get_parent().get_node("Room6").connect("use_axe", use_axe)

@@ -29,6 +29,7 @@ signal claw_room
 signal key_chest_room
 signal number_chest_room
 signal door_room
+signal tree_room
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -153,6 +154,7 @@ func enter_room6(room_number):
 	instance6.connect("enter_room5", enter_room5)
 	instance6.connect("enter_room7", enter_room7)
 	instance6.connect("enter_room8", enter_room8)
+	emit_signal("tree_room")
 	
 func enter_room7(room_number):
 	if room_number == 6:

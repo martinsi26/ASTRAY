@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://m2ccf743egca"]
+[gd_scene load_steps=40 format=4 uid="uid://m2ccf743egca"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]
@@ -11584,6 +11584,9 @@ size = Vector2(20, 66)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sddfr"]
 size = Vector2(20, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1er3x"]
+size = Vector2(126, 210)
+
 [node name="Room6" type="Node2D"]
 script = ExtResource("1_qwvog")
 
@@ -11600,6 +11603,7 @@ tile_set = SubResource("TileSet_qxef3")
 [node name="DownTree" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAdABMAAAAOAAUAAAAhABMAAAAOAAUAAAANABAACAAGAAMAAFANAA8ACAAFAAMAAFAOAA8ACAAFAAIAAFAOABAACAAGAAIAAFAPABAACAAGAAEAAFAPAA8ACAAFAAEAAFAPABEACAAHAAEAAFAOABEACAAHAAIAAFAQABAACAAGAAIAAFARABAACAAGAAEAAFAQABEACAAHAAIAAFARABEACAAHAAEAAFASABAACAAGAAAAAFASAA8ACAAFAAAAAFARAA8ACAAFAAEAAFARAA4ACAAEAAEAAFAQAA4ACAAEAAIAAFAPAA4ACAAEAAEAAFAQAA8ACAAFAAIAAFAOAA4ACAAEAAIAAFA=")
+enabled = false
 tile_set = SubResource("TileSet_qxef3")
 
 [node name="Plants" type="TileMapLayer" parent="TileMap"]
@@ -11649,12 +11653,25 @@ shape = SubResource("RectangleShape2D_sddfr")
 polygon = PackedVector2Array(686, 0, 688, 83, 658, 82, 656, 144, 626, 145, 624, 209, 594, 209, 592, 273, 562, 274, 559, 337, 530, 337, 528, 401, 499, 402, 496, 464, 465, 467, 464, 479, 623, 480, 623, 463, 653, 461, 656, 399, 686, 397, 687, 368, 717, 366, 720, 304, 750, 301, 751, 239, 781, 237, 783, 111, 813, 110, 815, 0, 1152, 0, 1152, 336, 1264, 336, 1264, 399, 1151, 399, 1152, 649, 1067, 648, 1067, 758, 957, 758, 957, 648, 528, 648, 527, 623, 558, 622, 560, 560, 576, 559, 399, 544, 400, 592, 369, 593, 368, 648, 0, 648, 0, 144, -124, 144, -124, 80, 0, 80, 0, 1, 686, 2, -153, -43, -153, 784, 1321, 784, 1319, -47, 813, 0)
 
 [node name="BlockPath" type="StaticBody2D" parent="."]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlockPath"]
-polygon = PackedVector2Array(401, 544, 401, 528, 432, 528, 432, 496, 465, 496, 464, 479, 623, 480, 623, 495, 591, 495, 591, 544, 576, 544, 576, 559, 475, 551, 543, 536, 550, 513, 510, 509, 492, 520, 472, 551)
+polygon = PackedVector2Array(400, 543, 401, 528, 432, 528, 432, 496, 464, 496, 464, 479, 623, 480, 623, 495, 592, 496, 592, 544, 576, 544, 576, 559)
+
+[node name="StandingTree" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StandingTree"]
+polygon = PackedVector2Array(81, 607, 92, 596, 92, 576, 68, 574, 50, 546, 73, 512, 50, 482, 87, 424, 104, 423, 148, 483, 122, 510, 149, 545, 126, 575, 106, 576, 106, 596, 117, 608)
+
+[node name="Hitbox" type="Area2D" parent="StandingTree"]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandingTree/Hitbox"]
+position = Vector2(99, 519)
+shape = SubResource("RectangleShape2D_1er3x")
 
 [connection signal="area_entered" from="ToRoom7" to="." method="_on_to_room_7_area_entered"]
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]
+[connection signal="area_entered" from="StandingTree/Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="StandingTree/Hitbox" to="." method="_on_hitbox_area_exited"]
