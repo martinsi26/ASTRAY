@@ -403,10 +403,10 @@ sources/0 = SubResource("TileSetAtlasSource_uhmnr")
 sources/1 = SubResource("TileSetAtlasSource_hyqfj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkp2i"]
-size = Vector2(22, 126)
+size = Vector2(22, 127.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asilk"]
-size = Vector2(36.25, 100)
+size = Vector2(36.25, 125.5)
 
 [node name="Room2" type="Node2D"]
 script = ExtResource("1_rlsqt")
@@ -429,7 +429,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom1"]
-position = Vector2(-10, 176)
+position = Vector2(-11, 175.25)
 shape = SubResource("RectangleShape2D_bkp2i")
 
 [node name="ToRoom3" type="Area2D" parent="."]
@@ -437,8 +437,13 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom3"]
-position = Vector2(1177, 528)
+position = Vector2(1175, 528.25)
 shape = SubResource("RectangleShape2D_asilk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 112, 0, 0, 1152, 0, 1152, 465, 1220, 465, 1220, 590, 1152, 591, 1152, 648, 0, 648, 0, 239, -51, 239, -51, 112, 0, 112, -86, 94, -78, 701, 1249, 694, 1214, -36, -44, -38)
 
 [node name="Yarn" parent="." instance=ExtResource("4_i7d03")]
 position = Vector2(707, 78)

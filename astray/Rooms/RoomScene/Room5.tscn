@@ -269,10 +269,10 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_f5ei2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8reef"]
-size = Vector2(105, 20)
+size = Vector2(128, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwsl8"]
-size = Vector2(20, 105)
+size = Vector2(20, 128)
 
 [node name="Room5" type="Node2D"]
 script = ExtResource("1_a5lqu")
@@ -300,7 +300,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom3"]
-position = Vector2(728, 657)
+position = Vector2(720, 658)
 shape = SubResource("RectangleShape2D_8reef")
 
 [node name="ToRoom6" type="Area2D" parent="."]
@@ -308,7 +308,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom6"]
-position = Vector2(1160, 145)
+position = Vector2(1162, 144)
 shape = SubResource("RectangleShape2D_vwsl8")
 
 [node name="NumberCodeChest" parent="." instance=ExtResource("3_274ca")]
@@ -317,6 +317,11 @@ position = Vector2(206, 154)
 [node name="Code_Digit9" parent="." instance=ExtResource("4_v7i7u")]
 position = Vector2(944, 358)
 scale = Vector2(0.15, 0.15)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(1152, 208, 1152, 648, 784, 648, 784, 680, 656, 680, 656, 648, 0, 648, 0, 0, 1152, 0, 1152, 80, 1195, 80, 1195, 208, 1152, 208, 1210, 228, 1208, -21, -36, -32, -31, 687, 1186, 699)
 
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
