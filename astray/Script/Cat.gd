@@ -115,7 +115,6 @@ func use(item):
 	inv.remove(item)
 	
 func door_key_room() -> void:
-	print("door_key_room")
 	get_parent().get_node(door_key_path).connect("pickup_key", pickup_key)
 
 func key_chest_room() -> void:
