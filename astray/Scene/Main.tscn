@@ -11,10 +11,7 @@ script = ExtResource("1_aj2xg")
 [node name="Cat" parent="." instance=ExtResource("2_rjy8c")]
 top_level = true
 inv = ExtResource("3_dib7u")
+chest_key = null
+claw = null
+door_key = null
 puzzle_piece1 = ExtResource("5_2dq8l")
-
-[connection signal="claw_room" from="." to="Cat" method="claw_room"]
-[connection signal="door_key_room" from="." to="Cat" method="door_key_room"]
-[connection signal="door_room" from="." to="Cat" method="door_room"]
-[connection signal="key_chest_room" from="." to="Cat" method="key_chest_room"]
-[connection signal="number_chest_room" from="." to="Cat" method="number_chest_room"]
