@@ -33,25 +33,13 @@ signal tree_room
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("in main")
 	# Enter Room 1
 	add_child(instance1)
 	$Cat.position = instance1.get_node("Spawn").position
 	instance1.connect("enter_room0", enter_room0)
 	instance1.connect("enter_room2", enter_room2)
 	emit_signal("door_key_room")
-	
-	# Enter Room 4
-	#add_child(instance4)
-	#$Cat.position = instance4.get_node("FromR3").position
-	#instance4.connect("enter_room3", enter_room3)
-	#emit_signal("claw_room")
-	
-	# Enter Room 6
-	#add_child(instance6)
-	#$Cat.position = instance6.get_node("FromR5").position
-	#instance6.connect("enter_room5", enter_room5)
-	#instance6.connect("enter_room7", enter_room7)
-	#instance6.connect("enter_room8", enter_room8)
 
 func enter_room0(room_number):
 	if room_number == 1:
