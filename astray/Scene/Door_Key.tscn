@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbs62c14junt2"]
+[gd_scene load_steps=6 format=3 uid="uid://cc5pwr8xy41h5"]
 
 [ext_resource type="Script" path="res://Script/Door_Key.gd" id="1_mo8tn"]
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_smg07"]
