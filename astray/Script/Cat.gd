@@ -56,7 +56,6 @@ func _physics_process(delta: float) -> void:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	
 func pickup_key():
-	print("pickup")
 	collect(door_key)
 	Global.door_key_inv = true
 	open_pickup_key_dialogue()
