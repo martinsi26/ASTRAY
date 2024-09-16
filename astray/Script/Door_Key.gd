@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 		pickup()
 
 func pickup():
+	emit_signal("pickup_key")
 	queue_free()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
