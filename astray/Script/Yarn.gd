@@ -1,22 +1,13 @@
 extends RigidBody2D
 
-@onready var inv: Inv = preload("res://Inventory/Player_inv.tres")
-@onready var yarn: InvItem = preload("res://Inventory/Items/Yarn.tres")
-
 var on_yarn = false
 
 signal pickup_yarn
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if yarn_in_inv():
+	if Global.yarn_inv:
 		queue_free()
-	
-func yarn_in_inv():
-	for i in inv.slots.size():
-		if inv.slots[i].item == yarn:
-			return true
-	return false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

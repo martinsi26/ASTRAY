@@ -15,3 +15,5 @@ chest_key = null
 claw = null
 door_key = null
 puzzle_piece1 = ExtResource("5_2dq8l")
+
+[connection signal="start_dialogue" from="Cat" to="Cat/Dialogue" method="start_dialogue"]

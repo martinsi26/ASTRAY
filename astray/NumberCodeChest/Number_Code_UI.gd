@@ -25,8 +25,8 @@ signal open_number_chest
 func _ready() -> void:
 	image1.modulate = Color(0, 0, 1)
 	image2.modulate = Color(0, 1, 0)
-	image3.modulate = Color(1, 0, 0)
-	image4.modulate = Color(0, 0, 0)
+	image3.modulate = Color(1, 1, 0)
+	image4.modulate = Color(1, 0, 0)
 	
 	digit.update.connect(update_slots)
 	update_slots()
