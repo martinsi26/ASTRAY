@@ -26,21 +26,31 @@ expand_mode = 1
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 284.0
-offset_right = 632.0
-offset_bottom = 326.0
+offset_left = 460.0
+offset_top = 274.0
+offset_right = 618.0
+offset_bottom = 316.0
 theme = SubResource("Theme_nc351")
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 360.0
-offset_right = 632.0
-offset_bottom = 402.0
+offset_left = 647.0
+offset_top = 274.0
+offset_right = 805.0
+offset_bottom = 316.0
 theme = SubResource("Theme_nc351")
 text = "Quit"
 
+[node name="HelpButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 274.0
+offset_right = 434.0
+offset_bottom = 316.0
+theme = SubResource("Theme_nc351")
+text = "Help"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
