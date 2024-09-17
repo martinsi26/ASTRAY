@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://col05k6xwsbwk"]
-
-[ext_resource type="AudioStream" uid="uid://brwf4k1y6udu8" path="res://BG_Music.wav" id="1_h6ebe"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_h6ebe")
-autoplay = true

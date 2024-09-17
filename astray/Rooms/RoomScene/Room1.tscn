@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dho8vdulgvo3v"]
+[gd_scene load_steps=12 format=3 uid="uid://dho8vdulgvo3v"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_ewcsq"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_petmm"]
@@ -404,6 +404,18 @@ sources/2 = SubResource("TileSetAtlasSource_xfm3s")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqbnm"]
 size = Vector2(24.5, 127)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxxu8"]
+size = Vector2(23, 686)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ik4r"]
+size = Vector2(1169, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awltf"]
+size = Vector2(20, 115.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx8of"]
+size = Vector2(19.5, 438.5)
+
 [node name="Room1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -421,3 +433,23 @@ position = Vector2(1120, 175)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom2"]
 position = Vector2(1154.75, 175)
 shape = SubResource("RectangleShape2D_pqbnm")
+
+[node name="Wall1" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 334)
+shape = SubResource("RectangleShape2D_dxxu8")
+
+[node name="Wall2" type="CollisionShape2D" parent="."]
+position = Vector2(576, -1.75)
+shape = SubResource("RectangleShape2D_4ik4r")
+
+[node name="Wall3" type="CollisionShape2D" parent="."]
+position = Vector2(573, 675)
+shape = SubResource("RectangleShape2D_4ik4r")
+
+[node name="Wall4" type="CollisionShape2D" parent="."]
+position = Vector2(1155, 53.25)
+shape = SubResource("RectangleShape2D_awltf")
+
+[node name="Wall5" type="CollisionShape2D" parent="."]
+position = Vector2(1152.25, 458.25)
+shape = SubResource("RectangleShape2D_rx8of")

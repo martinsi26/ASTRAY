@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://1ttwrf1dam2v"]
 
-[ext_resource type="Texture2D" uid="uid://bj3a5p1257nch" path="res://Art/Images/icon.svg" id="1_gmnrb"]
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="1_nafvy"]
 [ext_resource type="Script" path="res://Script/KeyChest.gd" id="1_xd30j"]
+[ext_resource type="Texture2D" uid="uid://ddqg7kevv2u8m" path="res://Art/New_Assets/Open & Close.png" id="3_6qvm1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5273q"]
 size = Vector2(21.3333, 21.3333)
@@ -19,7 +19,7 @@ script = ExtResource("1_xd30j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_gmnrb")
+texture = ExtResource("3_6qvm1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.43051e-06, -1.43051e-06)
