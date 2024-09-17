@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6typvjb3thmd"]
+[gd_scene load_steps=20 format=3 uid="uid://b6typvjb3thmd"]
 
 [ext_resource type="Script" path="res://Script/Cat.gd" id="1_k6c7m"]
-[ext_resource type="Resource" uid="uid://by3dw60omvq5i" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
+[ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
 [ext_resource type="Resource" path="res://Inventory/Items/Key.tres" id="2_trw4r"]
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_ukpe8"]
 [ext_resource type="Texture2D" uid="uid://dq6kbb1pt7si1" path="res://Art/Images/Cat.webp" id="2_xglfj"]
-[ext_resource type="PackedScene" uid="uid://b1n4lnlhtxpm5" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
-[ext_resource type="Resource" path="res://Inventory/Items/Yarn.tres" id="4_nr5x1"]
-[ext_resource type="Resource" path="res://Inventory/Items/Claw.tres" id="5_tvq75"]
-[ext_resource type="Resource" path="res://Inventory/Items/Door_Key.tres" id="6_0l67d"]
+[ext_resource type="PackedScene" uid="uid://bdaex6esj5e4b" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
+[ext_resource type="Texture2D" uid="uid://5hq0skm58x5q" path="res://Art/New_Assets/Pixel Cat (Void) - Walk.png" id="7_l35lo"]
+[ext_resource type="Texture2D" uid="uid://bn51l82tkmmns" path="res://Art/New_Assets/Pixel Cat (Void) - Idle.png" id="8_dm84k"]
 
 [sub_resource type="Resource" id="Resource_uo2uu"]
 metadata/__load_path__ = "res://Inventory/Player_inv.tres"
@@ -84,11 +83,8 @@ collision_layer = 2
 collision_mask = 113
 script = ExtResource("1_k6c7m")
 inv = SubResource("Resource_uo2uu")
-chest_key = ExtResource("2_trw4r")
+key = ExtResource("2_trw4r")
 axe = ExtResource("2_ak1yd")
-yarn = ExtResource("4_nr5x1")
-claw = ExtResource("5_tvq75")
-door_key = ExtResource("6_0l67d")
 puzzle_piece1 = SubResource("Resource_x8mne")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_ukpe8")]
@@ -118,6 +114,6 @@ offset_bottom = -103.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_886x4")
-frame_progress = 0.296705
+frame_progress = 0.506169
 
 [connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
