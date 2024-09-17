@@ -82,9 +82,16 @@ animations = [{
 collision_layer = 2
 collision_mask = 113
 script = ExtResource("1_k6c7m")
-inv = SubResource("Resource_uo2uu")
-key = ExtResource("2_trw4r")
+inv = ExtResource("2_pjynx")
+chest_key = ExtResource("2_trw4r")
 axe = ExtResource("2_ak1yd")
+yarn = ExtResource("4_nr5x1")
+claw = ExtResource("5_tvq75")
+door_key = ExtResource("6_0l67d")
+code1 = ExtResource("7_yne67")
+code2 = ExtResource("8_k75gv")
+code3 = ExtResource("9_g7lxr")
+code4 = ExtResource("10_reqa4")
 puzzle_piece1 = SubResource("Resource_x8mne")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_ukpe8")]

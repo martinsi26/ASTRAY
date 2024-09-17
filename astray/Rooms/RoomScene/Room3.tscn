@@ -852,6 +852,19 @@ collision_mask = 4
 position = Vector2(725, 655)
 shape = SubResource("RectangleShape2D_l5oc5")
 
+[node name="KeyChest" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(830, 273)
+script = null
+
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]
 [connection signal="area_entered" from="ToRoom2" to="." method="_on_to_room_2_area_entered"]
 [connection signal="area_entered" from="ToRoom4" to="." method="_on_to_room_4_area_entered"]
