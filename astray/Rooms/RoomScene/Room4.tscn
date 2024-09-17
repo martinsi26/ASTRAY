@@ -1,8 +1,3 @@
-
-[gd_scene load_steps=6 format=4 uid="uid://dj2yijkd1r2ab"]
-
-[ext_resource type="Script" path="res://Rooms/RoomScript/Room4.gd" id="1_ohys6"]
-[ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_qxhe3"]
 [gd_scene load_steps=9 format=4 uid="uid://dj2yijkd1r2ab"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room4.gd" id="1_ohys6"]
@@ -302,7 +297,7 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom3"]
 position = Vector2(720, -8)
 shape = SubResource("RectangleShape2D_vn4s1")
- 
+
 [node name="Claw" parent="." instance=ExtResource("3_727s4")]
 position = Vector2(222, 465)
 scale = Vector2(0.5, 0.5)
