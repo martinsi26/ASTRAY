@@ -8,6 +8,10 @@ var dialogue = preload("res://Scene/Dialogue.tscn")
 @onready var key_chest_path: NodePath = "Room3/KeyChest"
 @onready var number_chest_path: NodePath = "Room5/NumberCodeChest/Number_Code_UI"
 @onready var door_path: NodePath = "Room2/Door"
+@onready var code2_path: NodePath = "Room4/Code_Digit2"
+@onready var code9_path: NodePath = "Room5/Code_Digit9"
+@onready var code6_path: NodePath = "Room4/Code_Digit6"
+@onready var code4_path: NodePath = "Room2/Code_Digit4"
 
 # character speed
 var speed = 500
@@ -19,10 +23,10 @@ var speed = 500
 @export var yarn: InvItem
 @export var claw: InvItem
 @export var door_key: InvItem
-@export var code1: InvItem
-@export var code2: InvItem
-@export var code3: InvItem
-@export var code4: InvItem
+@export var code_digit6: InvItem
+@export var code_digit9: InvItem
+@export var code_digit4: InvItem
+@export var code_digit2: InvItem
 @export var puzzle_piece1: InvItem
 
 # pushing items
@@ -54,7 +58,23 @@ func _physics_process(delta: float) -> void:
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+
+func pickup_code2():
+	collect(code_digit2)
+	Global.code1_inv = true
 	
+func pickup_code4():
+	collect(code_digit4)
+	Global.code2_inv = true
+	
+func pickup_code6():
+	collect(code_digit6)
+	Global.code3_inv = true
+	
+func pickup_code9():
+	collect(code_digit9)
+	Global.code4_inv = true
+
 func pickup_key():
 	collect(door_key)
 	Global.door_key_inv = true
@@ -121,13 +141,17 @@ func key_chest_room() -> void:
 	
 func number_chest_room() -> void:
 	get_parent().get_node(number_chest_path).connect("open_number_chest", open_number_chest)
+	get_parent().get_node(code9_path).connect("pickup_code", pickup_code9)
 
 func claw_room() -> void:
 	get_parent().get_node(claw_path).connect("pickup_claw", pickup_claw)
+	get_parent().get_node(code2_path).connect("pickup_code", pickup_code2)
+	get_parent().get_node(code6_path).connect("pickup_code", pickup_code6)
 
 func door_room() -> void:
 	get_parent().get_node(door_path).connect("use_door_key", use_door_key)
 	get_parent().get_node(yarn_path).connect("pickup_yarn", pickup_yarn)
+	get_parent().get_node(code4_path).connect("pickup_code", pickup_code4)
 
 func tree_room() -> void:
 	get_parent().get_node("Room6").connect("use_axe", use_axe)
