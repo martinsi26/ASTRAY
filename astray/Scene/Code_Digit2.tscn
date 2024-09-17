@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnd8jjl5mepwl"]
+[gd_scene load_steps=5 format=3 uid="uid://dnd8jjl5mepwl"]
 
-[ext_resource type="Texture2D" uid="uid://c66faasumkvdo" path="res://Art/Images/number2.png" id="1_yiiw5"]
+[ext_resource type="Script" path="res://Script/Code_Digit2.gd" id="1_8mi3w"]
+[ext_resource type="Texture2D" uid="uid://c66faasumkvdo" path="res://Art/Images/number2.png" id="2_dsig5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yy7h"]
 size = Vector2(202, 250)
@@ -8,10 +9,11 @@ size = Vector2(202, 250)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjm4u"]
 size = Vector2(228, 277)
 
-[node name="Code4" type="StaticBody2D"]
+[node name="Code_Digit2" type="StaticBody2D"]
+script = ExtResource("1_8mi3w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_yiiw5")
+texture = ExtResource("2_dsig5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1yy7h")

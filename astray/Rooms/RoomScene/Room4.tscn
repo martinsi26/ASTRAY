@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dj2yijkd1r2ab"]
+[gd_scene load_steps=9 format=4 uid="uid://dj2yijkd1r2ab"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room4.gd" id="1_ohys6"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_qxhe3"]
 [ext_resource type="PackedScene" path="res://Scene/Claw.tscn" id="3_727s4"]
+[ext_resource type="PackedScene" uid="uid://dnd8jjl5mepwl" path="res://Scene/Code_Digit2.tscn" id="5_1orpg"]
+[ext_resource type="PackedScene" uid="uid://ck2bn6en7nmbc" path="res://Scene/Code_Digit6.tscn" id="5_yfoji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d83w8"]
 texture = ExtResource("1_qxhe3")
@@ -299,5 +301,13 @@ shape = SubResource("RectangleShape2D_vn4s1")
 [node name="Claw" parent="." instance=ExtResource("3_727s4")]
 position = Vector2(222, 465)
 scale = Vector2(0.5, 0.5)
+
+[node name="Code_Digit6" parent="." instance=ExtResource("5_yfoji")]
+position = Vector2(81, 197)
+scale = Vector2(0.15, 0.15)
+
+[node name="Code_Digit2" parent="." instance=ExtResource("5_1orpg")]
+position = Vector2(914, 264)
+scale = Vector2(0.15, 0.15)
 
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]

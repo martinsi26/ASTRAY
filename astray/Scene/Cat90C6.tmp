@@ -10,10 +10,10 @@
 [ext_resource type="Resource" uid="uid://nfl84h88krs3" path="res://Inventory/Items/Yarn.tres" id="4_nr5x1"]
 [ext_resource type="Resource" path="res://Inventory/Items/Claw.tres" id="5_tvq75"]
 [ext_resource type="Resource" path="res://Inventory/Items/Door_Key.tres" id="6_0l67d"]
-[ext_resource type="Resource" uid="uid://bhja7upc7o3yg" path="res://Inventory/Items/Code_Digit6.tres" id="8_g2ppp"]
-[ext_resource type="Resource" uid="uid://cge3nhmhij0me" path="res://Inventory/Items/Code_Digit9.tres" id="9_wpsfd"]
-[ext_resource type="Resource" uid="uid://d31rpnhx2vvgu" path="res://Inventory/Items/Code_Digit4.tres" id="10_u6e24"]
-[ext_resource type="Resource" uid="uid://dorv4uye8wij5" path="res://Inventory/Items/Code_Digit2.tres" id="11_75885"]
+[ext_resource type="Resource" uid="uid://bhja7upc7o3yg" path="res://Inventory/Items/Code1.tres" id="7_yne67"]
+[ext_resource type="Resource" uid="uid://cge3nhmhij0me" path="res://Inventory/Items/Code2.tres" id="8_k75gv"]
+[ext_resource type="Resource" uid="uid://dorv4uye8wij5" path="res://Inventory/Items/Code3.tres" id="9_g7lxr"]
+[ext_resource type="Resource" uid="uid://d31rpnhx2vvgu" path="res://Inventory/Items/Code4.tres" id="10_reqa4"]
 
 [sub_resource type="Resource" id="Resource_x8mne"]
 metadata/__load_path__ = "res://Inventory/Items/Puzzle_Piece1.tres"
@@ -36,10 +36,10 @@ axe = ExtResource("2_ak1yd")
 yarn = ExtResource("4_nr5x1")
 claw = ExtResource("5_tvq75")
 door_key = ExtResource("6_0l67d")
-code_digit6 = ExtResource("8_g2ppp")
-code_digit9 = ExtResource("9_wpsfd")
-code_digit4 = ExtResource("10_u6e24")
-code_digit2 = ExtResource("11_75885")
+code1 = ExtResource("7_yne67")
+code2 = ExtResource("8_k75gv")
+code3 = ExtResource("9_g7lxr")
+code4 = ExtResource("10_reqa4")
 puzzle_piece1 = SubResource("Resource_x8mne")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_ukpe8")]
