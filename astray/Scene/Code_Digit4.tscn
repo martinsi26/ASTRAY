@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ravui1ewp6k4"]
+[gd_scene load_steps=5 format=3 uid="uid://ravui1ewp6k4"]
 
-[ext_resource type="Texture2D" uid="uid://ps1hbibauadx" path="res://Art/Images/number4.png" id="1_upgsu"]
+[ext_resource type="Script" path="res://Script/Code_Digit4.gd" id="1_jxpsx"]
+[ext_resource type="Texture2D" uid="uid://ps1hbibauadx" path="res://Art/Images/number4.png" id="2_beqpk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmwki"]
 size = Vector2(202, 250)
@@ -8,10 +9,11 @@ size = Vector2(202, 250)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb23n"]
 size = Vector2(225, 274)
 
-[node name="Code3" type="StaticBody2D"]
+[node name="Code_Digit4" type="StaticBody2D"]
+script = ExtResource("1_jxpsx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_upgsu")
+texture = ExtResource("2_beqpk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tmwki")

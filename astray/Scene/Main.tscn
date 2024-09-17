@@ -15,3 +15,4 @@ top_level = true
 [connection signal="key_chest_room" from="." to="Cat" method="key_chest_room"]
 [connection signal="number_chest_room" from="." to="Cat" method="number_chest_room"]
 [connection signal="tree_room" from="." to="Cat" method="tree_room"]
+[connection signal="start_dialogue" from="Cat" to="Cat/Dialogue" method="start_dialogue"]
