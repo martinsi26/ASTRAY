@@ -46,10 +46,14 @@ func _physics_process(delta: float) -> void:
 	
 	if direction.x == 0 and direction.y == 0:
 		# idle
-		pass
+		$AnimatedSprite2D.play("Idle")
 	if direction.x != 0 or direction.y != 0:
 		# walking
-		pass
+		$AnimatedSprite2D.play("Walk")
+	if direction.x > 0:
+		get_node("AnimatedSprite2D").flip_h = false
+	elif direction.x < 0:
+		get_node("AnimatedSprite2D").flip_h = true
 		
 	velocity = direction * speed
 	move_and_slide()

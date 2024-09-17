@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_b3rqx"]
 [ext_resource type="PackedScene" uid="uid://cvqysjcl4lr2d" path="res://Scene/Yarn.tscn" id="4_i7d03"]
 [ext_resource type="PackedScene" path="res://Scene/Door.tscn" id="5_8yyjk"]
-[ext_resource type="PackedScene" uid="uid://ravui1ewp6k4" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
+[ext_resource type="PackedScene" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhmnr"]
 texture = ExtResource("1_6t7ay")
