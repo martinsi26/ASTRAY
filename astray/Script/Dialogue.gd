@@ -49,11 +49,3 @@ func _on_next_message_timeout():
 		display = ""
 		current_char = 0
 		$NextChar.start()
-
-
-func _on_count_code_chest_start_dialogue() -> void:
-	pass # Replace with function body.
-
-
-func _on_key_chest_start_dialogue() -> void:
-	pass # Replace with function body.

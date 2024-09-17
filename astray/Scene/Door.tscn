@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://brnd7fyxnr11a"]
+
+[ext_resource type="Texture2D" uid="uid://bj3a5p1257nch" path="res://Art/Images/icon.svg" id="1_injiq"]
+[ext_resource type="Script" path="res://Script/Door.gd" id="1_kk6jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gefl"]
+size = Vector2(20, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4iqk1"]
+size = Vector2(20, 129)
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_kk6jc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 54.5)
+shape = SubResource("RectangleShape2D_3gefl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.25, 54.5)
+scale = Vector2(0.160156, 1.00781)
+texture = ExtResource("1_injiq")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-9, 54.5)
+shape = SubResource("RectangleShape2D_4iqk1")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

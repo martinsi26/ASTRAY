@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://1ttwrf1dam2v"]
+[gd_scene load_steps=6 format=3 uid="uid://d30undk6fe833"]
 
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="1_nafvy"]
 [ext_resource type="Script" path="res://Script/KeyChest.gd" id="1_xd30j"]
@@ -33,6 +33,5 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_aoiuk")
 
-[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
