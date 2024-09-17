@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< Updated upstream:astray/Art/New_Assets/Open & Close.png.import
+uid="uid://ddqg7kevv2u8m"
+path="res://.godot/imported/Open & Close.png-a0981fb9e695ed2a44a023a17663718c.ctex"
+=======
+uid="uid://h6j0tokn5kyv"
+path="res://.godot/imported/Open & Close.png-a725c7bc1db03066e9dff7168341d6f0.ctex"
+>>>>>>> Stashed changes:astray/Art/Images/Basic Pack Free v1.0/Treasure Chest/SpriteSheet/Open & Close.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<< Updated upstream:astray/Art/New_Assets/Open & Close.png.import
+source_file="res://Art/New_Assets/Open & Close.png"
+dest_files=["res://.godot/imported/Open & Close.png-a0981fb9e695ed2a44a023a17663718c.ctex"]
+=======
+source_file="res://Art/Images/Basic Pack Free v1.0/Treasure Chest/SpriteSheet/Open & Close.png"
+dest_files=["res://.godot/imported/Open & Close.png-a725c7bc1db03066e9dff7168341d6f0.ctex"]
+>>>>>>> Stashed changes:astray/Art/Images/Basic Pack Free v1.0/Treasure Chest/SpriteSheet/Open & Close.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
