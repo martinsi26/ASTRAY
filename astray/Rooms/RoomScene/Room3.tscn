@@ -859,3 +859,4 @@ position = Vector2(878, 276)
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]
 [connection signal="area_entered" from="ToRoom2" to="." method="_on_to_room_2_area_entered"]
 [connection signal="area_entered" from="ToRoom4" to="." method="_on_to_room_4_area_entered"]
+[connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]
