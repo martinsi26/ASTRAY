@@ -12,7 +12,10 @@ func _ready():
 	if Global.tree_down:
 		get_node("TileMap/DownTree").enabled = true
 		get_node("TileMap/OriginalTree").enabled = false
-		get_node("BlockPath/CollisionPolygon2D").disabled = true
+		get_node("BlockPath").collision_layer = 0
+		get_node("BlockPath").collision_mask = 0
+		get_node("StandingTree").collision_layer = 0
+		get_node("StandingTree").collision_mask = 0
 
 func _on_to_room_7_area_entered(area: Area2D) -> void:
 	emit_signal("enter_room7", 6)
@@ -26,7 +29,6 @@ func _on_to_room_5_area_entered(area: Area2D) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if on_tree and Input.is_action_just_pressed("Interact") and Global.axe_inv:
-		Global.tree_down = true
 		get_node("TileMap/DownTree").enabled = true
 		get_node("TileMap/OriginalTree").enabled = false
 		get_node("BlockPath/CollisionPolygon2D").disabled = true

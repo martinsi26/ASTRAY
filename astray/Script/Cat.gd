@@ -51,10 +51,12 @@ func _physics_process(delta: float) -> void:
 		# walking
 		$AnimatedSprite2D.play("Walk")
 	if direction.x > 0:
+		#face left
 		get_node("AnimatedSprite2D").flip_h = false
 		$HitboxRight.disabled = false
 		$HitboxLeft.disabled = true
 	elif direction.x < 0:
+		#face right
 		get_node("AnimatedSprite2D").flip_h = true
 		$HitboxRight.disabled = true
 		$HitboxLeft.disabled = false
@@ -108,6 +110,7 @@ func use_door_key():
 	Global.door_key_inv = false
 	
 func use_axe():
+	Global.tree_down = true
 	use(axe)
 	Global.axe_inv = false
 	Global.axe_used = true

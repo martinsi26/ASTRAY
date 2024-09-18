@@ -11618,17 +11618,17 @@ tile_set = SubResource("TileSet_2ee3c")
 position = Vector2(33, 112)
 
 [node name="FromR8" type="Marker2D" parent="."]
-position = Vector2(1127, 365)
+position = Vector2(1122, 367)
 
 [node name="FromR7" type="Marker2D" parent="."]
-position = Vector2(1010, 620)
+position = Vector2(1010, 605)
 
 [node name="ToRoom7" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom7"]
-position = Vector2(1012, 712)
+position = Vector2(1012, 658)
 shape = SubResource("RectangleShape2D_tdqpu")
 
 [node name="ToRoom8" type="Area2D" parent="."]
@@ -11636,7 +11636,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom8"]
-position = Vector2(1202, 367)
+position = Vector2(1162, 367)
 shape = SubResource("RectangleShape2D_1sf2a")
 
 [node name="ToRoom5" type="Area2D" parent="."]
@@ -11644,7 +11644,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom5"]
-position = Vector2(-47, 113)
+position = Vector2(-10, 112)
 shape = SubResource("RectangleShape2D_sddfr")
 
 [node name="Walls" type="StaticBody2D" parent="."]
