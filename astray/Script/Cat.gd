@@ -52,9 +52,12 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("Walk")
 	if direction.x > 0:
 		get_node("AnimatedSprite2D").flip_h = false
+		$HitboxRight.disabled = false
+		$HitboxLeft.disabled = true
 	elif direction.x < 0:
 		get_node("AnimatedSprite2D").flip_h = true
-		
+		$HitboxRight.disabled = true
+		$HitboxLeft.disabled = false
 	velocity = direction * speed
 	move_and_slide()
 	
