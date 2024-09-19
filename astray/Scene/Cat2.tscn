@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://bein7bukcoww1"]
+
+[ext_resource type="Texture2D" uid="uid://833cfft76d57" path="res://Art/New_Assets/Pixel Cat (Orange) - Sit.png" id="1_7oejh"]
+[ext_resource type="Script" path="res://Script/Cat_2.gd" id="1_ryq7o"]
+[ext_resource type="Texture2D" uid="uid://dsvv3qfuo816b" path="res://Art/New_Assets/Pixel Cat (Orange) - Walk.png" id="2_yqvj0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggj62"]
+atlas = ExtResource("1_7oejh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awpkh"]
+atlas = ExtResource("1_7oejh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06rxk"]
+atlas = ExtResource("2_yqvj0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41xud"]
+atlas = ExtResource("2_yqvj0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwlrx"]
+atlas = ExtResource("2_yqvj0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv58l"]
+atlas = ExtResource("2_yqvj0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwr3y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggj62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awpkh")
+}],
+"loop": true,
+"name": &"Sit",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06rxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41xud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwlrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv58l")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wg6r"]
+radius = 11.0
+height = 22.0
+
+[node name="Ash" type="Node2D"]
+script = ExtResource("1_ryq7o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kwr3y")
+animation = &"Sit"
+frame_progress = 0.584132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 7)
+shape = SubResource("CapsuleShape2D_0wg6r")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 56
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 7)
