@@ -404,10 +404,10 @@ sources/1 = SubResource("TileSetScenesCollectionSource_mdfhg")
 sources/2 = SubResource("TileSetAtlasSource_xfm3s")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqbnm"]
-size = Vector2(24.5, 127)
+size = Vector2(25.25, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bbio"]
-size = Vector2(20, 93)
+size = Vector2(20, 94)
 
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_btm2b")
@@ -433,20 +433,26 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom2"]
-position = Vector2(1154.75, 175)
+position = Vector2(1164.63, 175.5)
 shape = SubResource("RectangleShape2D_pqbnm")
 
 [node name="ToRoom0" type="Area2D" parent="."]
+position = Vector2(-14, -14)
 collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom0"]
-position = Vector2(-9, 391)
+position = Vector2(4, 403)
 shape = SubResource("RectangleShape2D_3bbio")
 
 [node name="Door_Key" parent="." instance=ExtResource("4_cgi7p")]
 position = Vector2(800, 389)
 scale = Vector2(0.5, 0.5)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 112, 1210, 112, 1210, 239, 1152, 239, 1152, 648, 0, 648, 0, 436, -31, 436, -31, 342, 0, 342, 0, 0, -53, 336, -30, 661, 1244, 668, 1236, -29, 0, -9)
 
 [connection signal="area_entered" from="ToRoom2" to="." method="_on_to_room_2_area_entered"]
 [connection signal="area_entered" from="ToRoom0" to="." method="_on_to_room_0_area_entered"]

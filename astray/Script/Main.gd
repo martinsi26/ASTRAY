@@ -1,5 +1,7 @@
 extends Node2D
 
+var yarn_ball = preload("res://Scene/Yarn.tscn")
+
 var room0 = preload("res://Rooms/RoomScene/Room0.tscn")
 var room1 = preload("res://Rooms/RoomScene/Room1.tscn")
 var room2 = preload("res://Rooms/RoomScene/Room2.tscn")
@@ -30,22 +32,95 @@ signal key_chest_room
 signal number_chest_room
 signal door_room
 signal tree_room
+signal yarn_room
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Enter Room 1
 	add_child(instance1)
 	$Cat.position = instance1.get_node("Spawn").position
-	instance1.connect("enter_room0", enter_room0)
-	instance1.connect("enter_room2", enter_room2)
+	instance1.connect("enter_room0", enter_room)
+	instance1.connect("enter_room2", enter_room)
 	emit_signal("door_key_room")
-
+	
+func enter_room(from_room, to_room):
+	print("from room" + str(from_room))
+	print("going to room" + str(to_room))
+	
+	var from_room_path = "Room" + str(from_room)
+	var to_room_path = "Room" + str(to_room)
+	
+	if from_room_path == Global.yarn_room and !Global.yarn_inv:
+		Global.yarn_posx = get_node(from_room_path + "/Yarn").position.x
+		Global.yarn_posy = get_node(from_room_path + "/Yarn").position.y
+	if from_room == 0:
+		if to_room == 1:
+			enter_room1(from_room)
+	elif from_room == 1:
+		if to_room == 0:
+			enter_room0(from_room)
+		elif to_room == 2:
+			enter_room2(from_room)
+	elif from_room == 2:
+		if to_room == 1:
+			enter_room1(from_room)
+		elif to_room == 3:
+			enter_room3(from_room)
+	elif from_room == 3:
+		if to_room == 2:
+			enter_room2(from_room)
+		elif to_room == 4:
+			enter_room4(from_room)
+		elif to_room == 5:
+			enter_room5(from_room)
+	elif from_room == 4:
+		enter_room3(from_room)
+	elif from_room == 5:
+		if to_room == 6:
+			enter_room6(from_room)
+		elif to_room == 3:
+			enter_room3(from_room)
+	elif from_room == 6:
+		if to_room == 5:
+			enter_room5(from_room)
+		elif to_room == 7:
+			enter_room7(from_room)
+		elif to_room == 8:
+			enter_room8(from_room)
+	elif from_room == 7:
+		enter_room6(from_room)
+	elif from_room == 8:
+		if to_room == 6:
+			enter_room6(from_room)
+		elif to_room == 9:
+			enter_room9(from_room)
+		elif to_room == 10:
+			enter_room10(from_room)
+	elif from_room == 9:
+		if to_room == 8:
+			enter_room8(from_room)
+	elif from_room == 10:
+		if to_room == 8:
+			enter_room8(from_room)
+			
+	if to_room_path == Global.yarn_room and !Global.yarn_inv:
+		var ball_instance = yarn_ball.instantiate()
+		get_node(to_room_path).add_child(ball_instance)
+		
+		emit_signal("yarn_room", to_room_path + "/Yarn")
+		
+		get_node(to_room_path + "/Yarn").position.x = Global.yarn_posx
+		get_node(to_room_path + "/Yarn").position.y = Global.yarn_posy
+		
+		
+		
 func enter_room0(room_number):
 	if room_number == 1:
 		instance1.queue_free()
 		instance1 = room1.instantiate()
 		add_child(instance0)
 		#$Cat.position = instance0.get_node("FromR1").position
+	Global.room = "Room0"
 	
 func enter_room1(room_number):
 	if room_number == 0:
@@ -58,9 +133,10 @@ func enter_room1(room_number):
 		instance2 = room2.instantiate()
 		add_child(instance1)
 		$Cat.position = instance1.get_node("FromR2").position
-	instance1.connect("enter_room0", enter_room0)
-	instance1.connect("enter_room2", enter_room2)
+	instance1.connect("enter_room0", enter_room)
+	instance1.connect("enter_room2", enter_room)
 	emit_signal("door_key_room")
+	Global.room = "Room1"
 	
 func enter_room2(room_number):
 	if room_number == 1:
@@ -73,9 +149,10 @@ func enter_room2(room_number):
 		instance3 = room3.instantiate()
 		add_child(instance2)
 		$Cat.position = instance2.get_node("FromR3").position
-	instance2.connect("enter_room1", enter_room1)
-	instance2.connect("enter_room3", enter_room3)
+	instance2.connect("enter_room1", enter_room)
+	instance2.connect("enter_room3", enter_room)
 	emit_signal("door_room")
+	Global.room = "Room2"
 		
 func enter_room3(room_number):
 	if room_number == 2:
@@ -93,10 +170,11 @@ func enter_room3(room_number):
 		instance5 = room5.instantiate()
 		add_child(instance3)
 		$Cat.position = instance3.get_node("FromR5").position
-	instance3.connect("enter_room2", enter_room2)
-	instance3.connect("enter_room4", enter_room4)
-	instance3.connect("enter_room5", enter_room5)
+	instance3.connect("enter_room2", enter_room)
+	instance3.connect("enter_room4", enter_room)
+	instance3.connect("enter_room5", enter_room)
 	emit_signal("key_chest_room")
+	Global.room = "Room3"
 	
 func enter_room4(room_number):
 	if room_number == 3:
@@ -106,6 +184,7 @@ func enter_room4(room_number):
 		$Cat.position = instance4.get_node("FromR3").position
 	instance4.connect("enter_room3", enter_room3)
 	emit_signal("claw_room")
+	Global.room = "Room4"
 	
 func enter_room5(room_number):
 	if room_number == 6:
@@ -118,9 +197,10 @@ func enter_room5(room_number):
 		instance3 = room3.instantiate()
 		add_child(instance5)
 		$Cat.position = instance5.get_node("FromR3").position
-	instance5.connect("enter_room6", enter_room6)
-	instance5.connect("enter_room3", enter_room3)
+	instance5.connect("enter_room6", enter_room)
+	instance5.connect("enter_room3", enter_room)
 	emit_signal("number_chest_room")
+	Global.room = "Room5"
 	
 func enter_room6(room_number):
 	if room_number == 7:
@@ -138,10 +218,11 @@ func enter_room6(room_number):
 		instance8 = room8.instantiate()
 		add_child(instance6)
 		$Cat.position = instance6.get_node("FromR8").position
-	instance6.connect("enter_room5", enter_room5)
-	instance6.connect("enter_room7", enter_room7)
-	instance6.connect("enter_room8", enter_room8)
+	instance6.connect("enter_room5", enter_room)
+	instance6.connect("enter_room7", enter_room)
+	instance6.connect("enter_room8", enter_room)
 	emit_signal("tree_room")
+	Global.room = "Room6"
 	
 func enter_room7(room_number):
 	if room_number == 6:
@@ -150,6 +231,7 @@ func enter_room7(room_number):
 		add_child(instance7)
 		$Cat.position = instance7.get_node("FromR6").position
 	instance7.connect("enter_room6", enter_room6)
+	Global.room = "Room7"
 
 func enter_room8(room_number):
 	if room_number == 6:
@@ -167,9 +249,10 @@ func enter_room8(room_number):
 		instance10 = room10.instantiate()
 		add_child(instance8)
 		$Cat.position = instance8.get_node("FromR10").position
-	instance8.connect("enter_room6", enter_room6)
-	instance8.connect("enter_room9", enter_room9)
-	instance8.connect("enter_room10", enter_room10)
+	instance8.connect("enter_room6", enter_room)
+	instance8.connect("enter_room9", enter_room)
+	instance8.connect("enter_room10", enter_room)
+	Global.room = "Room8"
 	
 func enter_room9(room_number):
 	if room_number == 8:
@@ -177,7 +260,8 @@ func enter_room9(room_number):
 		instance8 = room8.instantiate()
 		add_child(instance9)
 		$Cat.position = instance9.get_node("FromR8").position
-	instance9.connect("enter_room8", enter_room8)
+	instance9.connect("enter_room8", enter_room)
+	Global.room = "Room9"
 
 func enter_room10(room_number):
 	if room_number == 8:
@@ -185,4 +269,5 @@ func enter_room10(room_number):
 		instance8 = room8.instantiate()
 		add_child(instance10)
 		$Cat.position = instance10.get_node("FromR8").position
-	instance10.connect("enter_room8", enter_room8)
+	instance10.connect("enter_room8", enter_room)
+	Global.room = "Room10"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_7g31s"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room3.gd" id="1_dxisv"]
-[ext_resource type="PackedScene" uid="uid://d30undk6fe833" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
+[ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oxkms"]
 texture = ExtResource("1_7g31s")
@@ -797,13 +797,13 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_selij")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jvk7"]
-size = Vector2(98, 20)
+size = Vector2(128, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8iju"]
-size = Vector2(20, 76)
+size = Vector2(20, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5oc5"]
-size = Vector2(108, 20)
+size = Vector2(128, 20)
 
 [node name="Room3" type="Node2D"]
 script = ExtResource("1_dxisv")
@@ -837,7 +837,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom5"]
-position = Vector2(723, -9)
+position = Vector2(720, -10)
 shape = SubResource("RectangleShape2D_0jvk7")
 
 [node name="ToRoom2" type="Area2D" parent="."]
@@ -845,7 +845,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom2"]
-position = Vector2(-7, 530)
+position = Vector2(-10, 528)
 shape = SubResource("RectangleShape2D_c8iju")
 
 [node name="ToRoom4" type="Area2D" parent="."]
@@ -853,8 +853,13 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom4"]
-position = Vector2(725, 655)
+position = Vector2(720, 658)
 shape = SubResource("RectangleShape2D_l5oc5")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 0, 656, 0, 656, -27, 785, -28, 784, 0, 1152, 0, 1152, 648, 784, 648, 784, 675, 656, 675, 656, 648, 0, 648, 0, 591, -21, 591, -21, 465, 0, 465, 0, 0, -56, 673, 1205, 717, 1196, -64, 7, -32, 0, -1)
 
 [connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]

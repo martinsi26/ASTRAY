@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://b6typvjb3thmd"]
+[gd_scene load_steps=24 format=3 uid="uid://b6typvjb3thmd"]
 
 [ext_resource type="Script" path="res://Script/Cat.gd" id="1_k6c7m"]
-[ext_resource type="Resource" uid="uid://dppw0jb5yeep5" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
+[ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
 [ext_resource type="Resource" uid="uid://cdkihtnkttrio" path="res://Inventory/Player_inv.tres" id="2_pjynx"]
 [ext_resource type="Resource" uid="uid://b2e2yoi01wscf" path="res://Inventory/Items/Chest_Key.tres" id="2_trw4r"]
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_ukpe8"]
@@ -13,11 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bn51l82tkmmns" path="res://Art/New_Assets/Pixel Cat (Void) - Idle.png" id="8_dm84k"]
 [ext_resource type="Resource" uid="uid://2lcujjjw87ve" path="res://Inventory/Items/Code_Digit6.tres" id="8_g2ppp"]
 [ext_resource type="Resource" uid="uid://o3l8eysvxdyf" path="res://Inventory/Items/Code_Digit9.tres" id="9_wpsfd"]
-[ext_resource type="Resource" uid="uid://cpcckkgaelevs" path="res://Inventory/Items/Code_Digit2.tres" id="10_u6e24"]
-[ext_resource type="Resource" uid="uid://byuspmxvsrys6" path="res://Inventory/Items/Code_Digit4.tres" id="11_75885"]
-
-[sub_resource type="Resource" id="Resource_x8mne"]
-metadata/__load_path__ = "res://Inventory/Items/Puzzle_Piece1.tres"
+[ext_resource type="Resource" uid="uid://cpcckkgaelevs" path="res://Inventory/Items/Code_Digit4.tres" id="11_75885"]
+[ext_resource type="Resource" uid="uid://b22qq0t2mkg3e" path="res://Inventory/Items/Puzzle_Piece1.tres" id="11_ya767"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otvov"]
 atlas = ExtResource("8_dm84k")
@@ -90,9 +87,9 @@ claw = ExtResource("5_tvq75")
 door_key = ExtResource("6_0l67d")
 code_digit6 = ExtResource("8_g2ppp")
 code_digit9 = ExtResource("9_wpsfd")
-code_digit4 = ExtResource("10_u6e24")
+code_digit4 = ExtResource("11_75885")
 code_digit2 = ExtResource("11_75885")
-puzzle_piece1 = SubResource("Resource_x8mne")
+puzzle_piece1 = ExtResource("11_ya767")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_ukpe8")]
 
@@ -127,4 +124,4 @@ offset_top = -167.0
 offset_right = 0.0
 offset_bottom = -103.0
 
-[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
+[connection signal="drop_yarn" from="Inv_UI" to="." method="drop_yarn"]
