@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc5pwr8xy41h5"]
+[gd_scene load_steps=5 format=3 uid="uid://dlr0sb8epdjvr"]
 
 [ext_resource type="Script" path="res://Script/Door_Key.gd" id="1_mo8tn"]
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_smg07"]
-[ext_resource type="Texture2D" uid="uid://bj3a5p1257nch" path="res://Art/Images/icon.svg" id="3_obc27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tybaa"]
 size = Vector2(63.75, 62.75)
@@ -24,7 +23,6 @@ shape = SubResource("RectangleShape2D_tybaa")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.76837e-06, 4.76837e-06)
 scale = Vector2(0.503906, 0.503906)
-texture = ExtResource("3_obc27")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 8
