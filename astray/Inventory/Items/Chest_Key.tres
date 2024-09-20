@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("1_82emd")
-name = "Chest_Key"
+name = "Chest Key"
 texture = ExtResource("2_xnf78")
+tip = "Can be used to open a chest"

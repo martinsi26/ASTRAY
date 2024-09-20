@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("1_2xmbe")
-name = "axe"
+name = "Axe"
 texture = ExtResource("2_jksby")
+tip = "Can be used to chop a tree"

@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("1_laqgn")
-name = "claw"
+name = "Claw"
 texture = ExtResource("2_ewx2j")
+tip = "Can be used to reach items"

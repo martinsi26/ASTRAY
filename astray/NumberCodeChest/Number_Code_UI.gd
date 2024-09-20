@@ -51,7 +51,6 @@ func disable_buttons():
 	$NinePatchRect/GridContainer/Code_UI_Slot4/CenterContainer/Panel/ButtonLeft.disabled = true
 	$NinePatchRect/GridContainer/Code_UI_Slot4/CenterContainer/Panel/ButtonRight.disabled = true
 	
-	
 func open():
 	visible = true
 	is_open = true

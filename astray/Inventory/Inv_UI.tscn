@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdaex6esj5e4b"]
+[gd_scene load_steps=5 format=3 uid="uid://bdaex6esj5e4b"]
 
 [ext_resource type="Script" path="res://Inventory/Inv_UI.gd" id="1_4pmbo"]
+[ext_resource type="PackedScene" uid="uid://cdtbkn0u30ieh" path="res://Inventory/ToolTip.tscn" id="2_1ft1t"]
 [ext_resource type="Texture2D" uid="uid://cxlilyx6cpwkq" path="res://Art/Inventory_Art/inventory-background.png" id="2_chwkc"]
 [ext_resource type="PackedScene" uid="uid://ca74cklfsvd3h" path="res://Inventory/Inv_UI_Slot.tscn" id="3_4d0yn"]
 
@@ -12,6 +13,13 @@ offset_right = 84.0
 offset_bottom = 64.0
 scale = Vector2(2, 2)
 script = ExtResource("1_4pmbo")
+
+[node name="ToolTip" parent="." instance=ExtResource("2_1ft1t")]
+visible = false
+offset_left = -20.0
+offset_top = -41.0
+offset_right = 44.0
+offset_bottom = 0.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -73,3 +81,16 @@ layout_mode = 2
 
 [node name="Inv_UI_Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_4d0yn")]
 layout_mode = 2
+
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot1" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot2" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot3" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot4" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot5" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot6" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot7" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot8" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot9" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot10" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot11" to="." method="mouse_exited"]
+[connection signal="mouse_exited" from="NinePatchRect/GridContainer/Inv_UI_Slot12" to="." method="mouse_exited"]

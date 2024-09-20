@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_7g31s"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room3.gd" id="1_dxisv"]
+
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="2_5b38x"]
 [ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
 
@@ -854,28 +855,13 @@ margins = Vector2i(6, 9)
 sources/0 = SubResource("TileSetAtlasSource_sxob8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jvk7"]
-size = Vector2(129, 20)
+size = Vector2(128, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8iju"]
-size = Vector2(23, 128)
+size = Vector2(20, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5oc5"]
-size = Vector2(131, 17)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ost36"]
-size = Vector2(664, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xftsw"]
-size = Vector2(374, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hffj6"]
-size = Vector2(20, 665.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii34d"]
-size = Vector2(20, 458)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd2ac"]
-size = Vector2(20, 78)
+size = Vector2(128, 20)
 
 [node name="Room3" type="Node2D"]
 script = ExtResource("1_dxisv")
@@ -894,6 +880,9 @@ tile_set = SubResource("TileSet_1iqrk")
 tile_map_data = PackedByteArray("AAACABQAAAAcAAUAAAALAAEAAAAbAAQAAAAOAA8AAAAdAAgAAAARAAsAAAAcAAMAAAAPAA0AAAAaAAUAAAAPAAsAAAAaAAMAAAAQAAwAAAAbAAQAAAAPAAwAAAAaAAQAAAAQAAsAAAAbAAMAAAARAA0AAAAcAAUAAAAQAA0AAAAbAAUAAAARAAwAAAAcAAQAAAAJABIAAAAaAAIAAAALABAAAAAcAAAAAAAKABEAAAAbAAEAAAAJABEAAAAaAAEAAAAJABAAAAAaAAAAAAAKABAAAAAbAAAAAAAKABIAAAAbAAIAAAALABIAAAAcAAIAAAALABEAAAAcAAEAAAANAA8AAAAcAAgAAAANABAAAAAcAAkAAAAOABAAAAAdAAkAAAASABQAAAAcAAcAAAATABMAAAAdAAYAAAASABMAAAAcAAYAAAATABQAAAAdAAcAAAAAABQAAAAaAAUAAAACABIAAAAcAAMAAAAAABIAAAAaAAMAAAABABMAAAAbAAQAAAABABIAAAAbAAMAAAAAABMAAAAaAAQAAAACABMAAAAcAAQAAAABABQAAAAbAAUAAAAiAAQAAAAcAAMAAAAgAAYAAAAaAAUAAAAhAAUAAAAbAAQAAAAgAAUAAAAaAAQAAAAgAAQAAAAaAAMAAAAhAAQAAAAbAAMAAAAiAAUAAAAcAAQAAAAiAAYAAAAcAAUAAAAhAAYAAAAbAAUAAAALAAoAAAAaAAYAAAAMAAoAAAAbAAYAAAACAAIAAAAaAAAAAAAEAAQAAAAcAAIAAAADAAMAAAAbAAEAAAACAAMAAAAaAAEAAAACAAQAAAAaAAIAAAADAAQAAAAbAAIAAAAEAAIAAAAcAAAAAAADAAIAAAAbAAAAAAAEAAMAAAAcAAEAAAAKAAIAAAAaAAUAAAAMAAAAAAAcAAMAAAAKAAAAAAAaAAMAAAAMAAIAAAAcAAUAAAALAAIAAAAbAAUAAAAKAAEAAAAaAAQAAAALAAAAAAAbAAMAAAAMAAEAAAAcAAQAAAACAAoAAAAaAAYAAAACAAsAAAAaAAcAAAADAAoAAAAbAAYAAAADAAsAAAAbAAcAAAASAAEAAAAaAAYAAAASAAIAAAAaAAcAAAATAAEAAAAbAAYAAAATAAIAAAAbAAcAAAAbABAAAAAcAAgAAAAbABEAAAAcAAkAAAAcABAAAAAdAAgAAAAcABEAAAAdAAkAAAAhAAwAAAAcAAgAAAAhAA0AAAAcAAkAAAAiAAwAAAAdAAgAAAAiAA0AAAAdAAkAAAAhABEAAAAaAAgAAAAhABIAAAAaAAkAAAAiABEAAAAbAAgAAAAiABIAAAAbAAkAAAAaAAEAAAAaAAgAAAAaAAIAAAAaAAkAAAAbAAEAAAAbAAgAAAAbAAIAAAAbAAkAAAAQABAAAAAOAAUAAAAQAAMAAAAOAAUAAAAHAAEAAAAOAAUAAAACAAgAAAAOAAUAAAAgAAIAAAAOAAUAAAAeAA0AAAAOAAUAAAAaAAsAAAAOAAUAAAAfABMAAAAOAAUAAAAiAAkAAAAOAAUAAAASAA8AAAANAAYAAAANAAQAAAANAAYAAAABAAEAAAANAAYAAAAFABMAAAANAAYAAAAcABMAAAANAAYAAAAgABAAAAANAAYAAAAdAAIAAAANAAYAAAAaAAUAAAANAAYAAAALAAsAAAAaAAcAAAAMAAsAAAAbAAcAAAA=")
 tile_set = SubResource("TileSet_a2t13")
 
+[node name="KeyChest" parent="." instance=ExtResource("4_8aiku")]
+position = Vector2(871, 279)
+
 [node name="Fruit" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AABDABkAAAACAAEAAAAlACcAAAACAAEAAAAcAB8AAAACAAAAAAA=")
 tile_set = SubResource("TileSet_8rc3v")
@@ -902,17 +891,18 @@ tile_set = SubResource("TileSet_8rc3v")
 position = Vector2(29, 525)
 
 [node name="FromR4" type="Marker2D" parent="."]
-position = Vector2(725, 611)
+position = Vector2(724, 589)
 
 [node name="FromR5" type="Marker2D" parent="."]
-position = Vector2(724, 31)
+position = Vector2(726, 52)
 
 [node name="ToRoom5" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom5"]
-position = Vector2(719.5, -9)
+position = Vector2(720, -10)
+
 shape = SubResource("RectangleShape2D_0jvk7")
 
 [node name="ToRoom2" type="Area2D" parent="."]
@@ -920,7 +910,8 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom2"]
-position = Vector2(-6.5, 527)
+position = Vector2(-10, 528)
+
 shape = SubResource("RectangleShape2D_c8iju")
 
 [node name="ToRoom4" type="Area2D" parent="."]
@@ -928,55 +919,15 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom4"]
-position = Vector2(720.5, 675.5)
+position = Vector2(720, 658)
 shape = SubResource("RectangleShape2D_l5oc5")
 
-[node name="KeyChest" parent="." instance=ExtResource("4_8aiku")]
-position = Vector2(863, 301)
+[node name="Walls" type="StaticBody2D" parent="."]
 
-[node name="Wall1" type="StaticBody2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 0, 656, 0, 656, -27, 785, -28, 784, 0, 1152, 0, 1152, 648, 784, 648, 784, 675, 656, 675, 656, 648, 0, 648, 0, 591, -21, 591, -21, 465, 0, 465, 0, 0, -56, 673, 1205, 717, 1196, -64, 7, -32, 0, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
-position = Vector2(326, -4)
-shape = SubResource("RectangleShape2D_ost36")
-
-[node name="Wall2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(322, 677)
-shape = SubResource("RectangleShape2D_ost36")
-
-[node name="Wall3" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2(973, -7)
-shape = SubResource("RectangleShape2D_xftsw")
-
-[node name="Wall4" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
-position = Vector2(973, 678)
-shape = SubResource("RectangleShape2D_xftsw")
-
-[node name="Wall5" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
-position = Vector2(1157, 336)
-shape = SubResource("RectangleShape2D_hffj6")
-
-[node name="Wall6" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall6"]
-position = Vector2(-5, 233)
-shape = SubResource("RectangleShape2D_ii34d")
-
-[node name="Wall7" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall7"]
-position = Vector2(-8, 630)
-shape = SubResource("RectangleShape2D_yd2ac")
-
+[connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]
 [connection signal="area_entered" from="ToRoom2" to="." method="_on_to_room_2_area_entered"]
 [connection signal="area_entered" from="ToRoom4" to="." method="_on_to_room_4_area_entered"]
-[connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]

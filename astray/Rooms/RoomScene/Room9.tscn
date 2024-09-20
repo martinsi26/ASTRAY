@@ -928,7 +928,7 @@ sources/1 = SubResource("TileSetAtlasSource_wckne")
 sources/2 = SubResource("TileSetAtlasSource_41slo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plfr2"]
-size = Vector2(162.5, 20)
+size = Vector2(160, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sjft"]
 size = Vector2(14, 688)
@@ -969,37 +969,17 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom8"]
-position = Vector2(575, 676)
+position = Vector2(576, 658)
 shape = SubResource("RectangleShape2D_plfr2")
 
-[node name="Wall1" type="StaticBody2D" parent="."]
+[node name="House" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
-position = Vector2(-3, 334)
-shape = SubResource("RectangleShape2D_4sjft")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House"]
+polygon = PackedVector2Array(450, 352, 450, 324, 448, 322, 448, 256, 480, 256, 480, 240, 498, 240, 512, 233, 512, 208, 562, 208, 589, 194, 589, 192, 594, 192, 595, 194, 622, 208, 640, 208, 640, 233, 654, 240, 672, 240, 672, 256, 704, 256, 704, 320, 704, 351, 648, 351, 648, 352, 578, 352, 578, 351, 520, 351, 520, 352, 514, 352, 514, 351)
 
-[node name="Wall2" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(1154, 338)
-shape = SubResource("RectangleShape2D_4sjft")
-
-[node name="Wall3" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2(248.75, 678)
-shape = SubResource("RectangleShape2D_nn64p")
-
-[node name="Wall4" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
-position = Vector2(902, 677)
-shape = SubResource("RectangleShape2D_nn64p")
-
-[node name="Wall5" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
-position = Vector2(575, -8)
-shape = SubResource("RectangleShape2D_ux3sv")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 656, 648, 656, 681, 496, 681, 496, 648, 0, 648, 0, 0, -41, 695, 1178, 693, 1172, -32)
 
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]
