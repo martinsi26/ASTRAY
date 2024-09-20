@@ -155,6 +155,7 @@ func enter_room2(room_number):
 	Global.room = "Room2"
 		
 func enter_room3(room_number):
+	print("enter room 3")
 	if room_number == 2:
 		instance2.queue_free()
 		instance2 = room2.instantiate()
@@ -177,12 +178,13 @@ func enter_room3(room_number):
 	Global.room = "Room3"
 	
 func enter_room4(room_number):
+	print("enter room 4")
 	if room_number == 3:
 		instance3.queue_free()
 		instance3 = room3.instantiate()
 		add_child(instance4)
 		$Cat.position = instance4.get_node("FromR3").position
-	instance4.connect("enter_room3", enter_room3)
+	instance4.connect("enter_room3", enter_room)
 	emit_signal("claw_room")
 	Global.room = "Room4"
 	
@@ -230,7 +232,7 @@ func enter_room7(room_number):
 		instance6 = room6.instantiate()
 		add_child(instance7)
 		$Cat.position = instance7.get_node("FromR6").position
-	instance7.connect("enter_room6", enter_room6)
+	instance7.connect("enter_room6", enter_room)
 	Global.room = "Room7"
 
 func enter_room8(room_number):
