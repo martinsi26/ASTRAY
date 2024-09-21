@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dho8vdulgvo3v"]
+[gd_scene load_steps=15 format=3 uid="uid://dho8vdulgvo3v"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room1.gd" id="1_btm2b"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_ewcsq"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_petmm"]
-
 [ext_resource type="PackedScene" uid="uid://dlr0sb8epdjvr" path="res://Scene/Door_Key.tscn" id="4_cgi7p"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="4_vuprj"]
 
@@ -459,24 +458,6 @@ size = Vector2(25.25, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bbio"]
 size = Vector2(20, 94)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkrba"]
-size = Vector2(1165, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0v2y"]
-size = Vector2(20, 355)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbgpg"]
-size = Vector2(20, 232)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruy6a"]
-size = Vector2(23.5, 111.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqmt6"]
-size = Vector2(20, 434)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_idd7x"]
-size = Vector2(112, 112.5)
 
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_btm2b")

@@ -11,9 +11,9 @@
 [ext_resource type="Resource" uid="uid://c28iwqg50ohko" path="res://Inventory/Items/Door_Key.tres" id="6_0l67d"]
 [ext_resource type="Texture2D" uid="uid://5hq0skm58x5q" path="res://Art/New_Assets/Pixel Cat (Void) - Walk.png" id="7_l35lo"]
 [ext_resource type="Texture2D" uid="uid://bn51l82tkmmns" path="res://Art/New_Assets/Pixel Cat (Void) - Idle.png" id="8_dm84k"]
-[ext_resource type="Resource" uid="uid://2lcujjjw87ve" path="res://Inventory/Items/Code_Digit6.tres" id="8_g2ppp"]
-[ext_resource type="Resource" uid="uid://o3l8eysvxdyf" path="res://Inventory/Items/Code_Digit9.tres" id="9_wpsfd"]
-[ext_resource type="Resource" uid="uid://cpcckkgaelevs" path="res://Inventory/Items/Code_Digit4.tres" id="11_75885"]
+[ext_resource type="Resource" path="res://Inventory/Items/Code_Digit6.tres" id="8_g2ppp"]
+[ext_resource type="Resource" path="res://Inventory/Items/Code_Digit9.tres" id="9_wpsfd"]
+[ext_resource type="Resource" path="res://Inventory/Items/Code_Digit4.tres" id="11_75885"]
 [ext_resource type="Resource" uid="uid://b22qq0t2mkg3e" path="res://Inventory/Items/Puzzle_Piece1.tres" id="11_ya767"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otvov"]
@@ -75,10 +75,9 @@ animations = [{
 radius = 26.0
 height = 52.0
 
-
 [node name="Cat" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 113
+collision_mask = 241
 script = ExtResource("1_k6c7m")
 inv = ExtResource("2_pjynx")
 chest_key = ExtResource("2_trw4r")
@@ -99,7 +98,6 @@ position = Vector2(11, 11)
 scale = Vector2(1.6875, 1.6875)
 sprite_frames = SubResource("SpriteFrames_nvjxr")
 animation = &"Walk"
-frame_progress = 0.538788
 flip_h = true
 
 [node name="HitboxRight" type="CollisionPolygon2D" parent="."]

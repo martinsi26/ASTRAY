@@ -44,9 +44,6 @@ func _ready() -> void:
 	emit_signal("door_key_room")
 	
 func enter_room(from_room, to_room):
-	print("from room" + str(from_room))
-	print("going to room" + str(to_room))
-	
 	var from_room_path = "Room" + str(from_room)
 	var to_room_path = "Room" + str(to_room)
 	
@@ -119,7 +116,8 @@ func enter_room0(room_number):
 		instance1.queue_free()
 		instance1 = room1.instantiate()
 		add_child(instance0)
-		#$Cat.position = instance0.get_node("FromR1").position
+		$Cat.position = instance0.get_node("FromR1").position
+	instance0.connect("enter_room1", enter_room)
 	Global.room = "Room0"
 	
 func enter_room1(room_number):
@@ -155,7 +153,6 @@ func enter_room2(room_number):
 	Global.room = "Room2"
 		
 func enter_room3(room_number):
-	print("enter room 3")
 	if room_number == 2:
 		instance2.queue_free()
 		instance2 = room2.instantiate()
@@ -178,7 +175,6 @@ func enter_room3(room_number):
 	Global.room = "Room3"
 	
 func enter_room4(room_number):
-	print("enter room 4")
 	if room_number == 3:
 		instance3.queue_free()
 		instance3 = room3.instantiate()

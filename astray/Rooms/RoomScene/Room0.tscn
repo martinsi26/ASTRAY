@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dho8vdulgvo3v"]
+[gd_scene load_steps=8 format=3 uid="uid://dho8vdulgvo3v"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_f05ai"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room0.gd" id="1_hayoa"]
@@ -273,20 +273,8 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_8sy6b")
 sources/1 = SubResource("TileSetAtlasSource_0igtj")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_376b4"]
-size = Vector2(1168, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgdkx"]
-size = Vector2(20, 677)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65qbo"]
-size = Vector2(19.5, 133)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_otkhm"]
-size = Vector2(24, 335.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yai2w"]
-size = Vector2(25, 198.5)
+size = Vector2(19.75, 134)
 
 [node name="Room0" type="Node2D"]
 script = ExtResource("1_hayoa")
@@ -298,41 +286,20 @@ layer_0/tile_data = PackedInt32Array(0, 196608, 2, 65536, 196608, 2, 131072, 196
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(196614, 1703936, 3, 262150, 1703936, 4, 327686, 1703936, 5, 196615, 1769472, 3, 262151, 1769472, 4, 327687, 1769472, 5, 196616, 1835008, 3, 262152, 1835008, 4, 327688, 1835008, 5, 655362, 1703936, 3, 720898, 1703936, 4, 786434, 1703936, 5, 655363, 1769472, 3, 720899, 1769472, 4, 786435, 1769472, 5, 655364, 1835008, 3, 720900, 1835008, 4, 786436, 1835008, 5, 1048583, 1703936, 3, 1114119, 1703936, 4, 1179655, 1703936, 5, 1048584, 1769472, 3, 1114120, 1769472, 4, 1179656, 1769472, 5, 1048585, 1835008, 3, 1114121, 1835008, 4, 1179657, 1835008, 5, 131103, 1703936, 3, 196639, 1703936, 4, 262175, 1703936, 5, 131104, 1769472, 3, 196640, 1769472, 4, 262176, 1769472, 5, 131105, 1835008, 3, 196641, 1835008, 4, 262177, 1835008, 5, 327705, 1703936, 3, 393241, 1703936, 4, 458777, 1703936, 5, 327706, 1769472, 3, 393242, 1769472, 4, 458778, 1769472, 5, 327707, 1835008, 3, 393243, 1835008, 4, 458779, 1835008, 5, 720927, 1703936, 3, 786463, 1703936, 4, 851999, 1703936, 5, 720928, 1769472, 3, 786464, 1769472, 4, 852000, 1769472, 5, 720929, 1835008, 3, 786465, 1835008, 4, 852001, 1835008, 5, 1114138, 1703936, 3, 1179674, 1703936, 4, 1245210, 1703936, 5, 1114139, 1769472, 3, 1179675, 1769472, 4, 1245211, 1769472, 5, 1114140, 1835008, 3, 1179676, 1835008, 4, 1245212, 1835008, 5, 720922, 1835008, 6, 786458, 1835008, 7, 720923, 1900544, 6, 786459, 1900544, 7, 458783, 1835008, 6, 524319, 1835008, 7, 458784, 1900544, 6, 524320, 1900544, 7, 65561, 1835008, 6, 131097, 1835008, 7, 65562, 1900544, 6, 131098, 1900544, 7, 65547, 1835008, 6, 131083, 1835008, 7, 65548, 1900544, 6, 131084, 1900544, 7, 589831, 1835008, 6, 655367, 1835008, 7, 589832, 1900544, 6, 655368, 1900544, 7, 262145, 1835008, 6, 327681, 1835008, 7, 262146, 1900544, 6, 327682, 1900544, 7, 1179649, 1835008, 6, 1245185, 1835008, 7, 1179650, 1900544, 6, 1245186, 1900544, 7, 1114144, 1835008, 6, 1179680, 1835008, 7, 1114145, 1900544, 6, 1179681, 1900544, 7, 983062, 1835008, 6, 1048598, 1835008, 7, 983063, 1900544, 6, 1048599, 1900544, 7, 1048588, 1835008, 6, 1114124, 1835008, 7, 1048589, 1900544, 6, 1114125, 1900544, 7, 851975, 851968, 5, 983042, 851968, 5, 393219, 851968, 5, 3, 851968, 5, 65552, 851968, 5, 262155, 851968, 5, 262166, 851968, 5, 131100, 851968, 5, 458786, 851968, 5, 524317, 851968, 5, 851997, 851968, 5, 1245206, 851968, 5, 1245195, 851968, 5, 983045, 917504, 5, 524293, 917504, 5, 8, 917504, 5, 131093, 917504, 5, 196634, 917504, 5, 589858, 917504, 5, 983067, 917504, 5, 1245214, 917504, 5, 524289, 917504, 5, 131089, 1, 0)
 
-[node name="Wall1" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
-position = Vector2(574, -1)
-shape = SubResource("RectangleShape2D_376b4")
-
-[node name="Wall2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(578, 676)
-shape = SubResource("RectangleShape2D_376b4")
-
-[node name="Wall3" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2(-5, 332)
-shape = SubResource("RectangleShape2D_wgdkx")
+[node name="FromR1" type="Marker2D" parent="."]
+position = Vector2(1101, 405)
 
 [node name="ToRoom1" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom1"]
-position = Vector2(1154, 404)
+position = Vector2(1161.88, 404)
 shape = SubResource("RectangleShape2D_65qbo")
 
-[node name="FromR1" type="Marker2D" parent="."]
-position = Vector2(1131, 405)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Wall4" type="StaticBody2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 0, 648, 1152, 648, 1152, 471, 1166, 471, 1167, 337, 1152, 337, 1152, 0, 0, 0, 1203, -46, 1209, 708, -57, 698, -35, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
-position = Vector2(1158, 169.25)
-shape = SubResource("RectangleShape2D_otkhm")
-
-[node name="Wall5" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
-position = Vector2(1158.5, 567.75)
-shape = SubResource("RectangleShape2D_yai2w")
+[connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]

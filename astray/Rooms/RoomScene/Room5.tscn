@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://kq1q1getjues"]
+[gd_scene load_steps=15 format=4 uid="uid://kq1q1getjues"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room5.gd" id="1_a5lqu"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_keafm"]
 [ext_resource type="PackedScene" uid="uid://b8ri8ee7q22by" path="res://NumberCodeChest/NumberCodeChest.tscn" id="3_274ca"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_e3q3v"]
-[ext_resource type="PackedScene" uid="uid://2sebli83pbmh" path="res://Scene/Code_Digit9.tscn" id="4_v7i7u"]
+[ext_resource type="PackedScene" path="res://Scene/Code_Digit9.tscn" id="4_v7i7u"]
+[ext_resource type="PackedScene" uid="uid://b4mxvgfoi51w5" path="res://Scene/Ash.tscn" id="6_4kw1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5ei2"]
 texture = ExtResource("1_keafm")
@@ -816,6 +817,10 @@ size = Vector2(128, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwsl8"]
 size = Vector2(20, 128)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7uyu4"]
+vertices = PackedVector2Array(1142, 638, 9.97656, 638, 9.02344, 10, 1142, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+
 [node name="Room5" type="Node2D"]
 script = ExtResource("1_a5lqu")
 
@@ -849,7 +854,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom3"]
 position = Vector2(720, 658)
-
 shape = SubResource("RectangleShape2D_8reef")
 
 [node name="ToRoom6" type="Area2D" parent="."]
@@ -858,7 +862,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom6"]
 position = Vector2(1162, 144)
-
 shape = SubResource("RectangleShape2D_vwsl8")
 
 [node name="NumberCodeChest" parent="." instance=ExtResource("3_274ca")]
@@ -872,6 +875,16 @@ scale = Vector2(0.15, 0.15)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(1152, 208, 1152, 648, 784, 648, 784, 680, 656, 680, 656, 648, 0, 648, 0, 0, 1152, 0, 1152, 80, 1195, 80, 1195, 208, 1152, 208, 1210, 228, 1208, -21, -36, -32, -31, 687, 1186, 699)
+
+[node name="Ash" parent="." instance=ExtResource("6_4kw1h")]
+position = Vector2(1122, 128)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_7uyu4")
+
+[node name="BackPos" type="Marker2D" parent="."]
+position = Vector2(1111, 126)
 
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
