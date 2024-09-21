@@ -35,11 +35,13 @@ var push_force = 40
 
 # signals
 signal start_dialogue
+signal move_ash
+signal stop_moving
 #signal has_pickedup_key(pickedup_key)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	add_to_group("Player")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -75,7 +77,6 @@ func drop_yarn():
 	use(yarn)
 	
 	Global.yarn_room = Global.room
-	print("Yarn room is " + Global.yarn_room)
 	var ball_instance = yarn_ball.instantiate()
 	get_parent().get_node(Global.yarn_room).add_child(ball_instance)
 	
@@ -84,6 +85,9 @@ func drop_yarn():
 	else:
 		ball_instance.position.x = cat.position.x + 70
 	ball_instance.position.y = cat.position.y + 20
+	
+	if Global.yarn_room == "Room5":
+		emit_signal("move_ash")
 	
 	get_parent().get_node(Global.yarn_room + "/Yarn").connect("pickup_yarn", pickup_yarn)
 	
@@ -109,6 +113,8 @@ func pickup_key():
 	open_pickup_key_dialogue()
 	
 func pickup_yarn():
+	if Global.yarn_room == "Room5":
+		emit_signal("stop_moving")
 	collect(yarn)
 	Global.yarn_inv = true
 	

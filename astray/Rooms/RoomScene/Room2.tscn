@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf5qkq3b2ovch"]
+[gd_scene load_steps=13 format=3 uid="uid://bf5qkq3b2ovch"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_6t7ay"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room2.gd" id="1_rlsqt"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_b3rqx"]
-
-[ext_resource type="PackedScene" uid="uid://cvqysjcl4lr2d" path="res://Scene/Yarn.tscn" id="4_i7d03"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="4_j0mrj"]
 [ext_resource type="PackedScene" uid="uid://btfplc3o5jryv" path="res://Scene/Door.tscn" id="5_8yyjk"]
-[ext_resource type="PackedScene" uid="uid://bgrdkjenqukda" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
+[ext_resource type="PackedScene" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhmnr"]
 texture = ExtResource("1_6t7ay")
@@ -439,14 +437,14 @@ layer_2/tile_data = PackedInt32Array(524310, 2, 1)
 position = Vector2(49, 175)
 
 [node name="FromR3" type="Marker2D" parent="."]
-position = Vector2(1089, 528)
+position = Vector2(1099, 528)
 
 [node name="ToRoom1" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom1"]
-position = Vector2(-11, 175.25)
+position = Vector2(-11, 176)
 shape = SubResource("RectangleShape2D_bkp2i")
 
 [node name="ToRoom3" type="Area2D" parent="."]
@@ -454,14 +452,8 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom3"]
-position = Vector2(1175, 528.25)
-
+position = Vector2(1170.44, 527)
 shape = SubResource("RectangleShape2D_asilk")
-
-[node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(0, 112, 0, 0, 1152, 0, 1152, 465, 1220, 465, 1220, 590, 1152, 591, 1152, 648, 0, 648, 0, 239, -51, 239, -51, 112, 0, 112, -86, 94, -78, 701, 1249, 694, 1214, -36, -44, -38)
 
 [node name="Door" parent="." instance=ExtResource("5_8yyjk")]
 position = Vector2(1148, 472)
@@ -470,41 +462,10 @@ position = Vector2(1148, 472)
 position = Vector2(1106, 134)
 scale = Vector2(0.15, 0.15)
 
-[node name="Wall1" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
-position = Vector2(574, -3)
-shape = SubResource("RectangleShape2D_jcpea")
-
-[node name="Wall2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(579, 674)
-shape = SubResource("RectangleShape2D_jcpea")
-
-[node name="Wall3" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2(-7, 55)
-shape = SubResource("RectangleShape2D_7oea5")
-
-[node name="Wall4" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
-position = Vector2(-7, 457.5)
-shape = SubResource("RectangleShape2D_0ddsc")
-
-[node name="Wall5" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
-position = Vector2(1158, 229.5)
-shape = SubResource("RectangleShape2D_288df")
-
-[node name="Wall6" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall6"]
-position = Vector2(1158, 633.75)
-shape = SubResource("RectangleShape2D_1ebk4")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 0, 0, 112, -50, 112, -52, 242, 0, 240, 0, 648, 1108, 648, 1098, 633, 1109, 615, 1119, 609, 1132, 616, 1142, 629, 1135, 644, 1132, 648, 1152, 648, 1152, 591, 1200, 591, 1199, 461, 1152, 462, 1151, 0, 0, 0, 1238, -33, 1251, 723, -73, 706, -78, -4)
 
 [connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]

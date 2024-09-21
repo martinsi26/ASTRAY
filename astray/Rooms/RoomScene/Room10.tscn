@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://8as6tmje2qbr"]
+[gd_scene load_steps=12 format=4 uid="uid://8as6tmje2qbr"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room10.gd" id="1_1bl1u"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_rvh51"]
@@ -794,15 +794,6 @@ sources/0 = SubResource("TileSetAtlasSource_fa6nd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xef8g"]
 size = Vector2(20, 126.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbhfm"]
-size = Vector2(1166, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdpiq"]
-size = Vector2(20, 285)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_77686"]
-size = Vector2(24, 688)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inkrw"]
 size = Vector2(25, 25)
