@@ -508,3 +508,4 @@ polygon = PackedVector2Array(-203, 0, 1152, 0, 1152, 112, 1210, 112, 1210, 239, 
 
 [connection signal="area_entered" from="ToRoom2" to="." method="_on_to_room_2_area_entered"]
 [connection signal="area_entered" from="ToRoom0" to="." method="_on_to_room_0_area_entered"]
+[connection signal="start_dialogue" from="Door_Key" to="Door_Key/Dialogue" method="start_dialogue"]
