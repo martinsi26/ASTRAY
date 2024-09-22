@@ -971,6 +971,6 @@ polygon = PackedVector2Array(450, 352, 450, 324, 448, 322, 448, 256, 480, 256, 4
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 656, 648, 656, 681, 496, 681, 496, 648, 0, 648, 0, 0, -41, 695, 1178, 693, 1172, -32)
+polygon = PackedVector2Array(-412, -388, 0, 0, 1152, 0, 1152, 648, 656, 648, 656, 681, 496, 681, 496, 648, 0, 648, 0, 0, -412, -388, -427, 1073, 1600, 1070, 1581, -372)
 
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]

@@ -13,7 +13,7 @@ var dialogue = preload("res://Scene/Dialogue.tscn")
 @onready var code4_path: NodePath = "Room2/Code_Digit4"
 
 # character speed
-var speed = 500
+var speed = 300
 
 @export var inv: Inv
 # items
@@ -45,6 +45,11 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("Sprint"):
+		speed = 500
+	else:
+		speed = 300
+		
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	
 	if direction.x == 0 and direction.y == 0:

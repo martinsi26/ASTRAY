@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room4.gd" id="1_ohys6"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_qxhe3"]
 [ext_resource type="PackedScene" uid="uid://cce7h8mtkw6yx" path="res://Scene/Claw.tscn" id="3_727s4"]
-[ext_resource type="PackedScene" path="res://Scene/Code_Digit2.tscn" id="5_1orpg"]
-[ext_resource type="PackedScene" path="res://Scene/Code_Digit6.tscn" id="5_yfoji"]
+[ext_resource type="PackedScene" uid="uid://dbwiuijthhqxy" path="res://Scene/Code_Digit2.tscn" id="5_1orpg"]
+[ext_resource type="PackedScene" uid="uid://dik2s6xpt8k3g" path="res://Scene/Code_Digit6.tscn" id="5_yfoji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d83w8"]
 texture = ExtResource("1_qxhe3")
@@ -313,6 +313,6 @@ scale = Vector2(0.15, 0.15)
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(0, 0, 657, 0, 657, -20, 784, -20, 784, 0, 912, 0, 912, 47, 944, 48, 944, 80, 975, 80, 976, 110, 1006, 112, 1009, 142, 1071, 144, 1073, 175, 1152, 176, 1152, 648, 85, 648, 93, 641, 94, 631, 87, 621, 96, 609, 96, 600, 85, 586, 75, 580, 66, 583, 60, 590, 49, 584, 47, 583, 35, 589, 33, 585, 27, 581, 21, 579, 12, 584, 7, 589, 3, 594, 0, 599, 0, 0, -28, 727, 1188, 717, 1173, -43, 1, -24)
+polygon = PackedVector2Array(0, 0, 657, 0, 657, -20, 784, -20, 784, 0, 912, 0, 912, 47, 944, 48, 944, 80, 975, 80, 976, 110, 1006, 112, 1009, 142, 1071, 144, 1073, 175, 1152, 176, 1152, 648, 85, 648, 93, 641, 94, 631, 87, 621, 96, 609, 96, 600, 85, 586, 75, 580, 66, 583, 60, 590, 49, 584, 47, 583, 35, 589, 33, 585, 27, 581, 21, 579, 12, 584, 7, 589, 3, 594, 0, 599, 0, 0, -265, -254, -273, 877, 1453, 870, 1416, -260, -265, -252)
 
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]

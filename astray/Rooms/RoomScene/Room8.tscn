@@ -856,7 +856,7 @@ shape = SubResource("RectangleShape2D_2o70h")
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(0, 240, 0, 0, 592, 0, 592, -65, 751, -65, 752, 0, 1152, 0, 1152, 262, 1215, 262, 1216, 388, 1152, 387, 1152, 648, 0, 648, 0, 400, -32, 400, -32, 240, 0, 240, -45, 234, -44, 665, 1269, 672, 1230, -45, -28, -137)
+polygon = PackedVector2Array(-572, -3, -571, 235, 0, 240, 0, 0, 592, 0, 592, -65, 751, -65, 752, 0, 1152, 0, 1152, 262, 1215, 262, 1216, 388, 1152, 387, 1152, 648, 0, 648, 0, 400, -32, 400, -32, 240, 0, 240, -571, 235, -597, 995, 1689, 971, 1657, -383, -572, -381)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
 [connection signal="area_entered" from="ToRoom9" to="." method="_on_to_room_9_area_entered"]

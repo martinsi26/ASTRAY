@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_b3rqx"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="4_j0mrj"]
 [ext_resource type="PackedScene" uid="uid://btfplc3o5jryv" path="res://Scene/Door.tscn" id="5_8yyjk"]
-[ext_resource type="PackedScene" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
+[ext_resource type="PackedScene" uid="uid://bgrdkjenqukda" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhmnr"]
 texture = ExtResource("1_6t7ay")
@@ -465,7 +465,7 @@ scale = Vector2(0.15, 0.15)
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(0, 0, 0, 112, -50, 112, -52, 242, 0, 240, 0, 648, 1108, 648, 1098, 633, 1109, 615, 1119, 609, 1132, 616, 1142, 629, 1135, 644, 1132, 648, 1152, 648, 1152, 591, 1200, 591, 1199, 461, 1152, 462, 1151, 0, 0, 0, 1238, -33, 1251, 723, -73, 706, -78, -4)
+polygon = PackedVector2Array(0, 0, 0, 112, -50, 112, -52, 242, 0, 240, 0, 648, 1108, 648, 1098, 633, 1109, 615, 1119, 609, 1132, 616, 1142, 629, 1135, 644, 1132, 648, 1152, 648, 1152, 591, 1200, 591, 1199, 461, 1152, 462, 1151, 0, 1, 0, -415, -234, 1409, -218, 1490, 871, -450, 923, -415, -234)
 
 [connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
