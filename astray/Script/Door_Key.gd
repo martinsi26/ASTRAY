@@ -15,8 +15,11 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if on_key and Input.is_action_just_pressed("Interact"):
-		pickup()
+	if on_key:
+		$AnimatedSprite2D.play("Rotate")
+		if Input.is_action_just_pressed("Interact"):
+			pickup()
+		
 
 func pickup():
 	emit_signal("pickup_key")

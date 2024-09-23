@@ -17,6 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if on_chest and Input.is_action_pressed("Interact") and Global.chest_key_inv:
 		emit_signal("open_key_chest")
+		$AnimatedSprite2D.play("OpenChest")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if !chest_opened:
