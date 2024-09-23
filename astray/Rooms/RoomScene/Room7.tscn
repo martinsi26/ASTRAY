@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx4pg07tusom4"]
+[gd_scene load_steps=8 format=3 uid="uid://dx4pg07tusom4"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room7.gd" id="1_mwqyq"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_bodqw"]
 [ext_resource type="PackedScene" uid="uid://cts1aukgpd0d5" path="res://CountCodeChest/CountCodeChest.tscn" id="3_tx4ki"]
+[ext_resource type="PackedScene" uid="uid://cqxx4oky4ng6q" path="res://Scene/Puzzle_Piece1.tscn" id="4_etriq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oxnut"]
 texture = ExtResource("2_bodqw")
@@ -291,5 +292,8 @@ shape = SubResource("RectangleShape2D_ih4ft")
 
 [node name="CountCodeChest" parent="." instance=ExtResource("3_tx4ki")]
 position = Vector2(864, 535)
+
+[node name="PuzzlePiece1" parent="." instance=ExtResource("4_etriq")]
+position = Vector2(1083, 259)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
