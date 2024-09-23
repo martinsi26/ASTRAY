@@ -1,7 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://m2ccf743egca"]
+[gd_scene load_steps=41 format=4 uid="uid://m2ccf743egca"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]
+[ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_nhsan"]
+[ext_resource type="Texture2D" uid="uid://b4cpsjq32r7o6" path="res://Art/32x32 tileset/Tree Set #1/tree-set.png" id="4_blvc5"]
+[ext_resource type="Texture2D" uid="uid://212t8rfhib28" path="res://Art/32x32 tileset/Tree Set #1/tree-set-preview.png" id="5_chgfo"]
+[ext_resource type="PackedScene" uid="uid://cqxx4oky4ng6q" path="res://Scene/Puzzle_Piece1.tscn" id="6_e844d"]
 
 [sub_resource type="TileSet" id="TileSet_e0oyc"]
 tile_size = Vector2i(32, 32)
@@ -347,6 +351,9 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StandingTree/Hitbox"]
 position = Vector2(99, 519)
 shape = SubResource("RectangleShape2D_1er3x")
+
+[node name="PuzzlePiece1" parent="." instance=ExtResource("6_e844d")]
+position = Vector2(129, 260)
 
 [connection signal="area_entered" from="ToRoom7" to="." method="_on_to_room_7_area_entered"]
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]
