@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dho8vdulgvo3v"]
+[gd_scene load_steps=9 format=3 uid="uid://dho8vdulgvo3v"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_f05ai"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room0.gd" id="1_hayoa"]
 [ext_resource type="Texture2D" uid="uid://ctfngujm3ie2" path="res://Art/New_Assets/Paper_Sprite.png" id="3_oxqgf"]
+[ext_resource type="PackedScene" uid="uid://dymc2bbv4a8cw" path="res://Scene/Door2_Key.tscn" id="4_64fa4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sy6b"]
 texture = ExtResource("1_f05ai")
@@ -301,5 +302,9 @@ shape = SubResource("RectangleShape2D_65qbo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, -232, 0, 648, 1152, 648, 1152, 471, 1166, 471, 1167, 337, 1152, 337, 1152, 0, 0, 0, 0, -232, 1394, -223, 1446, 871, -243, 879, -243, -234)
+
+[node name="Door2_Key" parent="." instance=ExtResource("4_64fa4")]
+position = Vector2(564, 398)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]

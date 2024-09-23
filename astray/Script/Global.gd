@@ -1,8 +1,11 @@
 extends Node
 
 var door_open = false
+var door2_open = false
 var door_key_inv = false
+var door2_key_inv = false
 var used_door_key = false
+var used_door2_key = false
 
 var chest_key_inv = false
 var used_chest_key = false
