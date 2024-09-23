@@ -6,12 +6,12 @@ var on_piece = false
 var found_puzzle_piece_dialogue
 
 signal pickup_piece(piece_num)
-signal start_dialogue
+signal start_dialogue  
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.puzzle_piece1_inv:
-		queue_free() 
+	if Global.puzzle_piece4_inv:
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,8 +24,8 @@ func _process(delta: float) -> void:
 		
 # Function to pick up the puzzle piece and add it to the inventory
 func pickup(): 
-	emit_signal("pickup_piece", 1)
-	queue_free() 
+	emit_signal("pickup_piece", 4)
+	queue_free()  
 
 # Called when the player enters the interaction area near the puzzle piece
 func _on_area_2d_area_entered(area: Area2D) -> void:

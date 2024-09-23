@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfm03qt3561uh"]
+
+[ext_resource type="Texture2D" uid="uid://h1ph6ot8lg46" path="res://Art/Images/puzzle piece 1.png" id="1_0rumf"]
+[ext_resource type="Script" path="res://Script/Puzzle_Piece4.gd" id="1_v6nhr"]
+[ext_resource type="Texture2D" uid="uid://cvjdmxs0uxcrs" path="res://Art/Images/puzzle piece 6.png" id="2_jhjhj"]
+[ext_resource type="Texture2D" uid="uid://2arhjx21ako2" path="res://Art/Images/puzzle piece 2.png" id="3_x17if"]
+[ext_resource type="Texture2D" uid="uid://d0inbefeee74r" path="res://Art/Images/puzzle piece 3.png" id="4_ht5v7"]
+[ext_resource type="Texture2D" uid="uid://cx87jpo4l3lym" path="res://Art/Images/puzzle piece 4.png" id="5_q0kyp"]
+[ext_resource type="Texture2D" uid="uid://c2rbdj75nfy1b" path="res://Art/Images/puzzle piece 5.png" id="6_6sls5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0r1c"]
+size = Vector2(22, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nlo51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0rumf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jhjhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x17if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ht5v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q0kyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6sls5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wxt4"]
+size = Vector2(26, 24)
+
+[node name="Puzzle_Piece4" type="StaticBody2D"]
+script = ExtResource("1_v6nhr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_r0r1c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nlo51")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_8wxt4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

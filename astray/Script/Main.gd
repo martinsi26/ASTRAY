@@ -31,6 +31,7 @@ signal door2_key_room
 signal claw_room
 signal key_chest_room
 signal number_chest_room
+signal count_chest_room
 signal door_room
 signal tree_room
 signal yarn_room
@@ -231,6 +232,7 @@ func enter_room7(room_number):
 		add_child(instance7)
 		$Cat.position = instance7.get_node("FromR6").position
 	instance7.connect("enter_room6", enter_room)
+	emit_signal("count_chest_room")
 	Global.room = "Room7"
 
 func enter_room8(room_number):

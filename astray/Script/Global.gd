@@ -21,10 +21,15 @@ var axe_inv = false
 var axe_used = false
 var tree_down = false
 
-var code1_inv = false
 var code2_inv = false
-var code3_inv = false
 var code4_inv = false
+var code6_inv = false
+var code9_inv = false
+
+var puzzle_piece1_inv = false
+var puzzle_piece2_inv = false
+var puzzle_piece3_inv = false
+var puzzle_piece4_inv = false
 
 var room
 

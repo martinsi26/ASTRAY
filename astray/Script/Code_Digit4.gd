@@ -2,12 +2,12 @@ extends StaticBody2D
 
 var on_code = false
 
-signal pickup_code
+signal pickup_code(code_num)
 signal start_dialogue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.code3_inv:
+	if Global.code4_inv:
 		queue_free()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		pickup()
 
 func pickup():
-	emit_signal("pickup_code")
+	emit_signal("pickup_code", 4)
 	queue_free()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
