@@ -1,11 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://d30undk6fe833"]
+[gd_scene load_steps=11 format=3 uid="uid://1ttwrf1dam2v"]
 
-[ext_resource type="Texture2D" uid="uid://bj3a5p1257nch" path="res://Art/Images/icon.svg" id="1_gmnrb"]
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="1_nafvy"]
 [ext_resource type="Script" path="res://Script/KeyChest.gd" id="1_xd30j"]
+[ext_resource type="Texture2D" uid="uid://by8uhvkvalle4" path="res://Art/Images/Fantasy RPG (Toony) 32x32.png" id="3_r4ilj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5273q"]
 size = Vector2(21.3333, 21.3333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75yy8"]
+atlas = ExtResource("3_r4ilj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccyhy"]
+atlas = ExtResource("3_r4ilj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if1u7"]
+atlas = ExtResource("3_r4ilj")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax8ax"]
+atlas = ExtResource("3_r4ilj")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3y1cu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75yy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccyhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if1u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax8ax")
+}],
+"loop": false,
+"name": &"OpenChest",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aoiuk"]
 size = Vector2(72, 72)
@@ -17,14 +53,16 @@ script = ExtResource("1_xd30j")
 
 [node name="Dialogue" parent="." instance=ExtResource("1_nafvy")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_gmnrb")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.43051e-06, -1.43051e-06)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_5273q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.90735e-06, 1.90735e-06)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3y1cu")
+animation = &"OpenChest"
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 16

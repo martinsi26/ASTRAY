@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck2bn6en7nmbc"]
+[gd_scene load_steps=5 format=3 uid="uid://dik2s6xpt8k3g"]
 
 [ext_resource type="Script" path="res://Script/Code_Digit6.gd" id="1_rt7fd"]
 [ext_resource type="Texture2D" uid="uid://d1n2dieiva25k" path="res://Art/Images/number6.png" id="2_5kgyu"]

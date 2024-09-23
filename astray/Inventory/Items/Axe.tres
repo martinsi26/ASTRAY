@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://by3dw60omvq5i"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dbnkbw8e8rf11"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_2xmbe"]
 [ext_resource type="Texture2D" uid="uid://c1opq8gmptqft" path="res://Art/Images/axe.png" id="2_jksby"]
 
 [resource]
 script = ExtResource("1_2xmbe")
-name = "axe"
+name = "Axe"
 texture = ExtResource("2_jksby")
+tip = "Can be used to chop a tree"

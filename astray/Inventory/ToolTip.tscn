@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdtbkn0u30ieh"]
+
+[ext_resource type="FontFile" uid="uid://cl2lhgti582t6" path="res://Art/Godot_Fonts/fonts/droid-sans/DroidSans.ttf" id="2_0vkjs"]
+[ext_resource type="Texture2D" uid="uid://cmtodd5a2bwl2" path="res://Art/Inventory_Art/inventory-slot.png" id="2_oc82f"]
+
+[node name="ToolTip" type="Control"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 41.0
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 41.0
+texture = ExtResource("2_oc82f")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect2"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 32.0
+
+[node name="ItemName" type="Label" parent="NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.117647)
+theme_override_fonts/font = ExtResource("2_0vkjs")
+theme_override_font_sizes/font_size = 10
+text = "Yarn Ball"
+horizontal_alignment = 1
+
+[node name="Tip" type="Label" parent="NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.27451, 1)
+theme_override_fonts/font = ExtResource("2_0vkjs")
+theme_override_font_sizes/font_size = 8
+text = "Can be dropped to distract"
+horizontal_alignment = 1
+autowrap_mode = 2

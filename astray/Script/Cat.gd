@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
 
-@onready var yarn_path: NodePath = "Room2/Yarn"
 @onready var door_key_path: NodePath = "Room1/Door_Key"
 @onready var claw_path: NodePath = "Room4/Claw"
 @onready var key_chest_path: NodePath = "Room3/KeyChest"
@@ -14,7 +13,7 @@ var dialogue = preload("res://Scene/Dialogue.tscn")
 @onready var code4_path: NodePath = "Room2/Code_Digit4"
 
 # character speed
-var speed = 500
+var speed = 300
 
 @export var inv: Inv
 # items
@@ -29,28 +28,46 @@ var speed = 500
 @export var code_digit2: InvItem
 @export var puzzle_piece1: InvItem
 
+var yarn_ball = preload("res://Scene/Yarn.tscn")
+
 # pushing items
 var push_force = 40
 
 # signals
 signal start_dialogue
+signal move_ash
+signal stop_moving
 #signal has_pickedup_key(pickedup_key)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	add_to_group("Player")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("Sprint"):
+		speed = 500
+	else:
+		speed = 300
+		
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	
 	if direction.x == 0 and direction.y == 0:
 		# idle
-		pass
+		$AnimatedSprite2D.play("Idle")
 	if direction.x != 0 or direction.y != 0:
 		# walking
-		pass
-		
+		$AnimatedSprite2D.play("Walk")
+	if direction.x > 0:
+		#face left
+		get_node("AnimatedSprite2D").flip_h = false
+		$HitboxRight.disabled = false
+		$HitboxLeft.disabled = true
+	elif direction.x < 0:
+		#face right
+		get_node("AnimatedSprite2D").flip_h = true
+		$HitboxRight.disabled = true
+		$HitboxLeft.disabled = false
 	velocity = direction * speed
 	move_and_slide()
 	
@@ -59,6 +76,26 @@ func _physics_process(delta: float) -> void:
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
+func drop_yarn():
+	var cat = get_node(".")
+	Global.yarn_inv = false
+	use(yarn)
+	
+	Global.yarn_room = Global.room
+	var ball_instance = yarn_ball.instantiate()
+	get_parent().get_node(Global.yarn_room).add_child(ball_instance)
+	
+	if get_node("AnimatedSprite2D").flip_h:
+		ball_instance.position.x = cat.position.x - 50
+	else:
+		ball_instance.position.x = cat.position.x + 70
+	ball_instance.position.y = cat.position.y + 20
+	
+	if Global.yarn_room == "Room5":
+		emit_signal("move_ash")
+	
+	get_parent().get_node(Global.yarn_room + "/Yarn").connect("pickup_yarn", pickup_yarn)
+	
 func pickup_code2():
 	collect(code_digit2)
 	Global.code1_inv = true
@@ -81,6 +118,8 @@ func pickup_key():
 	open_pickup_key_dialogue()
 	
 func pickup_yarn():
+	if Global.yarn_room == "Room5":
+		emit_signal("stop_moving")
 	collect(yarn)
 	Global.yarn_inv = true
 	
@@ -101,6 +140,7 @@ func use_door_key():
 	Global.door_key_inv = false
 	
 func use_axe():
+	Global.tree_down = true
 	use(axe)
 	Global.axe_inv = false
 	Global.axe_used = true
@@ -150,8 +190,10 @@ func claw_room() -> void:
 
 func door_room() -> void:
 	get_parent().get_node(door_path).connect("use_door_key", use_door_key)
-	get_parent().get_node(yarn_path).connect("pickup_yarn", pickup_yarn)
 	get_parent().get_node(code4_path).connect("pickup_code", pickup_code4)
 
 func tree_room() -> void:
 	get_parent().get_node("Room6").connect("use_axe", use_axe)
+
+func yarn_room(yarn_path) -> void:
+	get_parent().get_node(yarn_path).connect("pickup_yarn", pickup_yarn)

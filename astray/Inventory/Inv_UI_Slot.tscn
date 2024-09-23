@@ -26,3 +26,5 @@ layout_mode = 2
 [node name="Item_Display" type="Sprite2D" parent="CenterContainer/Panel"]
 position = Vector2(-7.15256e-07, 4.76837e-07)
 scale = Vector2(0.0703125, 0.0703125)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
