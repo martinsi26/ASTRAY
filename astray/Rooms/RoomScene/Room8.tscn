@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://gi3wxwtpygrq"]
+[gd_scene load_steps=13 format=4 uid="uid://gi3wxwtpygrq"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room8.gd" id="1_r1kpx"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_ew8jx"]
+[ext_resource type="PackedScene" uid="uid://bckx46x3wvhrr" path="res://Scene/Door2.tscn" id="3_lb7l4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hp7d"]
 texture = ExtResource("2_ew8jx")
@@ -842,7 +843,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom9"]
-position = Vector2(672, -10)
+position = Vector2(672, -16)
 shape = SubResource("RectangleShape2D_p6rjs")
 
 [node name="ToRoom10" type="Area2D" parent="."]
@@ -857,6 +858,9 @@ shape = SubResource("RectangleShape2D_2o70h")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(-572, -3, -571, 235, 0, 240, 0, 0, 592, 0, 592, -65, 751, -65, 752, 0, 1152, 0, 1152, 262, 1215, 262, 1216, 388, 1152, 387, 1152, 648, 0, 648, 0, 400, -32, 400, -32, 240, 0, 240, -571, 235, -597, 995, 1689, 971, 1657, -383, -572, -381)
+
+[node name="Door2" parent="." instance=ExtResource("3_lb7l4")]
+position = Vector2(602, 4)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
 [connection signal="area_entered" from="ToRoom9" to="." method="_on_to_room_9_area_entered"]

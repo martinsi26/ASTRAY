@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://61d1e0vdcnud"]
+[gd_scene load_steps=13 format=4 uid="uid://61d1e0vdcnud"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_yo3m8"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room9.gd" id="2_0qfhr"]
@@ -930,6 +930,9 @@ sources/2 = SubResource("TileSetAtlasSource_41slo")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plfr2"]
 size = Vector2(160, 20)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmmt8"]
+radius = 47.0
+
 [node name="Room9" type="Node2D"]
 script = ExtResource("2_0qfhr")
 
@@ -973,4 +976,13 @@ polygon = PackedVector2Array(450, 352, 450, 324, 448, 322, 448, 256, 480, 256, 4
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(-412, -388, 0, 0, 1152, 0, 1152, 648, 656, 648, 656, 681, 496, 681, 496, 648, 0, 648, 0, 0, -412, -388, -427, 1073, 1600, 1070, 1581, -372)
 
+[node name="Ending" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ending"]
+position = Vector2(587, 398)
+shape = SubResource("CircleShape2D_tmmt8")
+
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]
+[connection signal="area_entered" from="Ending" to="." method="_on_ending_area_entered"]

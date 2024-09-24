@@ -27,6 +27,7 @@ var instance9 = room9.instantiate()
 var instance10 = room10.instantiate()
 
 signal door_key_room
+signal door2_key_room
 signal claw_room
 signal key_chest_room
 signal number_chest_room
@@ -118,6 +119,7 @@ func enter_room0(room_number):
 		add_child(instance0)
 		$Cat.position = instance0.get_node("FromR1").position
 	instance0.connect("enter_room1", enter_room)
+	emit_signal("door2_key_room")
 	Global.room = "Room0"
 	
 func enter_room1(room_number):
@@ -259,6 +261,7 @@ func enter_room9(room_number):
 		add_child(instance9)
 		$Cat.position = instance9.get_node("FromR8").position
 	instance9.connect("enter_room8", enter_room)
+	instance9.connect("ending", ending)
 	Global.room = "Room9"
 
 func enter_room10(room_number):
@@ -269,3 +272,6 @@ func enter_room10(room_number):
 		$Cat.position = instance10.get_node("FromR8").position
 	instance10.connect("enter_room8", enter_room)
 	Global.room = "Room10"
+	
+func ending():
+	get_tree().change_scene_to_file("res://Scene/EndingScreen.tscn")

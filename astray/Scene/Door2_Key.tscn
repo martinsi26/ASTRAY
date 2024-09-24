@@ -1,109 +1,108 @@
-[gd_scene load_steps=31 format=3 uid="uid://dlr0sb8epdjvr"]
+[gd_scene load_steps=30 format=3 uid="uid://dymc2bbv4a8cw"]
 
-[ext_resource type="Script" path="res://Script/Door_Key.gd" id="1_mo8tn"]
-[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_smg07"]
-[ext_resource type="Texture2D" uid="uid://eq7f6620w3jf" path="res://Art/Images/free_rotating_key_frakassets/key_32x32_24f.png" id="3_c7cor"]
+[ext_resource type="Script" path="res://Script/Door2_Key.gd" id="1_fls8l"]
+[ext_resource type="Texture2D" uid="uid://eq7f6620w3jf" path="res://Art/Images/free_rotating_key_frakassets/key_32x32_24f.png" id="1_jm0a6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tybaa"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j21e"]
 size = Vector2(63.75, 62.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0fy3"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6itx"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwh5h"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1q8m"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pj8aq"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xj1vl"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60et4"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c50s1"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxqij"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7v50"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyyde"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmo4n"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75nd4"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gae5f"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(416, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_415q7"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(448, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0mgt"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(480, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ln40h"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(512, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x73fi"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(544, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3debl"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(576, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgfy3"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(608, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4sba"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(640, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_532r8"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(672, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o52fn"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(704, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unffr"]
-atlas = ExtResource("3_c7cor")
+atlas = ExtResource("1_jm0a6")
 region = Rect2(736, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_it7yw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4inxg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -183,24 +182,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8kbh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2lek"]
 size = Vector2(72, 71)
 
-[node name="Door_Key" type="StaticBody2D"]
-position = Vector2(538, 262)
+[node name="Door2_Key" type="StaticBody2D"]
 collision_layer = 8
 collision_mask = 6
-script = ExtResource("1_mo8tn")
-
-[node name="Dialogue" parent="." instance=ExtResource("2_smg07")]
+script = ExtResource("1_fls8l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tybaa")
+shape = SubResource("RectangleShape2D_4j21e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(7.62939e-06, -9.53674e-06)
-scale = Vector2(2, 1.9375)
-sprite_frames = SubResource("SpriteFrames_it7yw")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4inxg")
 animation = &"Rotate"
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -209,8 +204,7 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_w8kbh")
+shape = SubResource("RectangleShape2D_g2lek")
 
-[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

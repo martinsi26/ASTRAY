@@ -7,6 +7,7 @@ var dialogue = preload("res://Scene/Dialogue.tscn")
 @onready var key_chest_path: NodePath = "Room3/KeyChest"
 @onready var number_chest_path: NodePath = "Room5/NumberCodeChest/Number_Code_UI"
 @onready var door_path: NodePath = "Room2/Door"
+@onready var door2_key_path: NodePath = "Room0/Door2_Key"
 @onready var code2_path: NodePath = "Room4/Code_Digit2"
 @onready var code9_path: NodePath = "Room5/Code_Digit9"
 @onready var code6_path: NodePath = "Room4/Code_Digit6"
@@ -22,6 +23,7 @@ var speed = 300
 @export var yarn: InvItem
 @export var claw: InvItem
 @export var door_key: InvItem
+@export var door2_key: InvItem
 @export var code_digit6: InvItem
 @export var code_digit9: InvItem
 @export var code_digit4: InvItem
@@ -112,10 +114,14 @@ func pickup_code9():
 	collect(code_digit9)
 	Global.code4_inv = true
 
-func pickup_key():
-	collect(door_key)
-	Global.door_key_inv = true
-	open_pickup_key_dialogue()
+func pickup_key(key_num):
+	if key_num == 1:
+		collect(door_key)
+		Global.door_key_inv = true
+		open_pickup_key_dialogue()
+	elif key_num == 2:
+		collect(door2_key)
+		Global.door2_key_inv = true
 	
 func pickup_yarn():
 	if Global.yarn_room == "Room5":
@@ -134,10 +140,16 @@ func open_pickup_key_dialogue():
 	]
 	emit_signal("start_dialogue", dialogue)
 
-func use_door_key():
-	use(door_key)
-	Global.door_open = true
-	Global.door_key_inv = false
+func use_door_key(door_num):
+	
+	if door_num == 1:
+		use(door_key)
+		Global.door_open = true
+		Global.door_key_inv = false
+	elif door_num == 2:
+		use(door2_key)
+		Global.door2_open = true
+		Global.door2_key_inv = false
 	
 func use_axe():
 	Global.tree_down = true
@@ -175,6 +187,9 @@ func use(item):
 	
 func door_key_room() -> void:
 	get_parent().get_node(door_key_path).connect("pickup_key", pickup_key)
+	
+func door2_key_room() -> void:
+	get_parent().get_node(door2_key_path).connect("pickup_key", pickup_key)
 
 func key_chest_room() -> void:
 	get_parent().get_node(key_chest_path).connect("open_key_chest", open_key_chest)
