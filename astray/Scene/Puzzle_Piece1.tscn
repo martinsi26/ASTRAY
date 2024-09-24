@@ -55,8 +55,13 @@ animation = &"idle"
 frame_progress = 0.0172376
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2, 2)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_ps74c")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

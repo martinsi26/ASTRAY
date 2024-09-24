@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://da2bbgrogslum"]
+[gd_scene load_steps=19 format=4 uid="uid://da2bbgrogslum"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_7g31s"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room3.gd" id="1_dxisv"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="2_5b38x"]
 [ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
+[ext_resource type="PackedScene" uid="uid://bfm03qt3561uh" path="res://Scene/Puzzle_Piece4.tscn" id="5_380mb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nrocq"]
 texture = ExtResource("2_5b38x")
@@ -923,6 +924,9 @@ shape = SubResource("RectangleShape2D_l5oc5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(0, 0, 656, 0, 656, -27, 785, -28, 784, 0, 1152, 0, 1152, 648, 784, 648, 784, 675, 656, 675, 656, 648, 0, 648, 0, 591, -21, 591, -21, 465, 0, 465, 0, 0, -235, -245, -233, 812, 1384, 847, 1390, -242, -71, -249, -235, -245)
+
+[node name="Puzzle_Piece4" parent="." instance=ExtResource("5_380mb")]
+position = Vector2(108, 103)
 
 [connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]

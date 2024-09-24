@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room8.gd" id="1_r1kpx"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_ew8jx"]
-[ext_resource type="PackedScene" uid="uid://bckx46x3wvhrr" path="res://Scene/Door2.tscn" id="3_lb7l4"]
+[ext_resource type="PackedScene" path="res://Scene/Door2.tscn" id="3_lb7l4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hp7d"]
 texture = ExtResource("2_ew8jx")

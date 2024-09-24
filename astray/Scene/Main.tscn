@@ -10,6 +10,7 @@ script = ExtResource("1_aj2xg")
 top_level = true
 
 [connection signal="claw_room" from="." to="Cat" method="claw_room"]
+[connection signal="count_chest_room" from="." to="Cat" method="count_chest_room"]
 [connection signal="door2_key_room" from="." to="Cat" method="door2_key_room"]
 [connection signal="door_key_room" from="." to="Cat" method="door_key_room"]
 [connection signal="door_room" from="." to="Cat" method="door_room"]

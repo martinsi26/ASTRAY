@@ -374,7 +374,7 @@ scale = Vector2(0.15, 0.15)
 position = Vector2(914, 264)
 scale = Vector2(0.15, 0.15)
 
-[node name="PuzzlePiece1" parent="." instance=ExtResource("6_pc5bb")]
+[node name="Puzzle_Piece1" parent="." instance=ExtResource("6_pc5bb")]
 position = Vector2(497, 229)
 
 [node name="Walls" type="StaticBody2D" parent="."]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx4pg07tusom4"]
+[gd_scene load_steps=11 format=3 uid="uid://dx4pg07tusom4"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room7.gd" id="1_mwqyq"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_bodqw"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="3_mdi27"]
 [ext_resource type="PackedScene" uid="uid://cts1aukgpd0d5" path="res://CountCodeChest/CountCodeChest.tscn" id="3_tx4ki"]
-[ext_resource type="PackedScene" uid="uid://cqxx4oky4ng6q" path="res://Scene/Puzzle_Piece1.tscn" id="4_etriq"]
+[ext_resource type="PackedScene" uid="uid://cyn0pmrgxgft3" path="res://Scene/Puzzle_Piece3.tscn" id="5_0x1co"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oxnut"]
 texture = ExtResource("2_bodqw")
@@ -324,11 +324,12 @@ shape = SubResource("RectangleShape2D_ih4ft")
 [node name="CountCodeChest" parent="." instance=ExtResource("3_tx4ki")]
 position = Vector2(864, 535)
 
-[node name="PuzzlePiece1" parent="." instance=ExtResource("4_etriq")]
-position = Vector2(1083, 259)
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(497, -287, 496, 47, 464, 48, 464, 111, 432, 112, 432, 143, 400, 144, 400, 176, 369, 177, 368, 208, 337, 209, 336, 239, 273, 241, 272, 271, 0, 272, 0, 648, 1152, 648, 1152, 1, 1018, 0, 1018, -32, 878, -32, 878, 0, 496, 0, 497, -287, 1670, -353, 1721, 976, -392, 1007, -381, -368)
+
+[node name="Puzzle_Piece3" parent="." instance=ExtResource("5_0x1co")]
+position = Vector2(462, 323)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
