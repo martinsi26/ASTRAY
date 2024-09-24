@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6fa64daskbai"]
+[gd_scene load_steps=8 format=3 uid="uid://c6fa64daskbai"]
 
 [ext_resource type="Texture2D" uid="uid://cxlilyx6cpwkq" path="res://Art/Inventory_Art/inventory-background.png" id="1_60aym"]
 [ext_resource type="Script" path="res://CountCodeChest/Count_Code_UI.gd" id="1_hayxo"]
 [ext_resource type="PackedScene" uid="uid://q6ryaibb8glu" path="res://CountCodeChest/Count_UI_Slot.tscn" id="2_l0jfj"]
 [ext_resource type="PackedScene" uid="uid://dc2ie6wcsb3h2" path="res://CountCodeChest/Count_UI_Image.tscn" id="3_oouc6"]
+[ext_resource type="PackedScene" uid="uid://3qpep5abtp22" path="res://Scene/Orange.tscn" id="4_puin5"]
+[ext_resource type="PackedScene" uid="uid://bgtxkxt0pg82k" path="res://Scene/Banana.tscn" id="5_85so8"]
+[ext_resource type="PackedScene" uid="uid://cjpswe04hhb33" path="res://Scene/Apple.tscn" id="6_1pxon"]
 
 [node name="Count_Code_UI" type="Control"]
 layout_mode = 3
@@ -41,13 +44,15 @@ columns = 4
 [node name="Count_UI_Image1" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
 layout_mode = 2
 
-[node name="Count_UI_Image2" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+[node name="Count_UI_Image2" parent="NinePatchRect/GridContainerImages" instance=ExtResource("4_puin5")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Count_UI_Image3" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+[node name="Count_UI_Image3" parent="NinePatchRect/GridContainerImages" instance=ExtResource("5_85so8")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Count_UI_Image4" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+[node name="Count_UI_Image4" parent="NinePatchRect/GridContainerImages" instance=ExtResource("6_1pxon")]
 layout_mode = 2
 
 [node name="GridContainerNumbers" type="GridContainer" parent="NinePatchRect"]
