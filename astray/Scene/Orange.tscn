@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://3qpep5abtp22"]
+
+[ext_resource type="Texture2D" uid="uid://rgm2vlw2hlx0" path="res://Art/New_Assets/orange.png" id="1_ut03r"]
+
+[node name="Panel" type="Panel"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31, 30)
+scale = Vector2(2.76316, 2.76316)
+texture = ExtResource("1_ut03r")
