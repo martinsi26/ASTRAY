@@ -108,11 +108,9 @@ func drop_yarn():
 	
 func pickup_code(code_num):
 	if code_num == 2:
-		print("picking up 2")
 		collect(code_digit2)
 		Global.code2_inv = true
 	elif code_num == 4:
-		print("picking up 4")
 		collect(code_digit4)
 		Global.code4_inv = true
 	elif code_num == 6:
@@ -134,16 +132,16 @@ func pickup_key(key_num):
 func pickup_piece(piece_num):
 	if piece_num == 1:
 		collect(puzzle_piece1)
-		Global.puzzle_piece1_inv
+		Global.puzzle_piece1_inv = true
 	elif piece_num == 2:
 		collect(puzzle_piece2)
-		Global.puzzle_piece2_inv
+		Global.puzzle_piece2_inv = true
 	elif piece_num == 3:
 		collect(puzzle_piece3)
-		Global.puzzle_piece3_inv
+		Global.puzzle_piece3_inv = true
 	elif piece_num == 4:
 		collect(puzzle_piece4)
-		Global.puzzle_piece4_inv
+		Global.puzzle_piece4_inv = true
 	
 func pickup_yarn():
 	if Global.yarn_room == "Room5":

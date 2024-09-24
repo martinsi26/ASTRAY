@@ -55,6 +55,8 @@ animation = &"idle"
 frame_progress = 0.0172376
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2, 2)

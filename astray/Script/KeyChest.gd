@@ -11,9 +11,9 @@ signal start_dialogue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.chest_key_inv:
+	if Global.axe_inv or Global.axe_used:
 		chest_opened = true
-		$AnimatedSprite2D.animation = "CloseChest"
+		$AnimatedSprite2D.animation = "OpenChest"
 		$AnimatedSprite2D.frame = 3
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
