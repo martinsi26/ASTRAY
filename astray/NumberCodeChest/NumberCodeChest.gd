@@ -13,7 +13,7 @@ signal start_dialogue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.chest_key_inv:
+	if Global.puzzle_piece4:
 		chest_open = true
 		close_chest = false
 		$AnimatedSprite2D.animation = "CloseChest"

@@ -1,13 +1,13 @@
 extends Control
 
 @onready var image1: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image1/CenterContainer/Panel/Sprite2D")
-@onready var texture1: Texture = preload("res://Art/Images/Cat.webp")
+@onready var texture1: Texture = preload("res://Art/New_Assets/apple.png")
 @onready var image2: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image2/CenterContainer/Panel/Sprite2D")
-@onready var texture2: Texture = preload("res://Art/Images/icon.svg")
+@onready var texture2: Texture = preload("res://Art/New_Assets/banana.png")
 @onready var image3: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image3/CenterContainer/Panel/Sprite2D")
-@onready var texture3: Texture = preload("res://Art/Images/icon.svg")
+@onready var texture3: Texture = preload("res://Art/New_Assets/orange.png")
 @onready var image4: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image4/CenterContainer/Panel/Sprite2D")
-@onready var texture4: Texture = preload("res://Art/Images/icon.svg")
+@onready var texture4: Texture = preload("res://Art/New_Assets/peach.png")
 
 @onready var digit: CountCode = preload("res://CountCodeChest/Count_Code.tres")
 @onready var slots: Array = $NinePatchRect/GridContainerNumbers.get_children()
@@ -21,8 +21,10 @@ signal open_count_chest
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	image1.scale.x = 0.05
-	image1.scale.y = 0.05
+	image1.scale = Vector2(2, 2)
+	image2.scale = Vector2(2, 2)
+	image3.scale = Vector2(2, 2)
+	image4.scale = Vector2(2, 2)
 	image1.texture = texture1
 	image2.texture = texture2
 	image3.texture = texture3

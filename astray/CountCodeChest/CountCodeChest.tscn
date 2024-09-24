@@ -89,9 +89,9 @@ script = ExtResource("1_e5feu")
 shape = SubResource("RectangleShape2D_irdbv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.313, 2.313)
 sprite_frames = SubResource("SpriteFrames_sfymm")
 animation = &"Close"
-frame_progress = 0.990205
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 16
