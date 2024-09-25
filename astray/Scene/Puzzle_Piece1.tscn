@@ -37,10 +37,11 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps74c"]
-size = Vector2(26, 24)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlvaq"]
+size = Vector2(348.5, 277)
 
 [node name="PuzzlePiece1" type="StaticBody2D"]
+z_index = 2
 script = ExtResource("1_fgpkp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -59,9 +60,8 @@ collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 2)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_ps74c")
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_rlvaq")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
