@@ -20,6 +20,8 @@ var claw_inv = false
 var axe_inv = false
 var axe_used = false
 var tree_down = false
+var wood_inv = false
+var wood_placed = false
 
 var code2_inv = false
 var code4_inv = false

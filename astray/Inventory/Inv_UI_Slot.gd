@@ -7,7 +7,8 @@ extends Panel
 @onready var door2_key_texture: Texture = preload("res://Art/Images/icon.svg")
 @onready var chest_key_texture: Texture = preload("res://Art/Images/icon.svg")
 @onready var axe_texture: Texture = preload("res://Art/Images/axe.png")
-@onready var yarn_texture: Texture = preload("res://Art/Images/yarn.png")
+@onready var wood_texture: Texture = preload("res://Art/Images/Wood.png")
+@onready var yarn_texture: Texture = preload("res://Art/Images/Yarn.png")
 @onready var code_digit2_texture: Texture = preload("res://Art/Images/number2.png")
 @onready var code_digit4_texture: Texture = preload("res://Art/Images/number4.png")
 @onready var code_digit6_texture: Texture = preload("res://Art/Images/number6.png")
@@ -36,10 +37,14 @@ func update(slot: InvSlot):
 		if item_visual.texture == axe_texture:
 			item_visual.scale = Vector2(0.7, 0.7)
 		
+		# Wood texture size
+		if item_visual.texture == wood_texture:
+			item_visual.scale = Vector2(0.125, 0.125)
+		
 		# Yarn texture size
 		elif item_visual.texture == yarn_texture:
-			item_visual.scale = Vector2(0.025, 0.025)
-
+			item_visual.scale = Vector2(0.125, 0.125)
+			
 		# Door key texture size
 		elif item_visual.texture == door_key_texture:
 			item_visual.scale = Vector2(0.1, 0.1)
