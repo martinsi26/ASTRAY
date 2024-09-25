@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbrg474hw1ttf"]
+[gd_scene load_steps=4 format=3 uid="uid://ctytucw5gij2i"]
 
 [ext_resource type="Script" path="res://Script/Ending_Screen.gd" id="1_4q4r0"]
 [ext_resource type="Texture2D" uid="uid://c7qkj1iupf2y4" path="res://Art/Images/StartScreenPic.png" id="1_qyimh"]
@@ -25,12 +25,23 @@ texture = ExtResource("1_qyimh")
 expand_mode = 1
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 472.0
-offset_top = 371.0
-offset_right = 630.0
-offset_bottom = 413.0
+layout_mode = 0
+offset_left = 368.0
+offset_top = 362.0
+offset_right = 526.0
+offset_bottom = 404.0
 theme = SubResource("Theme_6gjtu")
 text = "Quit"
+
+[node name="PlayAgainButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 362.0
+offset_right = 755.0
+offset_bottom = 404.0
+theme = SubResource("Theme_6gjtu")
+text = "Play Again
+"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -42,3 +53,4 @@ theme_override_font_sizes/font_size = 90
 text = "Thanks for playing!"
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
