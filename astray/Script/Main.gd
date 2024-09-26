@@ -34,6 +34,7 @@ signal room4_objects
 signal room5_objects
 signal room6_objects
 signal room7_objects
+signal room8_objects
 signal yarn_room
 
 # Called when the node enters the scene tree for the first time.
@@ -254,6 +255,7 @@ func enter_room8(room_number):
 	instance8.connect("enter_room6", enter_room)
 	instance8.connect("enter_room9", enter_room)
 	instance8.connect("enter_room10", enter_room)
+	emit_signal("room8_objects")
 	Global.room = "Room8"
 	
 func enter_room9(room_number):

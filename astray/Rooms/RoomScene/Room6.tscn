@@ -2048,7 +2048,6 @@ polygon = PackedVector2Array(686, 0, 688, 83, 658, 82, 656, 144, 626, 145, 624, 
 polygon = PackedVector2Array(433, 496, 432, 527, 401, 528, 400, 576, 576, 576, 592, 576, 592, 528, 623, 528, 623, 501, 463, 501, 463, 496)
 
 [node name="Puzzle_Piece2" parent="." instance=ExtResource("3_ad827")]
-z_index = 0
 position = Vector2(79, 202)
 
 [node name="Place_Wood_Hitbox" type="Area2D" parent="."]
