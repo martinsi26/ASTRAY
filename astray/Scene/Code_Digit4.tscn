@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgrdkjenqukda"]
+
+[ext_resource type="Script" path="res://Script/Code_Digit4.gd" id="1_jxpsx"]
+[ext_resource type="Texture2D" uid="uid://ps1hbibauadx" path="res://Art/Images/number4.png" id="2_beqpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnnyu"]
+size = Vector2(348.5, 277)
+
+[node name="Code_Digit4" type="Node2D"]
+z_index = 2
+script = ExtResource("1_jxpsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_beqpk")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_mnnyu")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
