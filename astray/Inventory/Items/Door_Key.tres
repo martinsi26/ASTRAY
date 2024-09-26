@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cnca8l1p1umqa"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c28iwqg50ohko"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_agvu0"]
 [ext_resource type="Texture2D" uid="uid://cflupy128eo70" path="res://Art/Images/Key.png" id="2_jisjl"]
