@@ -336,7 +336,9 @@ polygon = PackedVector2Array(686, 0, 688, 83, 658, 82, 656, 144, 626, 145, 624, 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlockPath"]
 polygon = PackedVector2Array(480, 465, 480, 480, 464, 480, 463, 496, 433, 497, 432, 527, 401, 528, 400, 592, 576, 591, 576, 576, 592, 576, 592, 528, 623, 527, 623, 464)
 
-[node name="StandingTree" type="StaticBody2D" parent="."]
+[node name="Puzzle_Piece2" parent="." instance=ExtResource("3_ad827")]
+z_index = 0
+position = Vector2(79, 202)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StandingTree"]
 polygon = PackedVector2Array(81, 607, 92, 596, 92, 576, 68, 574, 50, 546, 73, 512, 50, 482, 87, 424, 104, 423, 148, 483, 122, 510, 149, 545, 126, 575, 106, 576, 106, 596, 117, 608)

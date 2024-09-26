@@ -84,28 +84,32 @@ size = Vector2(85, 85)
 script = ExtResource("1_lcnsj")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_st3tr")]
+position = Vector2(0, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 39.5)
 shape = SubResource("RectangleShape2D_1jhj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 13)
 scale = Vector2(2.3125, 2.3125)
 sprite_frames = SubResource("SpriteFrames_yupgu")
 animation = &"OpenChest"
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 13)
 collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_4iavg")
 
 [node name="Number_Code_UI" parent="." instance=ExtResource("3_m5b02")]
 offset_left = -138.0
-offset_top = -152.0
+offset_top = -139.0
 offset_right = 138.0
-offset_bottom = -54.0
+offset_bottom = -41.0
 
 [connection signal="close_number_code" from="." to="Number_Code_UI" method="close_number_code"]
 [connection signal="open_number_code" from="." to="Number_Code_UI" method="open_number_code"]

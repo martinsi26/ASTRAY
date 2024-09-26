@@ -7,6 +7,7 @@ extends Panel
 @onready var door2_key_texture: Texture = preload("res://Art/Images/icon.svg")
 @onready var chest_key_texture: Texture = preload("res://Art/Images/icon.svg")
 @onready var axe_texture: Texture = preload("res://Art/Images/axe.png")
+@onready var wood_texture: Texture = preload("res://Art/Images/Wood.png")
 @onready var yarn_texture: Texture = preload("res://Art/Images/yarn.png")
 @onready var code_digit2_texture: Texture = preload("res://Art/Images/number2.png")
 @onready var code_digit4_texture: Texture = preload("res://Art/Images/number4.png")

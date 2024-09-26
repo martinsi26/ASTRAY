@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://sdqd21tv751h"]
 
 [ext_resource type="Script" path="res://Script/Main.gd" id="1_aj2xg"]
-[ext_resource type="PackedScene" uid="uid://b6typvjb3thmd" path="res://Scene/Cat.tscn" id="2_rjy8c"]
+[ext_resource type="PackedScene" uid="uid://dfnblkht1i4a6" path="res://Scene/Ash.tscn" id="2_rjy8c"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_aj2xg")
@@ -9,12 +9,13 @@ script = ExtResource("1_aj2xg")
 [node name="Cat" parent="." instance=ExtResource("2_rjy8c")]
 top_level = true
 
-[connection signal="claw_room" from="." to="Cat" method="claw_room"]
-[connection signal="count_chest_room" from="." to="Cat" method="count_chest_room"]
-[connection signal="door2_key_room" from="." to="Cat" method="door2_key_room"]
-[connection signal="door_key_room" from="." to="Cat" method="door_key_room"]
-[connection signal="door_room" from="." to="Cat" method="door_room"]
-[connection signal="key_chest_room" from="." to="Cat" method="key_chest_room"]
-[connection signal="number_chest_room" from="." to="Cat" method="number_chest_room"]
-[connection signal="tree_room" from="." to="Cat" method="tree_room"]
-[connection signal="yarn_room" from="." to="Cat" method="yarn_room"]
+[connection signal="room0_objects" from="." to="Ash" method="room0_objects"]
+[connection signal="room1_objects" from="." to="Ash" method="room1_objects"]
+[connection signal="room2_objects" from="." to="Ash" method="room2_objects"]
+[connection signal="room3_objects" from="." to="Ash" method="room3_objects"]
+[connection signal="room4_objects" from="." to="Ash" method="room4_objects"]
+[connection signal="room5_objects" from="." to="Ash" method="room5_objects"]
+[connection signal="room6_objects" from="." to="Ash" method="room6_objects"]
+[connection signal="room7_objects" from="." to="Ash" method="room7_objects"]
+[connection signal="yarn_room" from="." to="Ash" method="yarn_room"]
+[connection signal="start_dialogue" from="Ash" to="Ash/Dialogue" method="start_dialogue"]

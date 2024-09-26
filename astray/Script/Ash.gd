@@ -8,10 +8,8 @@ var animation_played = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$".".position = Global.ash_pos
-	get_parent().get_parent().get_node("Cat").connect("move_ash", move_ash)
-	get_parent().get_parent().get_node("Cat").connect("stop_moving", move_back)
-
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if move:
@@ -57,11 +55,20 @@ func move_back():
 	Global.ash_pos = back_pos.position
 	make_path(back_pos)
 	
-func _on_navigation_agent_2d_target_reached() -> void:
-	$Timer.stop()
-	move = false
-	Global.ash_pos = $".".position
-	animation_played = false
+	Global.yarn_room = Global.room
+	var ball_instance = yarn_ball.instantiate()
+	get_parent().get_node(Global.yarn_room).add_child(ball_instance)
+	
+	if get_node("AnimatedSprite2D").flip_h:
+		ball_instance.position.x = cat.position.x - 47
+	else:
+		ball_instance.position.x = cat.position.x + 50
+	ball_instance.position.y = cat.position.y - 5
+	
+	if Global.yarn_room == "Room5":
+		emit_signal("move_orange_cat")
+	
+	get_parent().get_node(Global.yarn_room + "/Yarn").connect("pickup_yarn", pickup_yarn)
 
 func _on_timer_timeout() -> void:
 	move_ash()

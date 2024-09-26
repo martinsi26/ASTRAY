@@ -1,8 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4mxvgfoi51w5"]
+[gd_scene load_steps=31 format=3 uid="uid://dfnblkht1i4a6"]
 
-[ext_resource type="Script" path="res://Script/Ash.gd" id="1_pm1x5"]
-[ext_resource type="Texture2D" uid="uid://833cfft76d57" path="res://Art/New_Assets/Pixel Cat (Orange) - Sit.png" id="2_0hxux"]
-[ext_resource type="Texture2D" uid="uid://dsvv3qfuo816b" path="res://Art/New_Assets/Pixel Cat (Orange) - Walk.png" id="3_8bge5"]
+[ext_resource type="Script" path="res://Script/Ash.gd" id="1_k6c7m"]
+[ext_resource type="Resource" uid="uid://by3dw60omvq5i" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
+[ext_resource type="Resource" uid="uid://cdkihtnkttrio" path="res://Inventory/Player_inv.tres" id="2_pjynx"]
+[ext_resource type="Resource" uid="uid://ba7leu4mtl42h" path="res://Inventory/Items/Chest_Key.tres" id="2_trw4r"]
+[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_ukpe8"]
+[ext_resource type="PackedScene" uid="uid://bdaex6esj5e4b" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
+[ext_resource type="Resource" uid="uid://dgq2u4jwws1mn" path="res://Inventory/Items/Yarn.tres" id="4_nr5x1"]
+[ext_resource type="Resource" path="res://Inventory/Items/Wood.tres" id="5_27ea1"]
+[ext_resource type="Resource" uid="uid://xntaoaakbdfi" path="res://Inventory/Items/Claw.tres" id="5_tvq75"]
+[ext_resource type="Resource" uid="uid://cnca8l1p1umqa" path="res://Inventory/Items/Door_Key.tres" id="6_0l67d"]
+[ext_resource type="Texture2D" uid="uid://5hq0skm58x5q" path="res://Art/New_Assets/Pixel Cat (Void) - Walk.png" id="7_l35lo"]
+[ext_resource type="Texture2D" uid="uid://bn51l82tkmmns" path="res://Art/New_Assets/Pixel Cat (Void) - Idle.png" id="8_dm84k"]
+[ext_resource type="Resource" uid="uid://2lcujjjw87ve" path="res://Inventory/Items/Code_Digit6.tres" id="8_g2ppp"]
+[ext_resource type="Resource" uid="uid://d1c5h2xli0wfu" path="res://Inventory/Items/Door2_Key.tres" id="8_n5l74"]
+[ext_resource type="Resource" uid="uid://o3l8eysvxdyf" path="res://Inventory/Items/Code_Digit9.tres" id="9_wpsfd"]
+[ext_resource type="Resource" uid="uid://b22qq0t2mkg3e" path="res://Inventory/Items/Puzzle_Piece1.tres" id="11_ya767"]
+[ext_resource type="Resource" uid="uid://bflc7kflrcgu6" path="res://Inventory/Items/Code_Digit2.tres" id="12_mj6rg"]
+[ext_resource type="Resource" uid="uid://cpcckkgaelevs" path="res://Inventory/Items/Code_Digit4.tres" id="12_sbtau"]
+[ext_resource type="Resource" uid="uid://c2oumvg3ob5xd" path="res://Inventory/Items/Puzzle_Piece2.tres" id="13_kegij"]
+[ext_resource type="Resource" uid="uid://cab2hsl3hrasq" path="res://Inventory/Items/Puzzle_Piece3.tres" id="14_1wun8"]
+[ext_resource type="Resource" uid="uid://cyt0gwjbm8sy0" path="res://Inventory/Items/Puzzle_Piece4.tres" id="15_im7ld"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggj62"]
 atlas = ExtResource("2_0hxux")
@@ -62,7 +80,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_bium5"]
 radius = 34.5145
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2upip"]
+radius = 29.0
+
 [node name="Ash" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
@@ -95,9 +118,5 @@ scale = Vector2(2, 2)
 collision_layer = 128
 collision_mask = 2
 
-[node name="Hitbox" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 8)
-shape = SubResource("CircleShape2D_bium5")
-
-[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
+[connection signal="drop_yarn" from="Inv_UI" to="." method="drop_yarn"]
