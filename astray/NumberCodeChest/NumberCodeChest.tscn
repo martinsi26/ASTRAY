@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvvrbl464okg" path="res://NumberCodeChest/Number_Code_UI.tscn" id="3_m5b02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jhj0"]
-size = Vector2(60, 17)
+size = Vector2(75, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3tb0"]
 atlas = ExtResource("3_hrlrl")
@@ -81,15 +81,11 @@ animations = [{
 size = Vector2(85, 85)
 
 [node name="NumberCodeChest" type="StaticBody2D"]
-z_index = 1
-y_sort_enabled = true
 script = ExtResource("1_lcnsj")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_st3tr")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-y_sort_enabled = true
-position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_1jhj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -106,7 +102,6 @@ position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_4iavg")
 
 [node name="Number_Code_UI" parent="." instance=ExtResource("3_m5b02")]
-z_index = 2
 offset_left = -138.0
 offset_top = -152.0
 offset_right = 138.0

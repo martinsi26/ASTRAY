@@ -1,238 +1,67 @@
 extends CharacterBody2D
 
-var dialogue = preload("res://Scene/Dialogue.tscn")
+const speed = 200
+var move = false
+var animation_played = false
 
-# character speed
-var speed = 300
-
-@export var inv: Inv
-# items
-@export var chest_key: InvItem
-@export var axe: InvItem
-@export var wood: InvItem
-@export var yarn: InvItem
-@export var claw: InvItem
-@export var door_key: InvItem
-@export var door2_key: InvItem
-@export var code_digit6: InvItem
-@export var code_digit9: InvItem
-@export var code_digit4: InvItem
-@export var code_digit2: InvItem
-@export var puzzle_piece1: InvItem
-@export var puzzle_piece2: InvItem
-@export var puzzle_piece3: InvItem
-@export var puzzle_piece4: InvItem
-
-var yarn_ball = preload("res://Scene/Yarn.tscn")
-
-# pushing items
-var push_force = 40
-
-# signals
-signal start_dialogue
-signal move_orange_cat
-signal stop_moving
-#signal has_pickedup_key(pickedup_key)
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_to_group("Player")
-	
+	$".".position = Global.ash_pos
+	get_parent().get_parent().get_node("Cat").connect("move_ash", move_ash)
+	get_parent().get_parent().get_node("Cat").connect("stop_moving", move_back)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("Sprint"):
-		speed = 500
-	else:
-		speed = 300
+	if move:
+		var next_path_pos := nav_agent.get_next_path_position()
+		var direction = global_position.direction_to(next_path_pos)
 		
-	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
-	
-	if direction.x == 0 and direction.y == 0:
-		# idle
-		$AnimatedSprite2D.play("Idle")
-	if direction.x != 0 or direction.y != 0:
-		# walking
-		$AnimatedSprite2D.play("Walk")
-	if direction.x > 0:
-		#face left
-		get_node("AnimatedSprite2D").flip_h = false
-		#$HitboxRight.disabled = false
-		#$HitboxLeft.disabled = true
-	elif direction.x < 0:
-		#face right
+		if direction.x != 0 or direction.y != 0:
+			$AnimatedSprite2D.play("Walk")
+		if direction.x > 0:
+			#face left
+			get_node("AnimatedSprite2D").flip_h = false
+			$HitboxRight.disabled = false
+			$HitboxLeft.disabled = true
+		elif direction.x < 0:
+			#face right
+			get_node("AnimatedSprite2D").flip_h = true
+			$HitboxRight.disabled = true
+			$HitboxLeft.disabled = false
+			
+		velocity = direction * speed
+	else:
+		velocity = Vector2.ZERO
 		get_node("AnimatedSprite2D").flip_h = true
-		#$HitboxRight.disabled = true
-		#$HitboxLeft.disabled = false
-	velocity = direction * speed
+		if !animation_played:
+			$AnimatedSprite2D.play("Sit")
+			animation_played = true
+		
 	move_and_slide()
 	
-	for i in get_slide_collision_count():
-		var c = get_slide_collision(i)
-		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+func make_path(location):
+	nav_agent.target_position = location.position
 
-func drop_yarn():
-	var cat = get_node(".")
-	Global.yarn_inv = false
-	use(yarn)
+func move_ash():
+	$Timer.start()
+	move = true
+	var yarn = get_parent().get_node("Yarn")
+	make_path(yarn)
+
+func move_back():
+	$Timer.stop()
+	move = true
+	var back_pos = get_parent().get_node("BackPos")
+	Global.ash_pos = back_pos.position
+	make_path(back_pos)
 	
-	Global.yarn_room = Global.room
-	var ball_instance = yarn_ball.instantiate()
-	get_parent().get_node(Global.yarn_room).add_child(ball_instance)
-	
-	if get_node("AnimatedSprite2D").flip_h:
-		ball_instance.position.x = cat.position.x - 50
-	else:
-		ball_instance.position.x = cat.position.x + 70
-	ball_instance.position.y = cat.position.y + 20
-	
-	if Global.yarn_room == "Room5":
-		emit_signal("move_orange_cat")
-	
-	get_parent().get_node(Global.yarn_room + "/Yarn").connect("pickup_yarn", pickup_yarn)
+func _on_navigation_agent_2d_target_reached() -> void:
+	$Timer.stop()
+	move = false
+	Global.ash_pos = $".".position
+	animation_played = false
 
-func pickup_wood():
-	collect(wood)
-	Global.wood_inv = true
-
-func pickup_code(code_num):
-	if code_num == 2:
-		collect(code_digit2)
-		Global.code2_inv = true
-	elif code_num == 4:
-		collect(code_digit4)
-		Global.code4_inv = true
-	elif code_num == 6:
-		collect(code_digit6)
-		Global.code6_inv = true
-	elif code_num == 9:
-		collect(code_digit9)
-		Global.code9_inv = true
-
-func pickup_key(key_num):
-	if key_num == 1:
-		collect(door_key)
-		Global.door_key_inv = true
-		open_pickup_key_dialogue()
-	elif key_num == 2:
-		collect(door2_key)
-		Global.door2_key_inv = true
-		
-func pickup_piece(piece_num):
-	if piece_num == 1:
-		collect(puzzle_piece1)
-		Global.puzzle_piece1_inv = true
-	elif piece_num == 2:
-		collect(puzzle_piece2)
-		Global.puzzle_piece2_inv = true
-	elif piece_num == 3:
-		collect(puzzle_piece3)
-		Global.puzzle_piece3_inv = true
-	elif piece_num == 4:
-		collect(puzzle_piece4)
-		Global.puzzle_piece4_inv = true
-	
-func pickup_yarn():
-	if Global.yarn_room == "Room5":
-		emit_signal("stop_moving")
-	collect(yarn)
-	Global.yarn_inv = true
-	
-func pickup_claw():
-	collect(claw)
-	Global.claw_inv = true
-
-func open_pickup_key_dialogue():
-	dialogue = [
-		"You Picked Up The Key!",
-		"Now Find The Door!"
-	]
-	emit_signal("start_dialogue", dialogue)
-
-func use_wood():
-	use(wood)
-	Global.wood_inv = false
-	Global.wood_placed = true
-
-func use_door_key(door_num):
-	if door_num == 1:
-		use(door_key)
-		Global.door_open = true
-		Global.door_key_inv = false
-	elif door_num == 2:
-		use(door2_key)
-		Global.door2_open = true
-		Global.door2_key_inv = false
-	
-func use_axe():
-	Global.tree_down = true
-	use(axe)
-	Global.axe_inv = false
-	Global.axe_used = true
-
-func open_number_chest():
-	collect(chest_key)
-	Global.chest_key_inv = true
-
-func open_count_chest():
-	pass
-	
-func open_key_chest():
-	use(chest_key)
-	Global.used_chest_key = true
-	Global.chest_key_inv = false
-	
-	open_key_chest_dialogue()
-	
-	collect(axe)
-	Global.axe_inv = true
-	
-
-func open_key_chest_dialogue():
-	dialogue = [
-		"The Chest Is Open!",
-		"You Got An Axe!"
-	]
-	emit_signal("start_dialogue", dialogue)
-		
-func collect(item):
-	inv.insert(item)
-
-func use(item):
-	inv.remove(item)
-
-func yarn_room(yarn_path) -> void:
-	get_parent().get_node(yarn_path).connect("pickup_yarn", pickup_yarn)
-
-func room0_objects() -> void:
-	get_parent().get_node("Room0/Door2_Key").connect("pickup_key", pickup_key)
-
-func room1_objects() -> void:
-	get_parent().get_node("Room1/Door_Key").connect("pickup_key", pickup_key)
-
-func room2_objects() -> void:
-	get_parent().get_node("Room2/Door").connect("use_door_key", use_door_key)
-	get_parent().get_node("Room2/Code_Digit4").connect("pickup_code", pickup_code)
-
-func room3_objects() -> void:
-	get_parent().get_node("Room3/KeyChest").connect("open_key_chest", open_key_chest)
-	
-func room4_objects() -> void:
-	get_parent().get_node("Room4/Claw").connect("pickup_claw", pickup_claw)
-	get_parent().get_node("Room4/Code_Digit2").connect("pickup_code", pickup_code)
-	get_parent().get_node("Room4/Code_Digit6").connect("pickup_code", pickup_code)
-	get_parent().get_node("Room4/Puzzle_Piece1").connect("pickup_piece", pickup_piece)
-
-func room5_objects() -> void:
-	get_parent().get_node("Room5").connect("use_axe", use_axe)
-	get_parent().get_node("Room5").connect("pickup_wood", pickup_wood)
-	get_parent().get_node("Room5/NumberCodeChest/Number_Code_UI").connect("open_number_chest", open_number_chest)
-	get_parent().get_node("Room5/Code_Digit9").connect("pickup_code", pickup_code)
-
-func room6_objects() -> void:
-	get_parent().get_node("Room6/Puzzle_Piece2").connect("pickup_piece", pickup_piece)
-	get_parent().get_node("Room6").connect("use_wood", use_wood)
-
-func room7_objects() -> void:
-	get_parent().get_node("Room7/CountCodeChest").connect("open_count_chest", open_count_chest)
-	get_parent().get_node("Room7/Puzzle_Piece3").connect("pickup_piece", pickup_piece)
+func _on_timer_timeout() -> void:
+	move_ash()

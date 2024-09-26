@@ -4,28 +4,18 @@ signal enter_room5(current_room, to_room)
 signal enter_room7(current_room, to_room)
 signal enter_room8(current_room, to_room)
 
-signal use_wood
+signal use_axe
 
-var can_place_wood = false
+var on_tree = false
 
 func _ready():
-	if Global.wood_placed:
-		get_node("Bridge").enabled = true
+	if Global.tree_down:
+		#get_node("TileMap/DownTree").enabled = true
+		#get_node("TileMap/OriginalTree").enabled = false
 		get_node("BlockPath").collision_layer = 0
 		get_node("BlockPath").collision_mask = 0
-		
-func _process(delta: float) -> void:
-	if can_place_wood and Input.is_action_just_pressed("Interact") and Global.wood_inv:
-		get_node("Bridge").enabled = true
-		get_node("BlockPath").collision_layer = 0
-		get_node("BlockPath").collision_mask = 0
-		emit_signal("use_wood")
-
-func _on_place_wood_hitbox_area_entered(area: Area2D) -> void:
-	can_place_wood = true
-
-func _on_place_wood_hitbox_area_exited(area: Area2D) -> void:
-	can_place_wood = false
+		get_node("StandingTree").collision_layer = 0
+		get_node("StandingTree").collision_mask = 0
 
 func _on_to_room_7_area_entered(area: Area2D) -> void:
 	emit_signal("enter_room7", 6, 7)
@@ -35,3 +25,19 @@ func _on_to_room_8_area_entered(area: Area2D) -> void:
 
 func _on_to_room_5_area_entered(area: Area2D) -> void:
 	emit_signal("enter_room5", 6, 5)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if on_tree and Input.is_action_just_pressed("Interact") and Global.axe_inv:
+		#get_node("TileMap/DownTree").enabled = true
+		#get_node("TileMap/OriginalTree").enabled = false
+		get_node("BlockPath/CollisionPolygon2D").disabled = true
+		get_node("StandingTree/CollisionPolygon2D").disabled = true
+		# play animation of dust to give the idea that the tree is falling
+		emit_signal("use_axe")
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	on_tree = true
+
+func _on_hitbox_area_exited(area: Area2D) -> void:
+	on_tree = false

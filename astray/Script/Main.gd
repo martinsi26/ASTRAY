@@ -26,24 +26,24 @@ var instance8 = room8.instantiate()
 var instance9 = room9.instantiate()
 var instance10 = room10.instantiate()
 
-signal room0_objects
-signal room1_objects
-signal room2_objects
-signal room3_objects
-signal room4_objects
-signal room5_objects
-signal room6_objects
-signal room7_objects
+signal door_key_room
+signal door2_key_room
+signal claw_room
+signal key_chest_room
+signal number_chest_room
+signal count_chest_room
+signal door_room
+signal tree_room
 signal yarn_room
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Enter Room 1
 	add_child(instance1)
-	$Ash.position = instance1.get_node("Spawn").position
+	$Cat.position = instance1.get_node("Spawn").position
 	instance1.connect("enter_room0", enter_room)
 	instance1.connect("enter_room2", enter_room)
-	emit_signal("room1_objects")
+	emit_signal("door_key_room")
 	
 func enter_room(from_room, to_room):
 	var from_room_path = "Room" + str(from_room)
@@ -118,9 +118,9 @@ func enter_room0(room_number):
 		instance1.queue_free()
 		instance1 = room1.instantiate()
 		add_child(instance0)
-		$Ash.position = instance0.get_node("FromR1").position
+		$Cat.position = instance0.get_node("FromR1").position
 	instance0.connect("enter_room1", enter_room)
-	emit_signal("room0_objects")
+	emit_signal("door2_key_room")
 	Global.room = "Room0"
 	
 func enter_room1(room_number):
@@ -128,15 +128,15 @@ func enter_room1(room_number):
 		instance0.queue_free()
 		instance0 = room0.instantiate()
 		add_child(instance1)
-		$Ash.position = instance1.get_node("FromR0").position
+		$Cat.position = instance1.get_node("FromR0").position
 	elif room_number == 2:
 		instance2.queue_free()
 		instance2 = room2.instantiate()
 		add_child(instance1)
-		$Ash.position = instance1.get_node("FromR2").position
+		$Cat.position = instance1.get_node("FromR2").position
 	instance1.connect("enter_room0", enter_room)
 	instance1.connect("enter_room2", enter_room)
-	emit_signal("room1_objects")
+	emit_signal("door_key_room")
 	Global.room = "Room1"
 	
 func enter_room2(room_number):
@@ -144,15 +144,15 @@ func enter_room2(room_number):
 		instance1.queue_free()
 		instance1 = room1.instantiate()
 		add_child(instance2)
-		$Ash.position = instance2.get_node("FromR1").position
+		$Cat.position = instance2.get_node("FromR1").position
 	elif room_number == 3:
 		instance3.queue_free()
 		instance3 = room3.instantiate()
 		add_child(instance2)
-		$Ash.position = instance2.get_node("FromR3").position
+		$Cat.position = instance2.get_node("FromR3").position
 	instance2.connect("enter_room1", enter_room)
 	instance2.connect("enter_room3", enter_room)
-	emit_signal("room2_objects")
+	emit_signal("door_room")
 	Global.room = "Room2"
 		
 func enter_room3(room_number):
@@ -160,21 +160,21 @@ func enter_room3(room_number):
 		instance2.queue_free()
 		instance2 = room2.instantiate()
 		add_child(instance3)
-		$Ash.position = instance3.get_node("FromR2").position
+		$Cat.position = instance3.get_node("FromR2").position
 	elif room_number == 4:
 		instance4.queue_free()
 		instance4 = room4.instantiate()
 		add_child(instance3)
-		$Ash.position = instance3.get_node("FromR4").position
+		$Cat.position = instance3.get_node("FromR4").position
 	elif room_number == 5:
 		instance5.queue_free()
 		instance5 = room5.instantiate()
 		add_child(instance3)
-		$Ash.position = instance3.get_node("FromR5").position
+		$Cat.position = instance3.get_node("FromR5").position
 	instance3.connect("enter_room2", enter_room)
 	instance3.connect("enter_room4", enter_room)
 	instance3.connect("enter_room5", enter_room)
-	emit_signal("room3_objects")
+	emit_signal("key_chest_room")
 	Global.room = "Room3"
 	
 func enter_room4(room_number):
@@ -182,9 +182,9 @@ func enter_room4(room_number):
 		instance3.queue_free()
 		instance3 = room3.instantiate()
 		add_child(instance4)
-		$Ash.position = instance4.get_node("FromR3").position
+		$Cat.position = instance4.get_node("FromR3").position
 	instance4.connect("enter_room3", enter_room)
-	emit_signal("room4_objects")
+	emit_signal("claw_room")
 	Global.room = "Room4"
 	
 func enter_room5(room_number):
@@ -192,15 +192,15 @@ func enter_room5(room_number):
 		instance6.queue_free()
 		instance6 = room6.instantiate()
 		add_child(instance5)
-		$Ash.position = instance5.get_node("FromR6").position
+		$Cat.position = instance5.get_node("FromR6").position
 	elif room_number == 3:
 		instance3.queue_free()
 		instance3 = room3.instantiate()
 		add_child(instance5)
-		$Ash.position = instance5.get_node("FromR3").position
+		$Cat.position = instance5.get_node("FromR3").position
 	instance5.connect("enter_room6", enter_room)
 	instance5.connect("enter_room3", enter_room)
-	emit_signal("room5_objects")
+	emit_signal("number_chest_room")
 	Global.room = "Room5"
 	
 func enter_room6(room_number):
@@ -208,21 +208,21 @@ func enter_room6(room_number):
 		instance7.queue_free()
 		instance7 = room7.instantiate()
 		add_child(instance6)
-		$Ash.position = instance6.get_node("FromR7").position
+		$Cat.position = instance6.get_node("FromR7").position
 	elif room_number == 5:
 		instance5.queue_free()
 		instance5 = room5.instantiate()
 		add_child(instance6)
-		$Ash.position = instance6.get_node("FromR5").position
+		$Cat.position = instance6.get_node("FromR5").position
 	elif room_number == 8:
 		instance8.queue_free()
 		instance8 = room8.instantiate()
 		add_child(instance6)
-		$Ash.position = instance6.get_node("FromR8").position
+		$Cat.position = instance6.get_node("FromR8").position
 	instance6.connect("enter_room5", enter_room)
 	instance6.connect("enter_room7", enter_room)
 	instance6.connect("enter_room8", enter_room)
-	emit_signal("room6_objects")
+	emit_signal("tree_room")
 	Global.room = "Room6"
 	
 func enter_room7(room_number):
@@ -230,9 +230,9 @@ func enter_room7(room_number):
 		instance6.queue_free()
 		instance6 = room6.instantiate()
 		add_child(instance7)
-		$Ash.position = instance7.get_node("FromR6").position
+		$Cat.position = instance7.get_node("FromR6").position
 	instance7.connect("enter_room6", enter_room)
-	emit_signal("room7_objects")
+	emit_signal("count_chest_room")
 	Global.room = "Room7"
 
 func enter_room8(room_number):
@@ -240,17 +240,17 @@ func enter_room8(room_number):
 		instance6.queue_free()
 		instance6 = room6.instantiate()
 		add_child(instance8)
-		$Ash.position = instance8.get_node("FromR6").position
+		$Cat.position = instance8.get_node("FromR6").position
 	elif room_number == 9:
 		instance9.queue_free()
 		instance9 = room9.instantiate()
 		add_child(instance8)
-		$Ash.position = instance8.get_node("FromR9").position
+		$Cat.position = instance8.get_node("FromR9").position
 	elif room_number == 10:
 		instance10.queue_free()
 		instance10 = room10.instantiate()
 		add_child(instance8)
-		$Ash.position = instance8.get_node("FromR10").position
+		$Cat.position = instance8.get_node("FromR10").position
 	instance8.connect("enter_room6", enter_room)
 	instance8.connect("enter_room9", enter_room)
 	instance8.connect("enter_room10", enter_room)
@@ -261,7 +261,7 @@ func enter_room9(room_number):
 		instance8.queue_free()
 		instance8 = room8.instantiate()
 		add_child(instance9)
-		$Ash.position = instance9.get_node("FromR8").position
+		$Cat.position = instance9.get_node("FromR8").position
 	instance9.connect("enter_room8", enter_room)
 	instance9.connect("ending", ending)
 	Global.room = "Room9"
@@ -271,7 +271,7 @@ func enter_room10(room_number):
 		instance8.queue_free()
 		instance8 = room8.instantiate()
 		add_child(instance10)
-		$Ash.position = instance10.get_node("FromR8").position
+		$Cat.position = instance10.get_node("FromR8").position
 	instance10.connect("enter_room8", enter_room)
 	Global.room = "Room10"
 	

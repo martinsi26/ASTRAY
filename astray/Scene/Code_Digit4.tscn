@@ -1,25 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgrdkjenqukda"]
+[gd_scene load_steps=5 format=3 uid="uid://bgrdkjenqukda"]
 
 [ext_resource type="Script" path="res://Script/Code_Digit4.gd" id="1_jxpsx"]
 [ext_resource type="Texture2D" uid="uid://ps1hbibauadx" path="res://Art/Images/number4.png" id="2_beqpk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnnyu"]
-size = Vector2(348.5, 277)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmwki"]
+size = Vector2(202, 250)
 
-[node name="Code_Digit4" type="Node2D"]
-z_index = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb23n"]
+size = Vector2(225, 274)
+
+[node name="Code_Digit4" type="StaticBody2D"]
 script = ExtResource("1_jxpsx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_beqpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tmwki")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_mnnyu")
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_eb23n")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

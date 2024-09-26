@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://by8uhvkvalle4" path="res://Art/Images/Fantasy RPG (Toony) 32x32.png" id="3_r4ilj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5273q"]
-size = Vector2(17.3333, 4)
+size = Vector2(21.3333, 21.3333)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75yy8"]
 atlas = ExtResource("3_r4ilj")
@@ -47,8 +47,6 @@ animations = [{
 size = Vector2(72, 72)
 
 [node name="KeyChest" type="StaticBody2D"]
-z_index = 1
-y_sort_enabled = true
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_xd30j")
@@ -56,7 +54,7 @@ script = ExtResource("1_xd30j")
 [node name="Dialogue" parent="." instance=ExtResource("1_nafvy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.15256e-07, 24)
+position = Vector2(1.43051e-06, -1.43051e-06)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_5273q")
 
