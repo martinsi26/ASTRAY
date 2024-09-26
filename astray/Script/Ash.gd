@@ -56,13 +56,9 @@ func _physics_process(delta: float) -> void:
 	if direction.x > 0:
 		#face left
 		get_node("AnimatedSprite2D").flip_h = false
-		#$HitboxRight.disabled = false
-		#$HitboxLeft.disabled = true
 	elif direction.x < 0:
 		#face right
 		get_node("AnimatedSprite2D").flip_h = true
-		#$HitboxRight.disabled = true
-		#$HitboxLeft.disabled = false
 	velocity = direction * speed
 	move_and_slide()
 	
@@ -148,7 +144,25 @@ func open_pickup_key_dialogue():
 		"Now Find The Door!"
 	]
 	emit_signal("start_dialogue", dialogue)
-
+	
+func place_piece(piece_num):
+	if piece_num == 1:
+		use(puzzle_piece1)
+		Global.puzzle_piece1_inv = false
+		Global.puzzle_piece1_placed = true
+	elif piece_num == 2:
+		use(puzzle_piece2)
+		Global.puzzle_piece2_inv = false
+		Global.puzzle_piece2_placed = true
+	elif piece_num == 3:
+		use(puzzle_piece3)
+		Global.puzzle_piece3_inv = false
+		Global.puzzle_piece3_placed = true
+	elif piece_num == 4:
+		use(puzzle_piece4)
+		Global.puzzle_piece4_inv = false
+		Global.puzzle_piece4_placed = true
+		
 func use_wood():
 	use(wood)
 	Global.wood_inv = false
@@ -236,3 +250,7 @@ func room6_objects() -> void:
 func room7_objects() -> void:
 	get_parent().get_node("Room7/CountCodeChest").connect("open_count_chest", open_count_chest)
 	get_parent().get_node("Room7/Puzzle_Piece3").connect("pickup_piece", pickup_piece)
+	
+func room8_objects() -> void:
+	get_parent().get_node("Room8/PlacedPieces").connect("place_piece", place_piece)
+	

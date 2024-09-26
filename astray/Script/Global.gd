@@ -32,6 +32,10 @@ var puzzle_piece1_inv = false
 var puzzle_piece2_inv = false
 var puzzle_piece3_inv = false
 var puzzle_piece4_inv = false
+var puzzle_piece1_placed = false
+var puzzle_piece2_placed = false
+var puzzle_piece3_placed = false
+var puzzle_piece4_placed = false
 
 var room
 

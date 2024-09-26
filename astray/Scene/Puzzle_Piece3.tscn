@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyn0pmrgxgft3"]
+[gd_scene load_steps=10 format=3 uid="uid://cyn0pmrgxgft3"]
 
 [ext_resource type="Texture2D" uid="uid://h1ph6ot8lg46" path="res://Art/Images/puzzle piece 1.png" id="1_dlaa5"]
 [ext_resource type="Script" path="res://Script/Puzzle_Piece3.gd" id="1_e60vs"]
@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d0inbefeee74r" path="res://Art/Images/puzzle piece 3.png" id="4_w56jn"]
 [ext_resource type="Texture2D" uid="uid://cx87jpo4l3lym" path="res://Art/Images/puzzle piece 4.png" id="5_72g6q"]
 [ext_resource type="Texture2D" uid="uid://c2rbdj75nfy1b" path="res://Art/Images/puzzle piece 5.png" id="6_1a4o4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pw42"]
-size = Vector2(22, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dih05"]
 animations = [{
@@ -40,14 +37,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgvpl"]
 size = Vector2(348.5, 277)
 
-[node name="Puzzle_Piece3" type="StaticBody2D"]
+[node name="Puzzle_Piece3" type="Node2D"]
 z_index = 2
 script = ExtResource("1_e60vs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 2)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_2pw42")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)

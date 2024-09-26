@@ -38,8 +38,10 @@ func update_slots():
 	
 	if (digit.slots[0].value == 6 and digit.slots[1].value == 9 
 		and digit.slots[2].value == 2 and digit.slots[3].value == 4):
-		emit_signal("open_number_chest")
-		disable_buttons()
+		if (Global.code2_inv and Global.code4_inv 
+			and Global.code6_inv and Global.code9_inv):
+			emit_signal("open_number_chest")
+			disable_buttons()
 
 func disable_buttons():
 	$NinePatchRect/GridContainer/Code_UI_Slot1/CenterContainer/Panel/ButtonLeft.disabled = true
