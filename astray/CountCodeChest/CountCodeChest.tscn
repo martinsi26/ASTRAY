@@ -86,17 +86,20 @@ y_sort_enabled = true
 script = ExtResource("1_e5feu")
 
 [node name="Dialogue" parent="." instance=ExtResource("1_s0gtt")]
+position = Vector2(0, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 27)
+position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_irdbv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 12)
 scale = Vector2(2.313, 2.313)
 sprite_frames = SubResource("SpriteFrames_sfymm")
 animation = &"Open"
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 12)
 collision_layer = 16
 collision_mask = 4
 
@@ -106,9 +109,9 @@ shape = SubResource("RectangleShape2D_fhglc")
 [node name="Count_Code_UI" parent="." instance=ExtResource("3_4h2m5")]
 z_index = 2
 offset_left = -140.0
-offset_top = -221.0
+offset_top = -209.0
 offset_right = -140.0
-offset_bottom = -221.0
+offset_bottom = -209.0
 
 [connection signal="close_number_code" from="." to="Count_Code_UI" method="close_number_code"]
 [connection signal="open_number_code" from="." to="Count_Code_UI" method="open_number_code"]

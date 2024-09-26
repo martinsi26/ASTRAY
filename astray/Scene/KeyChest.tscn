@@ -54,19 +54,21 @@ collision_mask = 2
 script = ExtResource("1_xd30j")
 
 [node name="Dialogue" parent="." instance=ExtResource("1_nafvy")]
+position = Vector2(1.90735e-06, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.15256e-07, 24)
+position = Vector2(2.86102e-06, 35)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_5273q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.90735e-06, 1.90735e-06)
+position = Vector2(0, 11)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3y1cu")
 animation = &"OpenChest"
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(1.90735e-06, 11)
 collision_layer = 16
 collision_mask = 4
 

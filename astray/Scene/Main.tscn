@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://sdqd21tv751h"]
 
 [ext_resource type="Script" path="res://Script/Main.gd" id="1_aj2xg"]
-[ext_resource type="PackedScene" uid="uid://b6typvjb3thmd" path="res://Scene/Ash.tscn" id="2_rjy8c"]
+[ext_resource type="PackedScene" uid="uid://dfnblkht1i4a6" path="res://Scene/Ash.tscn" id="2_rjy8c"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -18,3 +18,4 @@ script = ExtResource("1_aj2xg")
 [connection signal="room6_objects" from="." to="Ash" method="room6_objects"]
 [connection signal="room7_objects" from="." to="Ash" method="room7_objects"]
 [connection signal="yarn_room" from="." to="Ash" method="yarn_room"]
+[connection signal="start_dialogue" from="Ash" to="Ash/Dialogue" method="start_dialogue"]

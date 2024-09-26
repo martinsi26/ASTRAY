@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room4.gd" id="1_ohys6"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_qxhe3"]
-[ext_resource type="PackedScene" uid="uid://cce7h8mtkw6yx" path="res://Scene/Claw.tscn" id="3_727s4"]
+[ext_resource type="PackedScene" uid="uid://p73xhevs8hbv" path="res://Scene/Claw.tscn" id="3_727s4"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="3_o5xxm"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="4_i8qgi"]
 [ext_resource type="PackedScene" uid="uid://dbwiuijthhqxy" path="res://Scene/Code_Digit2.tscn" id="5_1orpg"]
@@ -1024,6 +1024,7 @@ position = Vector2(914, 264)
 scale = Vector2(0.15, 0.15)
 
 [node name="Puzzle_Piece1" parent="." instance=ExtResource("6_pc5bb")]
+z_index = 0
 position = Vector2(497, 229)
 
 [node name="Walls" type="StaticBody2D" parent="."]

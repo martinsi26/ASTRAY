@@ -36,7 +36,7 @@ signal stop_moving
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_to_group("Player")
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -81,10 +81,10 @@ func drop_yarn():
 	get_parent().get_node(Global.yarn_room).add_child(ball_instance)
 	
 	if get_node("AnimatedSprite2D").flip_h:
-		ball_instance.position.x = cat.position.x - 50
+		ball_instance.position.x = cat.position.x - 47
 	else:
-		ball_instance.position.x = cat.position.x + 70
-	ball_instance.position.y = cat.position.y + 20
+		ball_instance.position.x = cat.position.x + 50
+	ball_instance.position.y = cat.position.y - 5
 	
 	if Global.yarn_room == "Room5":
 		emit_signal("move_orange_cat")

@@ -988,6 +988,7 @@ position = Vector2(864, 535)
 polygon = PackedVector2Array(497, -287, 496, 47, 464, 48, 464, 111, 432, 112, 432, 143, 400, 144, 400, 176, 369, 177, 368, 208, 337, 209, 336, 239, 273, 241, 272, 271, 0, 272, 0, 648, 1152, 648, 1152, 1, 1018, 0, 1018, -32, 878, -32, 878, 0, 496, 0, 497, -287, 1670, -353, 1721, 976, -392, 1007, -381, -368)
 
 [node name="Puzzle_Piece3" parent="." instance=ExtResource("5_0x1co")]
+z_index = 0
 position = Vector2(462, 323)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
