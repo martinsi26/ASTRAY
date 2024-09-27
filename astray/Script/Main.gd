@@ -35,9 +35,12 @@ signal door_room
 signal tree_room
 signal yarn_room
 
+@onready var audio_player = $AudioStreamPlayer2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Enter Room 1
+	audio_player.play()
 	add_child(instance1)
 	$Cat.position = instance1.get_node("Spawn").position
 	instance1.connect("enter_room0", enter_room)

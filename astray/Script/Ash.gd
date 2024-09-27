@@ -5,6 +5,7 @@ var move = false
 var animation_played = false
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var audio_player = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,16 +21,19 @@ func _physics_process(delta: float) -> void:
 		
 		if direction.x != 0 or direction.y != 0:
 			$AnimatedSprite2D.play("Walk")
+			audio_player.play()
 		if direction.x > 0:
 			#face left
 			get_node("AnimatedSprite2D").flip_h = false
 			$HitboxRight.disabled = false
 			$HitboxLeft.disabled = true
+			audio_player.play()
 		elif direction.x < 0:
 			#face right
 			get_node("AnimatedSprite2D").flip_h = true
 			$HitboxRight.disabled = true
 			$HitboxLeft.disabled = false
+			audio_player.play()
 			
 		velocity = direction * speed
 	else:
@@ -37,6 +41,7 @@ func _physics_process(delta: float) -> void:
 		get_node("AnimatedSprite2D").flip_h = true
 		if !animation_played:
 			$AnimatedSprite2D.play("Sit")
+			audio_player.stop()
 			animation_played = true
 		
 	move_and_slide()

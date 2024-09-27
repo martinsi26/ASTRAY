@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
+@onready var audio_player = $AudioStreamPlayer2D
 
 var chest_opened = false
 var on_chest
@@ -17,6 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if on_chest and Input.is_action_pressed("Interact") and Global.chest_key_inv:
 		emit_signal("open_key_chest")
+		audio_player.play()
 		$AnimatedSprite2D.play("OpenChest")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx2idbe6d4fpq"]
+[gd_scene load_steps=3 format=3 uid="uid://dx2idbe6d4fpq"]
 
 [ext_resource type="Texture2D" uid="uid://c7qkj1iupf2y4" path="res://Art/Images/StartScreenPic.png" id="1_qyimh"]
+[ext_resource type="AudioStream" uid="uid://h0cl2bkhpvbw" path="res://Music/Ending.mp3" id="2_b2l3s"]
 
 [node name="EndingScreen" type="Control"]
 layout_mode = 3
@@ -10,3 +11,8 @@ anchors_preset = 0
 layout_mode = 1
 texture = ExtResource("1_qyimh")
 expand_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_b2l3s")
+autoplay = true
+parameters/looping = true

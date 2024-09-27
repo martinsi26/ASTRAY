@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://dlr0sb8epdjvr"]
+[gd_scene load_steps=32 format=3 uid="uid://dlr0sb8epdjvr"]
 
 [ext_resource type="Script" path="res://Script/Door_Key.gd" id="1_mo8tn"]
 [ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_smg07"]
 [ext_resource type="Texture2D" uid="uid://eq7f6620w3jf" path="res://Art/Images/free_rotating_key_frakassets/key_32x32_24f.png" id="3_c7cor"]
+[ext_resource type="AudioStream" uid="uid://b5u2rgoo1fmu" path="res://Music/TaDa.mp3" id="4_syxg8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tybaa"]
 size = Vector2(63.75, 62.75)
@@ -210,6 +211,10 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_w8kbh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_syxg8")
+volume_db = -3.0
 
 [connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
