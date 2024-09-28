@@ -1,9 +1,21 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=56 format=4 uid="uid://m2ccf743egca"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]
 [ext_resource type="PackedScene" uid="uid://dqoktaly5gcw5" path="res://Scene/Puzzle_Piece2.tscn" id="3_ad827"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_jwj3k"]
+=======
+[gd_scene load_steps=13 format=4 uid="uid://m2ccf743egca"]
+
+[ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
+[ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]
+[ext_resource type="PackedScene" uid="uid://c15in3d4eg2op" path="res://Scene/dialogue_area.tscn" id="4_d46b6"]
+[ext_resource type="PackedScene" uid="uid://cqxx4oky4ng6q" path="res://Scene/Puzzle_Piece1.tscn" id="6_e844d"]
+
+[sub_resource type="TileSet" id="TileSet_e0oyc"]
+tile_size = Vector2i(32, 32)
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53kiy"]
 texture = ExtResource("2_oduuf")
@@ -1985,6 +1997,9 @@ size = Vector2(20, 127)
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbjtm"]
 radius = 106.17
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phwfi"]
+size = Vector2(52, 47)
+
 [node name="Room6" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_qwvog")
@@ -2057,6 +2072,13 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Place_Wood_Hitbox"]
 position = Vector2(430, 532)
 shape = SubResource("CircleShape2D_fbjtm")
+
+[node name="DialogueAreaPuzzle3" parent="." instance=ExtResource("4_d46b6")]
+position = Vector2(131, 265)
+
+[node name="Puzzle2D" type="CollisionShape2D" parent="DialogueAreaPuzzle3"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_phwfi")
 
 [connection signal="area_entered" from="ToRoom7" to="." method="_on_to_room_7_area_entered"]
 [connection signal="area_entered" from="ToRoom8" to="." method="_on_to_room_8_area_entered"]

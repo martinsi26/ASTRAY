@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://sdqd21tv751h"]
+
+[ext_resource type="Script" path="res://Script/Main.gd" id="1_aj2xg"]
+[ext_resource type="PackedScene" uid="uid://b6typvjb3thmd" path="res://Scene/Cat.tscn" id="2_rjy8c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0hgo"]
+size = Vector2(80, 73)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_aj2xg")
+
+[node name="Cat" parent="." instance=ExtResource("2_rjy8c")]
+top_level = true
+
+[node name="DialogueInteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractionArea"]
+position = Vector2(14, 26.5)
+shape = SubResource("RectangleShape2D_p0hgo")
+
+[connection signal="claw_room" from="." to="Cat" method="claw_room"]
+[connection signal="door_key_room" from="." to="Cat" method="door_key_room"]
+[connection signal="door_room" from="." to="Cat" method="door_room"]
+[connection signal="key_chest_room" from="." to="Cat" method="key_chest_room"]
+[connection signal="number_chest_room" from="." to="Cat" method="number_chest_room"]
+[connection signal="tree_room" from="." to="Cat" method="tree_room"]
+[connection signal="yarn_room" from="." to="Cat" method="yarn_room"]

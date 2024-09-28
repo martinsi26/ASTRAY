@@ -1,11 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=51 format=4 uid="uid://bf5qkq3b2ovch"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://bf5qkq3b2ovch"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_6t7ay"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room2.gd" id="1_rlsqt"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="2_b3rqx"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="4_j0mrj"]
-[ext_resource type="PackedScene" uid="uid://btfplc3o5jryv" path="res://Scene/Door.tscn" id="5_8yyjk"]
-[ext_resource type="PackedScene" uid="uid://bgrdkjenqukda" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
+[ext_resource type="PackedScene" uid="uid://brnd7fyxnr11a" path="res://Scene/Door.tscn" id="5_8yyjk"]
+[ext_resource type="PackedScene" path="res://Scene/Code_Digit4.tscn" id="6_wb2yi"]
+[ext_resource type="PackedScene" uid="uid://c15in3d4eg2op" path="res://Scene/dialogue_area.tscn" id="7_5pxbw"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_th48c"]
 tile_data = PackedInt32Array(524288, 1703936, 8, 589824, 1703936, 9, 983040, 1703936, 0, 1048576, 1703936, 1, 1114112, 1703936, 2, 524289, 1769472, 8, 589825, 1769472, 9, 983041, 1769472, 0, 1048577, 1769472, 1, 1114113, 1769472, 2, 65538, 1703936, 6, 131074, 1703936, 7, 262146, 917504, 4, 589826, 917504, 5, 983042, 1835008, 0, 1048578, 1835008, 1, 1114114, 1835008, 2, 65539, 1769472, 6, 131075, 1769472, 7, 589827, 917504, 4, 851971, 851968, 6, 1114115, 1703936, 8, 1179651, 1703936, 9, 65540, 917504, 4, 1114116, 1769472, 8, 1179652, 1769472, 9, 720902, 1835008, 6, 786438, 1835008, 7, 1048582, 917504, 5, 131079, 851968, 6, 458759, 1835008, 8, 524295, 1835008, 9, 720903, 1900544, 6, 786439, 1900544, 7, 458760, 1900544, 8, 524296, 1900544, 9, 9, 1703936, 0, 65545, 1703936, 1, 131081, 1703936, 2, 262153, 917504, 4, 10, 1769472, 0, 65546, 1769472, 1, 131082, 1769472, 2, 589834, 917504, 5, 1114122, 1703936, 3, 1179658, 1703936, 4, 1245194, 1703936, 5, 11, 1835008, 0, 65547, 1835008, 1, 131083, 1835008, 2, 1114123, 1769472, 3, 1179659, 1769472, 4, 1245195, 1769472, 5, 1114124, 1835008, 3, 1179660, 1835008, 4, 1245196, 1835008, 5, 983053, 917504, 4, 1245197, 851968, 5, 65550, 851968, 5, 1179662, 851968, 6, 589840, 1703936, 3, 655376, 1703936, 4, 720912, 1703936, 5, 196625, 1703936, 8, 262161, 1703936, 9, 524305, 917504, 5, 589841, 1769472, 3, 655377, 1769472, 4, 720913, 1769472, 5, 1114129, 1703936, 6, 1179665, 1703936, 7, 196626, 1769472, 8, 262162, 1769472, 9, 589842, 1835008, 3, 655378, 1835008, 4, 720914, 1835008, 5, 1114130, 1769472, 6, 1179666, 1769472, 7, 19, 1835008, 8, 65555, 1835008, 9, 20, 1900544, 8, 65556, 1900544, 9, 786453, 851968, 5, 524310, 1835008, 8, 589846, 1835008, 9, 983062, 917504, 4, 65559, 1703936, 3, 131095, 1703936, 4, 196631, 1703936, 5, 524311, 1900544, 8, 589847, 1900544, 9, 65560, 1769472, 3, 131096, 1769472, 4, 196632, 1769472, 5, 327704, 917504, 4, 65561, 1835008, 3, 131097, 1835008, 4, 196633, 1835008, 5, 720921, 1703936, 0, 786457, 1703936, 1, 851993, 1703936, 2, 1310745, 917504, 5, 720922, 1769472, 0, 786458, 1769472, 1, 851994, 1769472, 2, 327707, 851968, 6, 720923, 1835008, 0, 786459, 1835008, 1, 851995, 1835008, 2, 29, 1703936, 6, 65565, 1703936, 7, 1179677, 1835008, 6, 1245213, 1835008, 7, 30, 1769472, 6, 65566, 1769472, 7, 1179678, 1900544, 6, 1245214, 1900544, 7, 65568, 917504, 4, 524320, 1835008, 6, 589856, 1835008, 7, 1114144, 917504, 4, 196641, 1703936, 3, 262177, 1703936, 4, 327713, 1703936, 5, 524321, 1900544, 6, 589857, 1900544, 7, 196642, 1769472, 3, 262178, 1769472, 4, 327714, 1769472, 5, 720930, 917504, 5, 1245218, 1835008, 8, 1310754, 1835008, 9, 196643, 1835008, 3, 262179, 1835008, 4, 327715, 1835008, 5, 1245219, 1900544, 8, 1310755, 1900544, 9)
@@ -1069,6 +1074,9 @@ size = Vector2(22, 127.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asilk"]
 size = Vector2(36.25, 125.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yox4i"]
+size = Vector2(34.5, 43)
+
 [node name="Room2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_rlsqt")
@@ -1091,9 +1099,11 @@ tile_map_data = PackedByteArray("AAAWAAgAAgAAAAEAAAA=")
 tile_set = SubResource("TileSet_spy4s")
 
 [node name="FromR1" type="Marker2D" parent="."]
+visible = false
 position = Vector2(49, 175)
 
 [node name="FromR3" type="Marker2D" parent="."]
+visible = false
 position = Vector2(1099, 528)
 
 [node name="ToRoom1" type="Area2D" parent="."]
@@ -1123,6 +1133,13 @@ scale = Vector2(0.15, 0.15)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(0, 0, 0, 112, -50, 112, -52, 242, 0, 240, 0, 648, 1152, 648, 1152, 591, 1200, 591, 1199, 461, 1152, 462, 1151, 0, 1, 0, -415, -234, 1409, -218, 1490, 871, -450, 923, -415, -234)
+
+[node name="DialogueAreaCode4" parent="." instance=ExtResource("7_5pxbw")]
+position = Vector2(1106, 135)
+
+[node name="Code4" type="CollisionShape2D" parent="DialogueAreaCode4"]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_yox4i")
 
 [connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]

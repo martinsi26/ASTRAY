@@ -1,10 +1,18 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=50 format=4 uid="uid://da2bbgrogslum"]
+=======
+[gd_scene load_steps=18 format=4 uid="uid://b7ijcqd6i7ml5"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_7g31s"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room3.gd" id="1_dxisv"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="2_5b38x"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_8ftdq"]
 [ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
+=======
+[ext_resource type="PackedScene" uid="uid://d30undk6fe833" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8eqc"]
 texture = ExtResource("1_7g31s")
@@ -269,11 +277,15 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_h8eqc")
 
+<<<<<<< Updated upstream
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hw5tu"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
 agent_radius = 0.0
+=======
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ey1h0"]
+>>>>>>> Stashed changes
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_13qqa"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)

@@ -4,12 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://dfnblkht1i4a6" path="res://Scene/Ash.tscn" id="2_rjy8c"]
 [ext_resource type="AudioStream" uid="uid://cumoqi775nbj2" path="res://Music/Game.mp3" id="3_qpgc7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0hgo"]
+size = Vector2(80, 73)
+
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_aj2xg")
 
 [node name="Ash" parent="." instance=ExtResource("2_rjy8c")]
 
+<<<<<<< Updated upstream
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qpgc7")
 autoplay = true
@@ -25,3 +29,20 @@ parameters/looping = true
 [connection signal="room7_objects" from="." to="Ash" method="room7_objects"]
 [connection signal="room8_objects" from="." to="Ash" method="room8_objects"]
 [connection signal="yarn_room" from="." to="Ash" method="yarn_room"]
+=======
+[node name="DialogueInteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractionArea"]
+position = Vector2(14, 26.5)
+shape = SubResource("RectangleShape2D_p0hgo")
+
+[connection signal="claw_room" from="." to="Cat" method="claw_room"]
+[connection signal="door_key_room" from="." to="Cat" method="door_key_room"]
+[connection signal="door_room" from="." to="Cat" method="door_room"]
+[connection signal="key_chest_room" from="." to="Cat" method="key_chest_room"]
+[connection signal="number_chest_room" from="." to="Cat" method="number_chest_room"]
+[connection signal="tree_room" from="." to="Cat" method="tree_room"]
+[connection signal="yarn_room" from="." to="Cat" method="yarn_room"]
+>>>>>>> Stashed changes

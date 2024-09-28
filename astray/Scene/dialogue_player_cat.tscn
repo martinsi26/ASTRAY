@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dueekkcqjrymm"]
+
+[node name="DialoguePlayerCat" type="CanvasLayer"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextLabel" type="Label" parent="."]
+offset_right = 858.0
+offset_bottom = 293.0
+text = "This is a test for the font!
+"
