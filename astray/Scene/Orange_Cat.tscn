@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3iqbah56tugs"]
+[gd_scene load_steps=12 format=3 uid="uid://cdjnyjkhjtk52"]
 
 [ext_resource type="Script" path="res://Script/Ash.gd" id="1_f8kr6"]
 [ext_resource type="Texture2D" uid="uid://833cfft76d57" path="res://Art/New_Assets/Pixel Cat (Orange) - Sit.png" id="2_ksata"]

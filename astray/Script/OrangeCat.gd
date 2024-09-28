@@ -5,7 +5,8 @@ var move = false
 var animation_played = false
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var audio_player = $AudioStreamPlayer2D
+@onready var audio_player = $Walking
+@onready var meow = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +25,7 @@ func _physics_process(delta: float) -> void:
 			# Play the walking sound if it's not already playing
 			if not audio_player.playing:
 				audio_player.play()
+				meow.play()
 		if direction.x > 0:
 			# face left
 			get_node("AnimatedSprite2D").flip_h = false
@@ -42,6 +44,7 @@ func _physics_process(delta: float) -> void:
 		# Stop the walking sound when not moving
 		if audio_player.playing:
 			audio_player.stop()
+			meow.stop()
 		
 	move_and_slide()
 	

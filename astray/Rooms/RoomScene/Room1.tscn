@@ -404,7 +404,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aru2k"]
 texture = ExtResource("4_vuprj")
-margins = Vector2i(6, 9)
+margins = Vector2i(22, 9)
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -1133,7 +1133,7 @@ tile_set = SubResource("TileSet_o6cgg")
 [node name="Fruits" type="TileMapLayer" parent="."]
 z_index = 2
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAIAAAAAwAAAAEAAAAJAAAAAwAAAAEAAAAaAAkAAwAAAAIAAAAbAAkAAwAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAAIAAAAAwABAAEAAAAJAAAAAwABAAEAAAAaAAkAAwABAAAAAAAbAAkAAwABAAAAAAA=")
 tile_set = SubResource("TileSet_o2c6r")
 
 [node name="Spawn" type="Marker2D" parent="."]

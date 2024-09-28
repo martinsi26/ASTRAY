@@ -25,3 +25,4 @@ parameters/looping = true
 [connection signal="room7_objects" from="." to="Ash" method="room7_objects"]
 [connection signal="room8_objects" from="." to="Ash" method="room8_objects"]
 [connection signal="yarn_room" from="." to="Ash" method="yarn_room"]
+[connection signal="start_dialogue" from="Ash" to="Ash/Dialogue" method="start_dialogue"]

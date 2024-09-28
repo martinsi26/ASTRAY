@@ -9,6 +9,8 @@ var found_chest_dialogue
 signal open_key_chest
 signal start_dialogue
 
+@onready var audio_player = $AudioStreamPlayer2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Global.axe_inv or Global.axe_used:
@@ -20,6 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if on_chest and Input.is_action_pressed("Interact") and Global.chest_key_inv:
 		emit_signal("open_key_chest")
+		audio_player.play()
 		$AnimatedSprite2D.play("OpenChest")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
@@ -29,6 +32,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 func _on_hitbox_area_exited(area: Area2D) -> void:
 	on_chest = false
+	audio_player.stop()
 
 func chest_dialogue():
 	dialogue = [

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bckx46x3wvhrr"]
 
 [ext_resource type="Script" path="res://Script/Door2.gd" id="1_ar3ll"]
-[ext_resource type="Texture2D" uid="uid://bj3a5p1257nch" path="res://Art/Images/icon.svg" id="1_pj32s"]
+[ext_resource type="Texture2D" uid="uid://dvcno78vmgrx" path="res://Art/Images/Test.jpg" id="2_vup21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2cw4"]
 size = Vector2(160, 19)
@@ -17,9 +17,9 @@ position = Vector2(70, -0.5)
 shape = SubResource("RectangleShape2D_i2cw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(70, -0.5)
-scale = Vector2(1.25, 0.148438)
-texture = ExtResource("1_pj32s")
+position = Vector2(69, 3)
+scale = Vector2(0.675325, 0.06)
+texture = ExtResource("2_vup21")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 32

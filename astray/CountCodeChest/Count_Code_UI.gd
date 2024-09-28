@@ -1,18 +1,20 @@
 extends Control
 
 @onready var image1: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image1/CenterContainer/Panel/Sprite2D")
-@onready var texture1: Texture = preload("res://Art/New_Assets/apple.png")
 @onready var image2: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image2/CenterContainer/Panel/Sprite2D")
-@onready var texture2: Texture = preload("res://Art/New_Assets/banana.png")
 @onready var image3: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image3/CenterContainer/Panel/Sprite2D")
-@onready var texture3: Texture = preload("res://Art/New_Assets/orange.png")
 @onready var image4: Sprite2D = get_node("NinePatchRect/GridContainerImages/Count_UI_Image4/CenterContainer/Panel/Sprite2D")
+
+@onready var texture1: Texture = preload("res://Art/New_Assets/apple.png")
+@onready var texture2: Texture = preload("res://Art/New_Assets/banana.png")
+@onready var texture3: Texture = preload("res://Art/New_Assets/orange.png")
 @onready var texture4: Texture = preload("res://Art/New_Assets/peach.png")
 
 @onready var digit: CountCode = preload("res://CountCodeChest/Count_Code.tres")
 @onready var slots: Array = $NinePatchRect/GridContainerNumbers.get_children()
 
 @onready var inv: Inv = preload("res://Inventory/Player_inv.tres")
+@onready var puzzle: InvItem = preload("res://Inventory/Items/Puzzle_Piece4.tres")
 @onready var claw: InvItem = preload("res://Inventory/Items/Claw.tres")
 
 var is_open = false
@@ -39,9 +41,19 @@ func update_slots():
 		
 	if (digit.slots[0].value == 9 and digit.slots[1].value == 4 
 		and digit.slots[2].value == 6 and digit.slots[3].value == 2):
-		emit_signal("open_number_chest")
-		#disable_buttons()
-	
+			emit_signal("open_count_chest")
+			#disable_buttons()
+		
+#func disable_buttons():
+	#$NinePatchRect/GridContainer/Count_UI_Slot1/CenterContainer/Panel/ButtonLeft.disabled = true
+	#$NinePatchRect/GridContainer/Count_UI_Slot1/CenterContainer/Panel/ButtonRight.disabled = true
+	#$NinePatchRect/GridContainer/Count_UI_Slot2/CenterContainer/Panel/ButtonLeft.disabled = true
+	#$NinePatchRect/GridContainer/Count_UI_Slot2/CenterContainer/Panel/ButtonRight.disabled = true
+	#$NinePatchRect/GridContainer/Count_UI_Slot3/CenterContainer/Panel/ButtonLeft.disabled = true
+	#$NinePatchRect/GridContainer/Count_UI_Slot3/CenterContainer/Panel/ButtonRight.disabled = true
+	#$NinePatchRect/GridContainer/Count_UI_Slot4/CenterContainer/Panel/ButtonLeft.disabled = true
+	#$NinePatchRect/GridContainer/Count_UI_Slot4/CenterContainer/Panel/ButtonRight.disabled = true
+
 func open():
 	visible = true
 	is_open = true
@@ -55,10 +67,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Exit") and is_open:
 		close()
 	
-func open_number_code() -> void:
+func open_count_code() -> void:
 	if !is_open:
 		open()
 		
-func close_number_code() -> void:
+func close_count_code() -> void:
 	if is_open:
 		close()
