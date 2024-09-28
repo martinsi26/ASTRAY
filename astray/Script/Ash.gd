@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
 
+var is_walking = false
+var step_timer = 0.0
+var step_interval = 0.5  # Adjust for time between footstep sounds
 # character speed
 var speed = 300
 
@@ -22,6 +25,8 @@ var speed = 300
 @export var puzzle_piece2: InvItem
 @export var puzzle_piece3: InvItem
 @export var puzzle_piece4: InvItem
+
+@onready var audio_player = $AudioStreamPlayer2D
 
 var yarn_ball = preload("res://Scene/Yarn.tscn")
 
@@ -66,6 +71,25 @@ func _physics_process(delta: float) -> void:
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+	if velocity.length() > 0.1:  # Character is moving
+		if not is_walking:
+			is_walking = true
+			step_timer = 0.0  # Reset the timer when walking starts
+		else:
+			step_timer -= delta
+			if step_timer <= 0:
+				if audio_player:
+					audio_player.play()  # Play the footstep sound
+					print("Playing footstep sound")
+				else:
+					print("AudioStreamPlayer is not found!")
+				step_timer = step_interval  # Reset the timer
+	else:  # Character is idle (not moving)
+		if is_walking:  # Only reset if we were walking previously
+			is_walking = false
+			step_timer = 0.0  # Stop the footsteps sound when the character stops walking
+			if audio_player and audio_player.is_playing():
+				audio_player.stop()  # Stop the sound if it's still playing
 
 func drop_yarn():
 	var cat = get_node(".")

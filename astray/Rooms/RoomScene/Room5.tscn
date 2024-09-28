@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ri8ee7q22by" path="res://NumberCodeChest/NumberCodeChest.tscn" id="3_274ca"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_e3q3v"]
 [ext_resource type="PackedScene" uid="uid://2sebli83pbmh" path="res://Scene/Code_Digit9.tscn" id="4_v7i7u"]
-[ext_resource type="PackedScene" path="res://Scene/OrangeCat.tscn" id="6_4kw1h"]
+[ext_resource type="PackedScene" uid="uid://cqid30jd33wpt" path="res://Scene/OrangeCat.tscn" id="6_4kw1h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hw5tu"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -1035,10 +1035,10 @@ position = Vector2(1126, 147)
 [node name="BackPos" type="Marker2D" parent="."]
 position = Vector2(1111, 126)
 
-[connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_entered"]
 [connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_exited"]
+[connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_entered"]
 [connection signal="area_exited" from="Wood/Wood_Hitbox" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_exited"]
 [connection signal="area_entered" from="Cutting_Tree/Tree_Hitbox" to="." method="_on_tree_hitbox_area_entered"]
 [connection signal="area_exited" from="Cutting_Tree/Tree_Hitbox" to="." method="_on_tree_hitbox_area_exited"]
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]

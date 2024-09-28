@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqid30jd33wpt"]
+[gd_scene load_steps=14 format=3 uid="uid://cqid30jd33wpt"]
 
 [ext_resource type="Script" path="res://Script/OrangeCat.gd" id="1_x6vmy"]
 [ext_resource type="Texture2D" uid="uid://833cfft76d57" path="res://Art/New_Assets/Pixel Cat (Orange) - Sit.png" id="2_y22eh"]
 [ext_resource type="Texture2D" uid="uid://dsvv3qfuo816b" path="res://Art/New_Assets/Pixel Cat (Orange) - Walk.png" id="3_xji5v"]
+[ext_resource type="AudioStream" uid="uid://xalptxoc5r1v" path="res://Music/Walking.mp3" id="4_a1fcv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggj62"]
 atlas = ExtResource("2_y22eh")
@@ -99,6 +100,12 @@ collision_mask = 2
 [node name="Hitbox" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_bium5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_a1fcv")
+volume_db = 22.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
