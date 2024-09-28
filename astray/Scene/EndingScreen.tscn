@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7qkj1iupf2y4" path="res://Art/Images/StartScreenPic.png" id="1_qyimh"]
 
 [sub_resource type="Theme" id="Theme_6gjtu"]
+default_font_size = 19
 
 [node name="EndingScreen" type="Control"]
 layout_mode = 3
@@ -26,19 +27,19 @@ expand_mode = 1
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 342.0
-offset_top = 365.0
-offset_right = 500.0
-offset_bottom = 407.0
+offset_left = 378.0
+offset_top = 363.0
+offset_right = 536.0
+offset_bottom = 405.0
 theme = SubResource("Theme_6gjtu")
 text = "Quit"
 
 [node name="ReturnToHomeButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 600.0
-offset_top = 364.0
-offset_right = 758.0
-offset_bottom = 406.0
+offset_left = 597.0
+offset_top = 363.0
+offset_right = 755.0
+offset_bottom = 405.0
 theme = SubResource("Theme_6gjtu")
 text = "Return to Home"
 

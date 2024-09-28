@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7qkj1iupf2y4" path="res://Art/Images/StartScreenPic.png" id="2_puka8"]
 
 [sub_resource type="Theme" id="Theme_nc351"]
+default_font_size = 19
 
 [node name="Control" type="Control"]
 layout_mode = 3
