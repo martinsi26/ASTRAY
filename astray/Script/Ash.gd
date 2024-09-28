@@ -26,6 +26,7 @@ var speed = 300
 @export var puzzle_piece3: InvItem
 @export var puzzle_piece4: InvItem
 
+
 @onready var audio_player = $AudioStreamPlayer2D
 
 var yarn_ball = preload("res://Scene/Yarn.tscn")
@@ -80,7 +81,6 @@ func _physics_process(delta: float) -> void:
 			if step_timer <= 0:
 				if audio_player:
 					audio_player.play()  # Play the footstep sound
-					print("Playing footstep sound")
 				else:
 					print("AudioStreamPlayer is not found!")
 				step_timer = step_interval  # Reset the timer
@@ -213,7 +213,8 @@ func open_number_chest():
 	Global.chest_key_inv = true
 
 func open_count_chest():
-	pass
+	collect(puzzle_piece4)
+	Global.puzzle_piece4_inv = true
 	
 func open_key_chest():
 	use(chest_key)
@@ -272,7 +273,7 @@ func room6_objects() -> void:
 	get_parent().get_node("Room6").connect("use_wood", use_wood)
 
 func room7_objects() -> void:
-	get_parent().get_node("Room7/CountCodeChest").connect("open_count_chest", open_count_chest)
+	get_parent().get_node("Room7/CountCodeChest/Count_Code_UI").connect("open_count_chest", open_count_chest)
 	get_parent().get_node("Room7/Puzzle_Piece3").connect("pickup_piece", pickup_piece)
 	
 func room8_objects() -> void:

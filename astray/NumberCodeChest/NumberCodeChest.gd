@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 var dialogue = preload("res://Scene/Dialogue.tscn")
+@onready var audio_player = $AudioStreamPlayer2D
 
 var on_chest
 var chest_open = false
@@ -27,7 +28,6 @@ func _process(delta: float) -> void:
 	else:
 		if close_chest:
 			close_chest = false
-			$AnimatedSprite2D.play("CloseChest")
 			
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
@@ -37,6 +37,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	
 func _on_hitbox_area_exited(area: Area2D) -> void:
 	on_chest = false
+	audio_player.stop()
 	if !Global.chest_key_inv:
 		chest_open = false
 		close_chest = true

@@ -113,8 +113,8 @@ offset_top = -209.0
 offset_right = -140.0
 offset_bottom = -209.0
 
-[connection signal="close_number_code" from="." to="Count_Code_UI" method="close_number_code"]
-[connection signal="open_number_code" from="." to="Count_Code_UI" method="open_number_code"]
+[connection signal="close_count_code" from="." to="Count_Code_UI" method="close_count_code"]
+[connection signal="open_count_code" from="." to="Count_Code_UI" method="open_count_code"]
 [connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

@@ -3,10 +3,11 @@ extends Panel
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/Item_Display
 @onready var slot = $"."
 
+@onready var claw_texture: Texture = preload("res://Art/New_Assets/Claw.png")
 @onready var door_key_texture: Texture = preload("res://Art/Images/icon.svg")
 @onready var door2_key_texture: Texture = preload("res://Art/Images/icon.svg")
 @onready var chest_key_texture: Texture = preload("res://Art/Images/icon.svg")
-@onready var axe_texture: Texture = preload("res://Art/Images/axe.png")
+@onready var axe_texture: Texture = preload("res://Art/New_Assets/Axe.png")
 @onready var wood_texture: Texture = preload("res://Art/Images/Wood.png")
 @onready var yarn_texture: Texture = preload("res://Art/Images/yarn.png")
 @onready var code_digit2_texture: Texture = preload("res://Art/Images/number2.png")
@@ -35,7 +36,11 @@ func update(slot: InvSlot):
 		
 		# Axe texture size
 		if item_visual.texture == axe_texture:
-			item_visual.scale = Vector2(0.7, 0.7)
+			item_visual.scale = Vector2(0.2, 0.2)
+		
+		# Claw texture size
+		if item_visual.texture == claw_texture:
+			item_visual.scale = Vector2(1.5, 1.5)
 		
 		# Wood texture size
 		if item_visual.texture == wood_texture:
