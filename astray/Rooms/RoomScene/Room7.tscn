@@ -991,3 +991,6 @@ polygon = PackedVector2Array(497, -287, 496, 47, 464, 48, 464, 111, 432, 112, 43
 position = Vector2(462, 323)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
+[connection signal="close_count_code" from="CountCodeChest" to="CountCodeChest/Count_Code_UI" method="close_count_code"]
+[connection signal="open_count_code" from="CountCodeChest" to="CountCodeChest/Count_Code_UI" method="open_count_code"]
+[connection signal="start_dialogue" from="CountCodeChest" to="CountCodeChest/Dialogue" method="start_dialogue"]
