@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_ew8jx"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_7km7n"]
 [ext_resource type="PackedScene" uid="uid://bckx46x3wvhrr" path="res://Scene/Door2.tscn" id="3_lb7l4"]
-[ext_resource type="PackedScene" path="res://Scene/Placed_Pieces.tscn" id="5_1q3jj"]
+[ext_resource type="PackedScene" uid="uid://bayqdgl3k7tgn" path="res://Scene/Placed_Pieces.tscn" id="5_1q3jj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5fy4"]
 texture = ExtResource("2_ew8jx")
