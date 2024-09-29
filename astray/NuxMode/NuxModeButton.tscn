@@ -17,7 +17,7 @@ script = ExtResource("1_hbpal")
 
 [node name="OptionButton" type="OptionButton" parent="."]
 offset_right = 151.0
-offset_bottom = 66.0
+offset_bottom = 80.0
 item_count = 11
 popup/item_0/text = "Bush"
 popup/item_0/icon = ExtResource("2_8ln1j")
@@ -53,8 +53,8 @@ popup/item_10/text = "Clear Text"
 popup/item_10/id = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(66, 32.9726)
-scale = Vector2(0.485294, 0.241959)
+position = Vector2(75.5, 39.9727)
+scale = Vector2(0.555147, 0.293241)
 texture = ExtResource("1_7k1i1")
 
 [node name="Label" type="Label" parent="Sprite2D"]
