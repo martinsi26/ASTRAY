@@ -39,7 +39,7 @@ var puzzle_piece4_placed = false
 
 var room
 
-var ash_pos = Vector2(1111, 126)
+var ash_pos = Vector2(1125, 147)
 
 var random_key: int
 

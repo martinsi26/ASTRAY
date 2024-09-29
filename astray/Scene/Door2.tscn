@@ -1,32 +1,32 @@
 [gd_scene load_steps=5 format=3 uid="uid://bckx46x3wvhrr"]
 
 [ext_resource type="Script" path="res://Script/Door2.gd" id="1_ar3ll"]
-[ext_resource type="Texture2D" uid="uid://dvcno78vmgrx" path="res://Art/Images/Test.jpg" id="2_vup21"]
+[ext_resource type="Texture2D" uid="uid://b8xch6f0fbo3w" path="res://Art/New_Assets/Door.png" id="2_arb57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2cw4"]
-size = Vector2(160, 19)
+size = Vector2(160, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmhtx"]
-size = Vector2(160, 16)
+size = Vector2(160, 37)
 
 [node name="Door2" type="StaticBody2D"]
 script = ExtResource("1_ar3ll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(70, -0.5)
+position = Vector2(70, 5)
 shape = SubResource("RectangleShape2D_i2cw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(69, 3)
-scale = Vector2(0.675325, 0.06)
-texture = ExtResource("2_vup21")
+position = Vector2(70, 5)
+scale = Vector2(0.12619, 0.0227586)
+texture = ExtResource("2_arb57")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(70, 8)
+position = Vector2(70, 7.5)
 shape = SubResource("RectangleShape2D_dmhtx")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -1,21 +1,17 @@
 extends StaticBody2D
 
-var dialogue = preload("res://Scene/Dialogue.tscn")
-
 var chest_opened = false
 var on_chest
-var found_chest_dialogue
 
 signal open_key_chest
-signal start_dialogue
 
 @onready var audio_player = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimatedSprite2D.frame = 0
 	if Global.axe_inv or Global.axe_used:
 		chest_opened = true
-		$AnimatedSprite2D.animation = "OpenChest"
 		$AnimatedSprite2D.frame = 3
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,17 +22,8 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.play("OpenChest")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if !chest_opened:
-		chest_dialogue()
 	on_chest = true
 
 func _on_hitbox_area_exited(area: Area2D) -> void:
 	on_chest = false
 	audio_player.stop()
-
-func chest_dialogue():
-	dialogue = [
-		"You Found A Chest!",
-		"Press 'E' With A Key"
-	]
-	emit_signal("start_dialogue", dialogue)

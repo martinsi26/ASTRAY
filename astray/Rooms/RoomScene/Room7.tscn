@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://dx4pg07tusom4"]
+[gd_scene load_steps=50 format=4 uid="uid://dx4pg07tusom4"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room7.gd" id="1_mwqyq"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_bodqw"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cts1aukgpd0d5" path="res://CountCodeChest/CountCodeChest.tscn" id="3_tx4ki"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="4_f6auf"]
 [ext_resource type="PackedScene" uid="uid://cyn0pmrgxgft3" path="res://Scene/Puzzle_Piece3.tscn" id="5_0x1co"]
-[ext_resource type="PackedScene" uid="uid://dfnblkht1i4a6" path="res://Scene/Ash.tscn" id="7_yu28x"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_lfjid"]
 tile_data = PackedInt32Array(0, 851968, 6, 1048576, 1703936, 0, 1114112, 1703936, 1, 1179648, 1703936, 2, 524289, 1835008, 6, 589825, 1835008, 7, 851969, 917504, 5, 1048577, 1769472, 0, 1114113, 1769472, 1, 1179649, 1769472, 2, 524290, 1900544, 6, 589826, 1900544, 7, 851970, 917504, 4, 1048578, 1835008, 0, 1114114, 1835008, 1, 1179650, 1835008, 2, 65539, 917504, 5, 917509, 851968, 6, 1179653, 851968, 6, 589831, 917504, 4, 655367, 917504, 5, 983048, 1835008, 6, 1048584, 1835008, 7, 983049, 1900544, 6, 1048585, 1900544, 7, 720906, 851968, 6, 1179658, 917504, 5, 524300, 1703936, 0, 589836, 1703936, 1, 655372, 1703936, 2, 327693, 851968, 6, 524301, 1769472, 0, 589837, 1769472, 1, 655373, 1769472, 2, 524302, 1835008, 0, 589838, 1835008, 1, 655374, 1835008, 2, 851982, 851968, 6, 131088, 917504, 5, 196624, 917504, 4, 1048592, 1703936, 0, 1114128, 1703936, 1, 1179664, 1703936, 2, 1048593, 1769472, 0, 1114129, 1769472, 1, 1179665, 1769472, 2, 655378, 917504, 5, 1048594, 1835008, 0, 1114130, 1835008, 1, 1179666, 1835008, 2, 393235, 1835008, 8, 458771, 1835008, 9, 917523, 851968, 6, 20, 1835008, 8, 65556, 1835008, 9, 393236, 1900544, 8, 458772, 1900544, 9, 21, 1900544, 8, 65557, 1900544, 9, 262165, 851968, 6, 1179670, 917504, 5, 24, 917504, 5, 458776, 917504, 5, 131098, 1703936, 0, 196634, 1703936, 1, 262170, 1703936, 2, 131099, 1769472, 0, 196635, 1769472, 1, 262171, 1769472, 2, 131100, 1835008, 0, 196636, 1835008, 1, 262172, 1835008, 2, 458780, 917504, 4, 983069, 917504, 5, 1048606, 1835008, 6, 1114142, 1835008, 7, 131103, 851968, 6, 524319, 917504, 5, 1048607, 1900544, 6, 1114143, 1900544, 7, 262177, 1835008, 8, 327713, 1835008, 9, 720929, 851968, 6, 262178, 1900544, 8, 327714, 1900544, 9)
@@ -990,8 +989,5 @@ polygon = PackedVector2Array(497, -287, 496, 47, 464, 48, 464, 111, 432, 112, 43
 
 [node name="Puzzle_Piece3" parent="." instance=ExtResource("5_0x1co")]
 position = Vector2(462, 323)
-
-[node name="Ash" parent="." instance=ExtResource("7_yu28x")]
-position = Vector2(743, 292)
 
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]

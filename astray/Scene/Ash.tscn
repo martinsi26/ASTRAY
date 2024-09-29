@@ -1,10 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://dfnblkht1i4a6"]
+[gd_scene load_steps=31 format=3 uid="uid://dfnblkht1i4a6"]
 
 [ext_resource type="Script" path="res://Script/Ash.gd" id="1_k6c7m"]
 [ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
 [ext_resource type="Resource" uid="uid://cdkihtnkttrio" path="res://Inventory/Player_inv.tres" id="2_pjynx"]
 [ext_resource type="Resource" uid="uid://b2e2yoi01wscf" path="res://Inventory/Items/Chest_Key.tres" id="2_trw4r"]
-[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_ukpe8"]
 [ext_resource type="PackedScene" uid="uid://bdaex6esj5e4b" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
 [ext_resource type="Resource" uid="uid://nfl84h88krs3" path="res://Inventory/Items/Yarn.tres" id="4_nr5x1"]
 [ext_resource type="Resource" uid="uid://b2mu7qx2b3a0a" path="res://Inventory/Items/Wood.tres" id="5_27ea1"]
@@ -108,9 +107,6 @@ puzzle_piece2 = ExtResource("13_kegij")
 puzzle_piece3 = ExtResource("14_1wun8")
 puzzle_piece4 = ExtResource("15_im7ld")
 
-[node name="Dialogue" parent="." instance=ExtResource("2_ukpe8")]
-position = Vector2(0, 1)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -19)
 scale = Vector2(1.6875, 1.6875)
@@ -143,5 +139,4 @@ stream = ExtResource("22_ggkga")
 volume_db = 22.0
 parameters/looping = true
 
-[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
 [connection signal="drop_yarn" from="Inv_UI" to="." method="drop_yarn"]

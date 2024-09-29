@@ -36,11 +36,11 @@ func update(slot: InvSlot):
 		
 		# Axe texture size
 		if item_visual.texture == axe_texture:
-			item_visual.scale = Vector2(0.2, 0.2)
+			item_visual.scale = Vector2(0.4, 0.4)
 		
 		# Claw texture size
 		if item_visual.texture == claw_texture:
-			item_visual.scale = Vector2(1.5, 1.5)
+			item_visual.scale = Vector2(0.4, 0.4)
 		
 		# Wood texture size
 		if item_visual.texture == wood_texture:

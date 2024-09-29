@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_keafm"]
 [ext_resource type="PackedScene" uid="uid://b8ri8ee7q22by" path="res://NumberCodeChest/NumberCodeChest.tscn" id="3_274ca"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_e3q3v"]
-[ext_resource type="PackedScene" path="res://Scene/Code_Digit9.tscn" id="4_v7i7u"]
-[ext_resource type="PackedScene" path="res://Scene/OrangeCat.tscn" id="6_4kw1h"]
+[ext_resource type="PackedScene" uid="uid://2sebli83pbmh" path="res://Scene/Code_Digit9.tscn" id="4_v7i7u"]
+[ext_resource type="PackedScene" uid="uid://cqid30jd33wpt" path="res://Scene/OrangeCat.tscn" id="6_4kw1h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hw5tu"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -651,6 +651,53 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_813r2")
 sources/1 = SubResource("TileSetAtlasSource_dsqrx")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vydyl"]
+texture = ExtResource("2_eq8d7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7ir4"]
+texture = ExtResource("3_3vpj1")
+margins = Vector2i(5, 9)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ylmon"]
+sources/0 = SubResource("TileSetAtlasSource_vydyl")
+sources/1 = SubResource("TileSetAtlasSource_t7ir4")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekmlp"]
 texture = ExtResource("3_e3q3v")
 margins = Vector2i(7, 0)
@@ -965,6 +1012,11 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAZAAAAAAAaAAEAAAAZAAEAAAAaAAIAAAAaAAAAAAAbAAEAAAAaAAEAAAAbAAIAAAAbAAAAAAAcAAEAAAAbAAEAAAAcAAIAAAAAAAgAAAAaAAAAAAAAAAkAAAAaAAEAAAAAAAoAAAAaAAIAAAABAAgAAAAbAAAAAAABAAkAAAAbAAEAAAABAAoAAAAbAAIAAAACAAgAAAAcAAAAAAACAAkAAAAcAAEAAAACAAoAAAAcAAIAAAAQABAAAAAaAAAAAAAQABEAAAAaAAEAAAARABAAAAAbAAAAAAARABEAAAAbAAEAAAASABAAAAAcAAAAAAASABEAAAAcAAEAAAAhABIAAAAaAAAAAAAhABMAAAAaAAEAAAAhABQAAAAaAAIAAAAiABIAAAAbAAAAAAAiABMAAAAbAAEAAAAiABQAAAAbAAIAAAAjABIAAAAcAAAAAAAjABMAAAAcAAEAAAAjABQAAAAcAAIAAAAQAAYAAAAaAAMAAAAQAAcAAAAaAAQAAAARAAYAAAAbAAMAAAARAAcAAAAbAAQAAAASAAYAAAAcAAMAAAASAAcAAAAcAAQAAAAFABIAAAAaAAMAAAAFABMAAAAaAAQAAAAFABQAAAAaAAUAAAAGABIAAAAbAAMAAAAGABMAAAAbAAQAAAAGABQAAAAbAAUAAAAHABIAAAAcAAMAAAAHABMAAAAcAAQAAAAHABQAAAAcAAUAAAAcAAoAAAAaAAMAAAAcAAsAAAAaAAQAAAAcAAwAAAAaAAUAAAAdAAoAAAAbAAMAAAAdAAsAAAAbAAQAAAAdAAwAAAAbAAUAAAAeAAoAAAAcAAMAAAAeAAsAAAAcAAQAAAAeAAwAAAAcAAUAAAANAAAAAAAaAAYAAAANAAEAAAAaAAcAAAAOAAAAAAAbAAYAAAAOAAEAAAAbAAcAAAAJAAoAAAAaAAYAAAAJAAsAAAAaAAcAAAAKAAoAAAAbAAYAAAAKAAsAAAAbAAcAAAAcABIAAAAaAAYAAAAcABMAAAAaAAcAAAAdABIAAAAbAAYAAAAdABMAAAAbAAcAAAAiAAcAAAAcAAYAAAAiAAgAAAAcAAcAAAAjAAcAAAAdAAYAAAAjAAgAAAAdAAcAAAAWAAgAAAAaAAgAAAAWAAkAAAAaAAkAAAAXAAgAAAAbAAgAAAAXAAkAAAAbAAkAAAAaAA4AAAAaAAgAAAAaAA8AAAAaAAkAAAAbAA4AAAAbAAgAAAAbAA8AAAAbAAkAAAADAAsAAAAaAAgAAAADAAwAAAAaAAkAAAAEAAsAAAAbAAgAAAAEAAwAAAAbAAkAAAAMABMAAAAcAAgAAAAMABQAAAAcAAkAAAANABMAAAAdAAgAAAANABQAAAAdAAkAAAAhAA8AAAAcAAgAAAAhABAAAAAcAAkAAAAiAA8AAAAdAAgAAAAiABAAAAAdAAkAAAAbAAYAAAAcAAgAAAAbAAcAAAAcAAkAAAAcAAYAAAAdAAgAAAAcAAcAAAAdAAkAAAATAAEAAAAcAAgAAAATAAIAAAAcAAkAAAAUAAEAAAAdAAgAAAAUAAIAAAAdAAkAAAAiAAAAAAAaAAgAAAAiAAEAAAAaAAkAAAAjAAAAAAAbAAgAAAAjAAEAAAAbAAkAAAADAAIAAAAOAAQAAAAJAAYAAAAOAAQAAAAeAAMAAAAOAAQAAAAIAA4AAAAOAAQAAAAVABEAAAAOAAQAAAACAAIAAAAOAAUAAAAOAAoAAAAOAAUAAAACABMAAAAOAAUAAAALABEAAAAOAAUAAAAgABMAAAAOAAUAAAAjAA0AAAAOAAUAAAABAA0AAAANAAUAAAAOABMAAAANAAUAAAAVAAAAAAANAAUAAAAhAAoAAAANAAUAAAARAAoAAAANAAYAAAAPABIAAAANAAYAAAAcAA4AAAANAAYAAAAaABQAAAANAAcAAAAZAAsAAAAOAAUAAAAZAAgAAAAOAAQAAAADABEAAAAOAAQAAAASABMAAAAOAAQAAAAWAAEAAAAOAAQAAAAQAAgAAAAaAAUAAAARAAgAAAAbAAUAAAASAAgAAAAcAAUAAAAQABIAAAAaAAIAAAARABIAAAAbAAIAAAASABIAAAAcAAIAAAA=")
 tile_set = SubResource("TileSet_nltse")
 
+[node name="Fruit" type="TileMapLayer" parent="."]
+z_index = 2
+tile_map_data = PackedByteArray("AAAhAA8AAQACAAEAAAAjABEAAQACAAEAAABDAB8AAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_ylmon")
+
 [node name="Wood" type="TileMapLayer" parent="."]
 z_index = 1
 y_sort_enabled = true
@@ -1030,10 +1082,10 @@ scale = Vector2(0.15, 0.15)
 polygon = PackedVector2Array(1514, 271, 1152, 648, 784, 648, 784, 680, 656, 680, 656, 648, 0, 648, 0, 0, 1152, 0, 1152, 80, 1195, 80, 1195, 208, 1152, 208, 1152, 648, 1515, 271, 1481, -362, -350, -349, -343, 991, 1510, 971)
 
 [node name="OrangeCat" parent="." instance=ExtResource("6_4kw1h")]
-position = Vector2(1126, 147)
+position = Vector2(1125, 147)
 
 [node name="BackPos" type="Marker2D" parent="."]
-position = Vector2(1111, 126)
+position = Vector2(1125, 147)
 
 [connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_entered"]

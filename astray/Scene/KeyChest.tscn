@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://1ttwrf1dam2v"]
+[gd_scene load_steps=11 format=3 uid="uid://1ttwrf1dam2v"]
 
-[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="1_nafvy"]
 [ext_resource type="Script" path="res://Script/KeyChest.gd" id="1_xd30j"]
 [ext_resource type="Texture2D" uid="uid://by8uhvkvalle4" path="res://Art/Images/Fantasy RPG (Toony) 32x32.png" id="3_r4ilj"]
 [ext_resource type="AudioStream" uid="uid://b5u2rgoo1fmu" path="res://Music/TaDa.mp3" id="4_tjw86"]
@@ -53,9 +52,6 @@ y_sort_enabled = true
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_xd30j")
-
-[node name="Dialogue" parent="." instance=ExtResource("1_nafvy")]
-position = Vector2(1.90735e-06, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.86102e-06, 35)
