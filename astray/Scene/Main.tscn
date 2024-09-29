@@ -301,6 +301,7 @@ parameters/looping = true
 
 [node name="NuxModeButton" parent="." instance=ExtResource("4_1dxu1")]
 z_index = 4
+position = Vector2(6, 7)
 
 [connection signal="room0_objects" from="." to="Ash" method="room0_objects"]
 [connection signal="room1_objects" from="." to="Ash" method="room1_objects"]

@@ -11,7 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_option_button_pressed() -> void:
 	if !answer_box:
 		$Answer_Box.visible = true
