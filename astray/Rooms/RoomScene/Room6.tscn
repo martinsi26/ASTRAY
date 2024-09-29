@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://c0iq13tjgy2om"]
+[gd_scene load_steps=61 format=4 uid="uid://m2ccf743egca"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room6.gd" id="1_qwvog"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="2_oduuf"]

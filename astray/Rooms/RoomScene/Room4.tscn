@@ -1,12 +1,12 @@
-[gd_scene load_steps=54 format=4 uid="uid://dj2yijkd1r2ab"]
+[gd_scene load_steps=53 format=4 uid="uid://dj2yijkd1r2ab"]
 
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room4.gd" id="1_ohys6"]
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_qxhe3"]
 [ext_resource type="PackedScene" uid="uid://cce7h8mtkw6yx" path="res://Scene/Claw.tscn" id="3_727s4"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="3_o5xxm"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="4_i8qgi"]
-[ext_resource type="PackedScene" path="res://Scene/Code_Digit2.tscn" id="5_1orpg"]
-[ext_resource type="PackedScene" path="res://Scene/Code_Digit6.tscn" id="5_yfoji"]
+[ext_resource type="PackedScene" uid="uid://dbwiuijthhqxy" path="res://Scene/Code_Digit2.tscn" id="5_1orpg"]
+[ext_resource type="PackedScene" uid="uid://dik2s6xpt8k3g" path="res://Scene/Code_Digit6.tscn" id="5_yfoji"]
 [ext_resource type="PackedScene" uid="uid://cqxx4oky4ng6q" path="res://Scene/Puzzle_Piece1.tscn" id="6_pc5bb"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_7to1q"]
@@ -980,9 +980,6 @@ sources/0 = SubResource("TileSetAtlasSource_xio5k")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn4s1"]
 size = Vector2(127, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uqit"]
-size = Vector2(33, 31)
-
 [node name="Room4" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ohys6")
@@ -1035,14 +1032,4 @@ position = Vector2(497, 229)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(0, 0, 657, 0, 657, -20, 784, -20, 784, 0, 912, 0, 912, 47, 944, 48, 944, 80, 975, 80, 976, 110, 1006, 112, 1009, 142, 1071, 144, 1073, 175, 1152, 176, 1152, 648, 0, 648, 0, 0, -265, -254, -273, 877, 1453, 870, 1416, -260, -265, -252)
 
-[node name="MouseArea" type="Area2D" parent="."]
-position = Vector2(222, 465)
-scale = Vector2(0.5, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
-position = Vector2(1509, -115)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_6uqit")
-
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
-[connection signal="area_entered" from="MouseArea" to="." method="_on_mouse_area_area_entered"]
