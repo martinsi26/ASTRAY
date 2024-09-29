@@ -1,11 +1,8 @@
 extends StaticBody2D
 
-var dialogue = preload("res://Scene/Dialogue.tscn")
-
 var on_key = false
 
 signal pickup_key(key_num)
-signal start_dialogue
 @onready var audio_player = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
@@ -30,16 +27,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	on_key = true
 	visible = true
 	audio_player.play()
-	found_key_dialogue()
 	
 func _on_hitbox_area_exited(area: Area2D) -> void:
 	on_key = false
 	visible = false
 	audio_player.stop()
-
-func found_key_dialogue():
-	dialogue = [
-		"You Found A Key!",
-		"Press 'E' To Pickup"
-	]
-	emit_signal("start_dialogue", dialogue)

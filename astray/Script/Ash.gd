@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-var dialogue = preload("res://Scene/Dialogue.tscn")
-
 var is_walking = false
 var step_timer = 0.0
 var step_interval = 0.5  # Adjust for time between footstep sounds
@@ -35,7 +33,6 @@ var yarn_ball = preload("res://Scene/Yarn.tscn")
 var push_force = 40
 
 # signals
-signal start_dialogue
 signal move_orange_cat
 signal stop_moving
 #signal has_pickedup_key(pickedup_key)
@@ -133,7 +130,6 @@ func pickup_key(key_num):
 	if key_num == 1:
 		collect(door_key)
 		Global.door_key_inv = true
-		open_pickup_key_dialogue()
 	elif key_num == 2:
 		collect(door2_key)
 		Global.door2_key_inv = true
@@ -161,13 +157,6 @@ func pickup_yarn():
 func pickup_claw():
 	collect(claw)
 	Global.claw_inv = true
-
-func open_pickup_key_dialogue():
-	dialogue = [
-		"You Picked Up The Key!",
-		"Now Find The Door!"
-	]
-	emit_signal("start_dialogue", dialogue)
 	
 func place_piece(piece_num):
 	if piece_num == 1:
@@ -220,19 +209,8 @@ func open_key_chest():
 	use(chest_key)
 	Global.used_chest_key = true
 	Global.chest_key_inv = false
-	
-	open_key_chest_dialogue()
-	
 	collect(axe)
 	Global.axe_inv = true
-	
-
-func open_key_chest_dialogue():
-	dialogue = [
-		"The Chest Is Open!",
-		"You Got An Axe!"
-	]
-	emit_signal("start_dialogue", dialogue)
 		
 func collect(item):
 	inv.insert(item)

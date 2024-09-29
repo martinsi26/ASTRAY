@@ -1084,15 +1084,15 @@ scale = Vector2(0.15, 0.15)
 polygon = PackedVector2Array(1514, 271, 1152, 648, 784, 648, 784, 680, 656, 680, 656, 648, 0, 648, 0, 0, 1152, 0, 1152, 80, 1195, 80, 1195, 208, 1152, 208, 1152, 648, 1515, 271, 1481, -362, -350, -349, -343, 991, 1510, 971)
 
 [node name="OrangeCat" parent="." instance=ExtResource("6_4kw1h")]
-position = Vector2(1126, 147)
+position = Vector2(1125, 147)
 
 [node name="BackPos" type="Marker2D" parent="."]
-position = Vector2(1111, 126)
+position = Vector2(1125, 147)
 
-[connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_entered"]
 [connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_exited"]
+[connection signal="area_entered" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_entered"]
 [connection signal="area_exited" from="Wood/Wood_Hitbox" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Wood/Wood_Hitbox" to="." method="_on_wood_hitbox_area_exited"]
 [connection signal="area_entered" from="Cutting_Tree/Tree_Hitbox" to="." method="_on_tree_hitbox_area_entered"]
 [connection signal="area_exited" from="Cutting_Tree/Tree_Hitbox" to="." method="_on_tree_hitbox_area_exited"]
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
