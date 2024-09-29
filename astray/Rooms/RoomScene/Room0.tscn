@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://dho8vdulgvo3v"]
+[gd_scene load_steps=50 format=4 uid="uid://dho8vdulgvo3v"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_f05ai"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room0.gd" id="1_hayoa"]
@@ -932,6 +932,9 @@ sources/2 = SubResource("TileSetAtlasSource_xt6vk")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65qbo"]
 size = Vector2(19.75, 134)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrexi"]
+size = Vector2(39, 33)
+
 [node name="Room0" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_hayoa")
@@ -967,4 +970,13 @@ polygon = PackedVector2Array(0, -232, 0, 648, 1152, 648, 1152, 471, 1166, 471, 1
 position = Vector2(564, 398)
 scale = Vector2(0.5, 0.5)
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="PaperCollider" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(560.5, 78.5)
+shape = SubResource("RectangleShape2D_rrexi")
+
 [connection signal="area_entered" from="ToRoom1" to="." method="_on_to_room_1_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
