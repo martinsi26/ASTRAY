@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var dialogue = preload("res://Scene/Dialogue.tscn")
+
 var is_walking = false
 var step_timer = 0.0
 var step_interval = 0.5  # Adjust for time between footstep sounds
@@ -33,6 +35,7 @@ var yarn_ball = preload("res://Scene/Yarn.tscn")
 var push_force = 40
 
 # signals
+signal start_dialogue(dialogue)
 signal move_orange_cat
 signal stop_moving
 #signal has_pickedup_key(pickedup_key)
@@ -40,6 +43,8 @@ signal stop_moving
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+	#make starting dialogue ex. press esc for help (commands) 
+	#do another emit signal
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -257,3 +262,133 @@ func room7_objects() -> void:
 func room8_objects() -> void:
 	get_parent().get_node("Room8/PlacedPieces").connect("place_piece", place_piece)
 	
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body == get_parent().get_node("Room3/KeyChest"): 
+		dialogue = [
+			"You have found a chest!",
+			"I wonder if we found a pirate's hidden treasure,",
+			"I'd be able to buy all the fish and treats in the world!",
+			"Use the key to open the chest.",
+			"Press 'E' to open"
+		]
+	elif body ==  get_parent().get_node("Room5/NumberCodeChest"):
+			dialogue = [
+			"Maybe those numbers we collected", 
+			"have something to do with this chest?"
+		]
+	elif body ==  get_parent().get_node("Room7/CountCodeChest"):
+			dialogue = [
+			"Hmmm, I wonder how many days I've been lost in this forest?",
+			"We should probably look at our surroundings."
+		]
+	elif body ==  get_parent().get_node("Room1/Door_Key"):
+			dialogue = [
+			"You have found a key!",
+			"What can it unlock?",
+			"Press 'E' to pick up."
+		]
+	elif body ==  get_parent().get_node("Room0/Door2_Key"):
+			dialogue = [
+			"Nice, we got the second key!",
+			"Press 'E' to pick up."
+		]
+	elif body ==  get_parent().get_node("Room4/Code_Digit6"):
+		if Global.claw_inv:
+			dialogue = [
+				"Woah, there's a number card at the top of the tree!",
+				"I wonder what we could use that for?",
+				"Press 'E' to grab."
+			]
+		else:
+			dialogue = [
+				"The code seems too high up in the tree to grab,",
+				"we should find something that can reach that height."
+			]
+	elif body ==  get_parent().get_node("Room2/Code_Digit4"):
+		if Global.claw_inv:
+			dialogue = [
+				"Cool! You've found another number."
+				]
+		else:
+			dialogue = [
+				"The code seems too high up in the tree to grab,",
+				"we should find something that can reach that height."
+			]
+	elif body ==  get_parent().get_node("Room4/Code_Digit2"):
+		if Global.claw_inv:
+			dialogue = [
+				"You've found another number!", 
+				"Maybe this is someone's pin number to their bank info :)" 
+			]
+		else:
+			dialogue = [
+				"The code seems too high up in the tree to grab,",
+				"we should find something that can reach that height."
+			]
+	elif body ==  get_parent().get_node("Room5/Code_Digit9"):
+		if Global.claw_inv:
+			dialogue = [
+			"Great job friend,this is the last number!",
+			"Maybe I can use it to find out where you live hehehe."
+		]
+		else:
+			dialogue = [
+				"The code seems too high up in the tree to grab,",
+				"we should find something that can reach that height."
+			]
+	elif body ==  get_parent().get_node("Room4/Claw"):
+			dialogue = [
+			"What's that? It looks like a claw!", 
+			"The clawwwwww!",
+			"Nice! Now that we have a claw,",
+			"we can pick up items located in trees."
+		]
+	elif body ==  get_parent().get_node("Room5/OrangeCat"):
+			dialogue = [
+			"Oh no, it's the bad kitty, Ludacris!",
+			"There has to be some way around him!",
+			"I don't think we need to resort to fighting.",
+			"Have you ever heard of the phrase Hakuna Matata?",
+			"I base my life around it.", 
+			"If you didn't know, it means no worries for the rest of your days!"
+		]
+	elif body ==  get_parent().get_node("Room4/Puzzle_Piece1"):
+		if Global.claw_inv: 
+			dialogue = [
+			"That's great! You found the first puzzle piece."
+		]
+		else:
+			dialogue = [
+				"The puzzle seems too high up in the tree to grab,",
+				"we should find something that can reach that height."
+			]
+	elif body ==  get_parent().get_node("Room6/Puzzle_Piece2"):
+		if Global.claw_inv:
+			dialogue = [
+			"Oh look! There's another puzzle piece." 
+		]
+		else:
+			dialogue = [
+				"The puzzle seems too high up in the tree to grab,",
+				"we should find something that can reach that height."
+			]
+	elif body ==  get_parent().get_node("Room7/Puzzle_Piece3"):
+		if Global.claw_inv:
+			dialogue = [
+			"Hey, there's another piece! We're so close to figuring this out!"
+		]
+	elif body ==  get_parent().get_node("Room7/Puzzle_Piece4"):
+			dialogue = [
+			"YIPPIE! We found what looks to be the last puzzle piece. Terrific work!"
+		]
+	elif body ==  get_parent().get_node("Room0/MissingPoster"):
+			dialogue = [
+			"Press 'E' to pick up.",
+			"Oh look, there's a piece of paper!",
+			"I wonder what's in it?",
+			"Could it be a map to get home or your deleted tweets online?",
+			"Oh no! My owner is looking for me, it's my missing cat poster :("
+		]
+	else: 
+		return
+	emit_signal("start_dialogue", dialogue)
