@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://sdqd21tv751h"]
+[gd_scene load_steps=5 format=3 uid="uid://t216tx8fcj1r"]
 
-[ext_resource type="PackedScene" uid="uid://dfnblkht1i4a6" path="res://Scene/Ash.tscn" id="2_rjy8c"]
+[ext_resource type="PackedScene" path="res://Scene/Ash.tscn" id="2_rjy8c"]
 [ext_resource type="AudioStream" uid="uid://cumoqi775nbj2" path="res://Music/Game.mp3" id="3_qpgc7"]
-[ext_resource type="PackedScene" uid="uid://b60aacyagkp18" path="res://NuxMode/NuxModeButton.tscn" id="4_1dxu1"]
+[ext_resource type="PackedScene" path="res://NuxMode/NuxModeButton.tscn" id="4_1dxu1"]
 
 [sub_resource type="GDScript" id="GDScript_r8wcw"]
 script/source = "extends Node2D
