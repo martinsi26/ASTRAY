@@ -960,7 +960,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToRoom9"]
-position = Vector2(672, -16)
+position = Vector2(672, -25)
 shape = SubResource("RectangleShape2D_p6rjs")
 
 [node name="ToRoom10" type="Area2D" parent="."]
@@ -977,7 +977,7 @@ shape = SubResource("RectangleShape2D_2o70h")
 polygon = PackedVector2Array(-572, -3, -571, 235, 0, 240, 0, 0, 592, 0, 592, -65, 751, -65, 752, 0, 1152, 0, 1152, 262, 1215, 262, 1216, 388, 1152, 387, 1152, 648, 0, 648, 0, 400, -32, 400, -32, 240, 0, 240, -571, 235, -597, 995, 1689, 971, 1657, -383, -572, -381)
 
 [node name="Door2" parent="." instance=ExtResource("3_lb7l4")]
-position = Vector2(602, 4)
+position = Vector2(602, 0)
 
 [node name="PlacedPieces" parent="." instance=ExtResource("5_1q3jj")]
 position = Vector2(1033, 276)
