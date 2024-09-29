@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgtxkxt0pg82k"]
+
+[ext_resource type="Texture2D" uid="uid://ckj1fw6p37u8c" path="res://Art/New_Assets/banana.png" id="1_1qoxi"]
+
+[node name="Panel" type="Panel"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(33, 31)
+scale = Vector2(2.88333, 3.11667)
+texture = ExtResource("1_1qoxi")

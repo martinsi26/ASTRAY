@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dc2ie6wcsb3h2"]
+
+[node name="Count_UI_Image" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31, 31)
+scale = Vector2(2.86765, 2.8125)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(-5.96046e-08, 9.53674e-07)
+scale = Vector2(0.315, 0.309)
