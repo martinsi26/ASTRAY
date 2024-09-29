@@ -1,28 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cts1aukgpd0d5"]
+[gd_scene load_steps=11 format=3 uid="uid://cts1aukgpd0d5"]
 
 [ext_resource type="Script" path="res://CountCodeChest/CountCodeChest.gd" id="1_e5feu"]
-[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="1_s0gtt"]
 [ext_resource type="PackedScene" uid="uid://c6fa64daskbai" path="res://CountCodeChest/Count_Code_UI.tscn" id="3_4h2m5"]
 [ext_resource type="Texture2D" uid="uid://by8uhvkvalle4" path="res://Art/Images/Fantasy RPG (Toony) 32x32.png" id="3_8mdrb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irdbv"]
 size = Vector2(60, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvsyy"]
-atlas = ExtResource("3_8mdrb")
-region = Rect2(160, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tijox"]
-atlas = ExtResource("3_8mdrb")
-region = Rect2(160, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b72vk"]
-atlas = ExtResource("3_8mdrb")
-region = Rect2(160, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jd2g"]
-atlas = ExtResource("3_8mdrb")
-region = Rect2(160, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eooe7"]
 atlas = ExtResource("3_8mdrb")
@@ -44,23 +27,6 @@ region = Rect2(96, 224, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fvsyy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tijox")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b72vk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5jd2g")
-}],
-"loop": true,
-"name": &"Close",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_eooe7")
 }, {
 "duration": 1.0,
@@ -72,8 +38,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_waw7g")
 }],
-"loop": true,
-"name": &"Open",
+"loop": false,
+"name": &"OpenChest",
 "speed": 5.0
 }]
 
@@ -85,9 +51,6 @@ z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_e5feu")
 
-[node name="Dialogue" parent="." instance=ExtResource("1_s0gtt")]
-position = Vector2(0, 12)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_irdbv")
@@ -96,7 +59,7 @@ shape = SubResource("RectangleShape2D_irdbv")
 position = Vector2(0, 12)
 scale = Vector2(2.313, 2.313)
 sprite_frames = SubResource("SpriteFrames_sfymm")
-animation = &"Open"
+animation = &"OpenChest"
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(0, 12)
@@ -115,6 +78,6 @@ offset_bottom = -209.0
 
 [connection signal="close_count_code" from="." to="Count_Code_UI" method="close_count_code"]
 [connection signal="open_count_code" from="." to="Count_Code_UI" method="open_count_code"]
-[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
+[connection signal="open_count_chest" from="Count_Code_UI" to="." method="open_chest"]

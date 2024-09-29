@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://mgv6vj1ofiwr"]
 
-[ext_resource type="Script" path="res://Scene/HelpScreen.gd" id="1_4ykvm"]
+[ext_resource type="Script" path="res://Script/HelpScreen.gd" id="1_4ykvm"]
 [ext_resource type="Texture2D" uid="uid://cjtww8krfdril" path="res://Art/Images/StartScreenPicBlurred.png" id="1_dtjg3"]
 [ext_resource type="Texture2D" uid="uid://dvcno78vmgrx" path="res://Art/Images/Test.jpg" id="2_toj76"]
 [ext_resource type="FontFile" uid="uid://dbgn13wk75ow1" path="res://Art/Godot_Fonts/fonts/connection/Connection.otf" id="3_t1m0u"]

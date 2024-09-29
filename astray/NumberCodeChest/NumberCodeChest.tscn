@@ -1,29 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8ri8ee7q22by"]
+[gd_scene load_steps=12 format=3 uid="uid://b8ri8ee7q22by"]
 
 [ext_resource type="Script" path="res://NumberCodeChest/NumberCodeChest.gd" id="1_lcnsj"]
-[ext_resource type="PackedScene" uid="uid://cp8co0g5sqssp" path="res://Scene/Dialogue.tscn" id="2_st3tr"]
 [ext_resource type="Texture2D" uid="uid://by8uhvkvalle4" path="res://Art/Images/Fantasy RPG (Toony) 32x32.png" id="3_hrlrl"]
 [ext_resource type="PackedScene" uid="uid://cyvvrbl464okg" path="res://NumberCodeChest/Number_Code_UI.tscn" id="3_m5b02"]
 [ext_resource type="AudioStream" uid="uid://b5u2rgoo1fmu" path="res://Music/TaDa.mp3" id="5_iwavc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jhj0"]
 size = Vector2(60, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3tb0"]
-atlas = ExtResource("3_hrlrl")
-region = Rect2(96, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7heop"]
-atlas = ExtResource("3_hrlrl")
-region = Rect2(96, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8g6c"]
-atlas = ExtResource("3_hrlrl")
-region = Rect2(96, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hyym5"]
-atlas = ExtResource("3_hrlrl")
-region = Rect2(96, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4b4j"]
 atlas = ExtResource("3_hrlrl")
@@ -43,23 +26,6 @@ region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yupgu"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v3tb0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7heop")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k8g6c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hyym5")
-}],
-"loop": false,
-"name": &"CloseChest",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q4b4j")
@@ -90,9 +56,6 @@ script = ExtResource("1_lcnsj")
 position = Vector2(-138, -139)
 stream = ExtResource("5_iwavc")
 
-[node name="Dialogue" parent="." instance=ExtResource("2_st3tr")]
-position = Vector2(0, 13)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, 39.5)
@@ -103,8 +66,6 @@ position = Vector2(0, 13)
 scale = Vector2(2.3125, 2.3125)
 sprite_frames = SubResource("SpriteFrames_yupgu")
 animation = &"OpenChest"
-frame = 3
-frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(0, 13)
@@ -123,6 +84,6 @@ offset_bottom = -41.0
 
 [connection signal="close_number_code" from="." to="Number_Code_UI" method="close_number_code"]
 [connection signal="open_number_code" from="." to="Number_Code_UI" method="open_number_code"]
-[connection signal="start_dialogue" from="." to="Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
+[connection signal="open_number_chest" from="Number_Code_UI" to="." method="open_chest"]

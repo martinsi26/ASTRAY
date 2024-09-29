@@ -1025,7 +1025,6 @@ shape = SubResource("RectangleShape2D_l5oc5")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(0, 0, 656, 0, 656, -27, 785, -28, 784, 0, 1152, 0, 1152, 648, 784, 648, 784, 675, 656, 675, 656, 648, 0, 648, 0, 591, -21, 591, -21, 465, 0, 465, 0, 0, -235, -245, -233, 812, 1384, 847, 1390, -242, -71, -249, -235, -245)
 
-[connection signal="start_dialogue" from="KeyChest" to="KeyChest/Dialogue" method="start_dialogue"]
 [connection signal="area_entered" from="ToRoom5" to="." method="_on_to_room_5_area_entered"]
 [connection signal="area_entered" from="ToRoom2" to="." method="_on_to_room_2_area_entered"]
 [connection signal="area_entered" from="ToRoom4" to="." method="_on_to_room_4_area_entered"]

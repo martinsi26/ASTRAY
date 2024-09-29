@@ -10,7 +10,7 @@ signal start_dialogue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.puzzle_piece1_inv:
+	if Global.puzzle_piece1_inv or Global.puzzle_piece1_placed:
 		queue_free() 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,16 +30,7 @@ func pickup():
 # Called when the player enters the interaction area near the puzzle piece
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	on_piece = true  
-	piece_dialogue()
 
 # Called when the player exits the interaction area near the puzzle piece
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	on_piece = false
-
-# Function to display the dialogue when the player is near the puzzle piece
-func piece_dialogue():
-	var dialogue = [
-		"You Found A Puzzle Piece!",
-		"Press 'E' To Pick Up"
-	]
-	emit_signal("start_dialogue", dialogue)
