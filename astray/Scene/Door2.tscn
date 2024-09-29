@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://b8xch6f0fbo3w" path="res://Art/New_Assets/Door.png" id="2_arb57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2cw4"]
-size = Vector2(160, 19)
+size = Vector2(160, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmhtx"]
-size = Vector2(160, 26)
+size = Vector2(160, 37)
 
 [node name="Door2" type="StaticBody2D"]
 script = ExtResource("1_ar3ll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(70, -0.5)
+position = Vector2(70, 5)
 shape = SubResource("RectangleShape2D_i2cw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,7 +26,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(70, 3)
+position = Vector2(70, 7.5)
 shape = SubResource("RectangleShape2D_dmhtx")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
