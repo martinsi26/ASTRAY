@@ -997,5 +997,3 @@ position = Vector2(743, 292)
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
 [connection signal="close_count_code" from="CountCodeChest" to="CountCodeChest/Count_Code_UI" method="close_count_code"]
 [connection signal="open_count_code" from="CountCodeChest" to="CountCodeChest/Count_Code_UI" method="open_count_code"]
-[connection signal="start_dialogue" from="CountCodeChest" to="CountCodeChest/Dialogue" method="start_dialogue"]
-[connection signal="start_dialogue" from="Ash" to="Ash/Dialogue" method="start_dialogue"]
