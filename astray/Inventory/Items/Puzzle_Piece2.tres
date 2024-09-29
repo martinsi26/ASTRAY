@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c2oumvg3ob5xd"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_uqj4r"]
+[ext_resource type="Texture2D" uid="uid://h1ph6ot8lg46" path="res://Art/Images/puzzle piece 1.png" id="2_f6x0s"]
+
+[resource]
+script = ExtResource("1_uqj4r")
+name = "Puzzle Piece"
+texture = ExtResource("2_f6x0s")
+tip = "Can be placed to solve puzzle"

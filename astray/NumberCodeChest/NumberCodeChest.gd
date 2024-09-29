@@ -1,0 +1,33 @@
+extends StaticBody2D
+
+@onready var audio_player = $AudioStreamPlayer2D
+
+var on_chest = false
+var chest_open = false
+
+signal open_number_code
+signal close_number_code
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$AnimatedSprite2D.frame = 0
+	if Global.chest_key_inv or Global.used_chest_key:
+		chest_open = true
+		$AnimatedSprite2D.frame = 3
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if on_chest and Input.is_action_pressed("Interact") and !chest_open:
+		chest_open = true
+		emit_signal("open_number_code")
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	on_chest = true
+	
+func _on_hitbox_area_exited(area: Area2D) -> void:
+	on_chest = false
+	audio_player.stop()
+	emit_signal("close_number_code")
+
+func open_chest() -> void:
+	$AnimatedSprite2D.play("OpenChest")

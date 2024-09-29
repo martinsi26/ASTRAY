@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqoktaly5gcw5"]
+
+[ext_resource type="Script" path="res://Script/Puzzle_Piece2.gd" id="1_3t0vv"]
+[ext_resource type="Texture2D" uid="uid://h1ph6ot8lg46" path="res://Art/Images/puzzle piece 1.png" id="1_waryr"]
+[ext_resource type="Texture2D" uid="uid://cvjdmxs0uxcrs" path="res://Art/Images/puzzle piece 6.png" id="2_knr57"]
+[ext_resource type="Texture2D" uid="uid://2arhjx21ako2" path="res://Art/Images/puzzle piece 2.png" id="3_4p87l"]
+[ext_resource type="Texture2D" uid="uid://d0inbefeee74r" path="res://Art/Images/puzzle piece 3.png" id="4_6oa8u"]
+[ext_resource type="Texture2D" uid="uid://cx87jpo4l3lym" path="res://Art/Images/puzzle piece 4.png" id="5_ie2vo"]
+[ext_resource type="Texture2D" uid="uid://c2rbdj75nfy1b" path="res://Art/Images/puzzle piece 5.png" id="6_i04bs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3j7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_waryr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_knr57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4p87l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6oa8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ie2vo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i04bs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7vhe"]
+size = Vector2(348.5, 277)
+
+[node name="Puzzle_Piece2" type="Node2D"]
+z_index = 2
+script = ExtResource("1_3t0vv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_c3j7s")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_s7vhe")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

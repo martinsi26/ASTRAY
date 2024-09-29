@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://d13wsff8xrar7"]
+
+[ext_resource type="Script" path="res://NumberCodeChest/Code_UI_Slot.gd" id="1_6akov"]
+[ext_resource type="Texture2D" uid="uid://cmtodd5a2bwl2" path="res://Art/Inventory_Art/inventory-slot.png" id="1_fah0o"]
+[ext_resource type="Theme" uid="uid://x52q6ufa7uyd" path="res://Art/Resources/ButtonLeft.tres" id="3_6vtbj"]
+[ext_resource type="Theme" uid="uid://c55c5utd06qgm" path="res://Art/Resources/ButtonRight.tres" id="4_tmohr"]
+
+[node name="Code_UI_Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(64, 64)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_6akov")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("1_fah0o")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="NumberSelected" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 2
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 40
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonLeft" type="Button" parent="CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -25.0
+offset_top = 32.0
+offset_bottom = 57.0
+theme = ExtResource("3_6vtbj")
+
+[node name="ButtonRight" type="Button" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_top = 32.0
+offset_right = 25.0
+offset_bottom = 57.0
+theme = ExtResource("4_tmohr")
+
+[connection signal="button_down" from="CenterContainer/Panel/ButtonLeft" to="." method="on_button_left_down"]
+[connection signal="button_down" from="CenterContainer/Panel/ButtonRight" to="." method="on_button_right_down"]
