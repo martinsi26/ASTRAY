@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="2_w7fvj"]
 [ext_resource type="PackedScene" uid="uid://dqoktaly5gcw5" path="res://Scene/Puzzle_Piece2.tscn" id="3_ad827"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_jwj3k"]
-[ext_resource type="Texture2D" uid="uid://dpynkupckn5w" path="res://Art/Images/free_rotating_key_frakassets/Rings.png" id="4_tvuo6"]
+[ext_resource type="Texture2D" uid="uid://dpynkupckn5w" path="res://Art/Images/Rings.png" id="4_tvuo6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o0s4"]
 texture = ExtResource("2_w7fvj")

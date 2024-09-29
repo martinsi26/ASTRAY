@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cj0gvia54ff30"]
+[gd_scene load_steps=29 format=3 uid="uid://bsmkwjc7780rd"]
 
 [ext_resource type="Script" path="res://Script/Cat.gd" id="1_k6c7m"]
 [ext_resource type="Resource" uid="uid://by3dw60omvq5i" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]

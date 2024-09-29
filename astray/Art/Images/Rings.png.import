@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0dxowhftk34s"
-path="res://.godot/imported/Ratfolk Mage Sprite Sheet.png-7808f940d0e2a08fd17ca773649a543b.ctex"
+uid="uid://dpynkupckn5w"
+path="res://.godot/imported/Rings.png-dadf4c1f5efd3dc9fa4d96c70fb74ce4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Images/free_rotating_key_frakassets/Ratfolk Mage Sprite Sheet.png"
-dest_files=["res://.godot/imported/Ratfolk Mage Sprite Sheet.png-7808f940d0e2a08fd17ca773649a543b.ctex"]
+source_file="res://Art/Images/Rings.png"
+dest_files=["res://.godot/imported/Rings.png-dadf4c1f5efd3dc9fa4d96c70fb74ce4.ctex"]
 
 [params]
 
