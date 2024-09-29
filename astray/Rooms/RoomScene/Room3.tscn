@@ -1,10 +1,11 @@
-[gd_scene load_steps=50 format=4 uid="uid://da2bbgrogslum"]
+[gd_scene load_steps=53 format=4 uid="uid://da2bbgrogslum"]
 
 [ext_resource type="Texture2D" uid="uid://c2dvhcw4hsca4" path="res://Art/32x32 tileset/32x32 first tileset.png" id="1_7g31s"]
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room3.gd" id="1_dxisv"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="2_5b38x"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_8ftdq"]
-[ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
+[ext_resource type="PackedScene" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
+[ext_resource type="Texture2D" uid="uid://dmtgo2vr4d8nm" path="res://Art/Images/Teller.png" id="4_fkehs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8eqc"]
 texture = ExtResource("1_7g31s")
@@ -913,6 +914,15 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_vhot6")
 sources/1 = SubResource("TileSetAtlasSource_bilf8")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcf8j"]
+texture = ExtResource("4_fkehs")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_odee5"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_dcf8j")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxob8"]
 texture = ExtResource("2_5b38x")
 margins = Vector2i(6, 9)
@@ -978,6 +988,10 @@ z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAABIAAAAaAAMAAAAAABMAAAAaAAQAAAAAABQAAAAaAAUAAAABAAEAAAANAAYAAAABABIAAAAbAAMAAAABABMAAAAbAAQAAAABABQAAAAbAAUAAAACAAIAAAAaAAAAAAACAAMAAAAaAAEAAAACAAQAAAAaAAIAAAACAAgAAAAOAAUAAAACAAoAAAAaAAYAAAACAAsAAAAaAAcAAAACABIAAAAcAAMAAAACABMAAAAcAAQAAAACABQAAAAcAAUAAAADAAIAAAAbAAAAAAADAAMAAAAbAAEAAAADAAQAAAAbAAIAAAADAAoAAAAbAAYAAAADAAsAAAAbAAcAAAAEAAIAAAAcAAAAAAAEAAMAAAAcAAEAAAAEAAQAAAAcAAIAAAAFABMAAAANAAYAAAAHAAEAAAAOAAUAAAAJABAAAAAaAAAAAAAJABEAAAAaAAEAAAAJABIAAAAaAAIAAAAKAAAAAAAaAAMAAAAKAAEAAAAaAAQAAAAKAAIAAAAaAAUAAAAKABAAAAAbAAAAAAAKABEAAAAbAAEAAAAKABIAAAAbAAIAAAALAAAAAAAbAAMAAAALAAEAAAAbAAQAAAALAAIAAAAbAAUAAAALAAoAAAAaAAYAAAALAAsAAAAaAAcAAAALABAAAAAcAAAAAAALABEAAAAcAAEAAAALABIAAAAcAAIAAAAMAAAAAAAcAAMAAAAMAAEAAAAcAAQAAAAMAAIAAAAcAAUAAAAMAAoAAAAbAAYAAAAMAAsAAAAbAAcAAAANAAQAAAANAAYAAAANAA8AAAAcAAgAAAANABAAAAAcAAkAAAAOAA8AAAAdAAgAAAAOABAAAAAdAAkAAAAPAAsAAAAaAAMAAAAPAAwAAAAaAAQAAAAPAA0AAAAaAAUAAAAQAAMAAAAOAAUAAAAQAAsAAAAbAAMAAAAQAAwAAAAbAAQAAAAQAA0AAAAbAAUAAAAQABAAAAAOAAUAAAARAAsAAAAcAAMAAAARAAwAAAAcAAQAAAARAA0AAAAcAAUAAAASAAEAAAAaAAYAAAASAAIAAAAaAAcAAAASAA8AAAANAAYAAAASABMAAAAcAAYAAAASABQAAAAcAAcAAAATAAEAAAAbAAYAAAATAAIAAAAbAAcAAAATABMAAAAdAAYAAAATABQAAAAdAAcAAAAaAAEAAAAaAAgAAAAaAAIAAAAaAAkAAAAaAAUAAAANAAYAAAAaAAsAAAAOAAUAAAAbAAEAAAAbAAgAAAAbAAIAAAAbAAkAAAAbABAAAAAcAAgAAAAbABEAAAAcAAkAAAAcABAAAAAdAAgAAAAcABEAAAAdAAkAAAAcABMAAAANAAYAAAAdAAIAAAANAAYAAAAeAA0AAAAOAAUAAAAfABMAAAAOAAUAAAAgAAIAAAAOAAUAAAAgAAQAAAAaAAMAAAAgAAUAAAAaAAQAAAAgAAYAAAAaAAUAAAAgABAAAAANAAYAAAAhAAQAAAAbAAMAAAAhAAUAAAAbAAQAAAAhAAYAAAAbAAUAAAAhAAwAAAAcAAgAAAAhAA0AAAAcAAkAAAAhABEAAAAaAAgAAAAhABIAAAAaAAkAAAAiAAQAAAAcAAMAAAAiAAUAAAAcAAQAAAAiAAYAAAAcAAUAAAAiAAkAAAAOAAUAAAAiAAwAAAAdAAgAAAAiAA0AAAAdAAkAAAAiABEAAAAbAAgAAAAiABIAAAAbAAkAAAA=")
 tile_set = SubResource("TileSet_f1633")
+
+[node name="Bowl" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAATAAUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_odee5")
 
 [node name="Fruit" type="TileMapLayer" parent="."]
 z_index = 2
