@@ -128,7 +128,7 @@ position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_2upip")
 
 [node name="Inv_UI" parent="." instance=ExtResource("3_i1qjg")]
-z_index = 2
+z_index = 5
 offset_left = -84.0
 offset_top = -164.0
 offset_right = 0.0

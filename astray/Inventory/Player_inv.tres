@@ -41,4 +41,4 @@ script = ExtResource("2_s8nhk")
 
 [resource]
 script = ExtResource("2_vimlj")
-slots = [SubResource("Resource_14h4i"), SubResource("Resource_yuvyw"), SubResource("Resource_d5jsq"), SubResource("Resource_eehvr"), SubResource("Resource_vn00h"), SubResource("Resource_emcbg"), SubResource("Resource_e3jrj"), SubResource("Resource_nctdw"), SubResource("Resource_auiud"), SubResource("Resource_8q88i"), SubResource("Resource_wdk62"), SubResource("Resource_yva42")]
+slots = Array[ExtResource("2_s8nhk")]([SubResource("Resource_14h4i"), SubResource("Resource_yuvyw"), SubResource("Resource_d5jsq"), SubResource("Resource_eehvr"), SubResource("Resource_vn00h"), SubResource("Resource_emcbg"), SubResource("Resource_e3jrj"), SubResource("Resource_nctdw"), SubResource("Resource_auiud"), SubResource("Resource_8q88i"), SubResource("Resource_wdk62"), SubResource("Resource_yva42")])

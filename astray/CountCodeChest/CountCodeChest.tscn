@@ -59,11 +59,7 @@ shape = SubResource("RectangleShape2D_irdbv")
 position = Vector2(6, 24.5)
 scale = Vector2(1.8125, 1.46875)
 sprite_frames = SubResource("SpriteFrames_sfymm")
-<<<<<<< Updated upstream
 animation = &"OpenChest"
-=======
-animation = &"Close"
->>>>>>> Stashed changes
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(0, 12)
