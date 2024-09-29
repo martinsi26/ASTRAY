@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctytucw5gij2i"]
+[gd_scene load_steps=5 format=3 uid="uid://bbrg474hw1ttf"]
 
 [ext_resource type="Script" path="res://Script/Ending_Screen.gd" id="1_4q4r0"]
 [ext_resource type="Texture2D" uid="uid://c7qkj1iupf2y4" path="res://Art/Images/StartScreenPic.png" id="1_qyimh"]
+[ext_resource type="AudioStream" uid="uid://h0cl2bkhpvbw" path="res://Music/Ending.mp3" id="3_3kauo"]
 
 [sub_resource type="Theme" id="Theme_6gjtu"]
-default_font_size = 19
 
 [node name="EndingScreen" type="Control"]
 layout_mode = 3
@@ -27,21 +27,12 @@ expand_mode = 1
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 363.0
-offset_right = 536.0
-offset_bottom = 405.0
+offset_left = 472.0
+offset_top = 371.0
+offset_right = 630.0
+offset_bottom = 413.0
 theme = SubResource("Theme_6gjtu")
 text = "Quit"
-
-[node name="ReturnToHomeButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 597.0
-offset_top = 363.0
-offset_right = 755.0
-offset_bottom = 405.0
-theme = SubResource("Theme_6gjtu")
-text = "Return to Home"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -52,5 +43,9 @@ offset_bottom = 373.0
 theme_override_font_sizes/font_size = 90
 text = "Thanks for playing!"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3kauo")
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="ReturnToHomeButton" to="." method="_on_return_to_home_button_pressed"]

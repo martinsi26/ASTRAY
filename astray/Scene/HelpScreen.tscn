@@ -48,13 +48,13 @@ offset_right = 1064.0
 offset_bottom = 572.0
 theme_override_fonts/font = ExtResource("3_t1m0u")
 theme_override_font_sizes/font_size = 50
-text = "WASD-> Move around map
+text = "WASD - Move around map
 
-E-> Pick up objects and access chests
+E - Pick up objects and access chests
 
-\"TAB\" -> Access your Inventory
+\"TAB\" - Access your Inventory
 
-\"Click\" -> Interact with buttons"
+\"Click\" - Interact with buttons"
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 0
