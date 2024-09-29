@@ -1,0 +1,142 @@
+[gd_scene load_steps=31 format=3 uid="uid://dfnblkht1i4a6"]
+
+[ext_resource type="Script" path="res://Script/Ash.gd" id="1_k6c7m"]
+[ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
+[ext_resource type="Resource" uid="uid://cdkihtnkttrio" path="res://Inventory/Player_inv.tres" id="2_pjynx"]
+[ext_resource type="Resource" uid="uid://b2e2yoi01wscf" path="res://Inventory/Items/Chest_Key.tres" id="2_trw4r"]
+[ext_resource type="PackedScene" uid="uid://bdaex6esj5e4b" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
+[ext_resource type="Resource" uid="uid://nfl84h88krs3" path="res://Inventory/Items/Yarn.tres" id="4_nr5x1"]
+[ext_resource type="Resource" uid="uid://b2mu7qx2b3a0a" path="res://Inventory/Items/Wood.tres" id="5_27ea1"]
+[ext_resource type="Resource" uid="uid://xsrg4wlacujn" path="res://Inventory/Items/Claw.tres" id="5_tvq75"]
+[ext_resource type="Resource" uid="uid://cnca8l1p1umqa" path="res://Inventory/Items/Door_Key.tres" id="6_0l67d"]
+[ext_resource type="Texture2D" uid="uid://5hq0skm58x5q" path="res://Art/New_Assets/Pixel Cat (Void) - Walk.png" id="7_l35lo"]
+[ext_resource type="Texture2D" uid="uid://bn51l82tkmmns" path="res://Art/New_Assets/Pixel Cat (Void) - Idle.png" id="8_dm84k"]
+[ext_resource type="Resource" uid="uid://2lcujjjw87ve" path="res://Inventory/Items/Code_Digit6.tres" id="8_g2ppp"]
+[ext_resource type="Resource" uid="uid://d1c5h2xli0wfu" path="res://Inventory/Items/Door2_Key.tres" id="8_n5l74"]
+[ext_resource type="Resource" uid="uid://o3l8eysvxdyf" path="res://Inventory/Items/Code_Digit9.tres" id="9_wpsfd"]
+[ext_resource type="Resource" uid="uid://b22qq0t2mkg3e" path="res://Inventory/Items/Puzzle_Piece1.tres" id="11_ya767"]
+[ext_resource type="Resource" uid="uid://bflc7kflrcgu6" path="res://Inventory/Items/Code_Digit2.tres" id="12_mj6rg"]
+[ext_resource type="Resource" uid="uid://cpcckkgaelevs" path="res://Inventory/Items/Code_Digit4.tres" id="12_sbtau"]
+[ext_resource type="Resource" uid="uid://c2oumvg3ob5xd" path="res://Inventory/Items/Puzzle_Piece2.tres" id="13_kegij"]
+[ext_resource type="Resource" uid="uid://cab2hsl3hrasq" path="res://Inventory/Items/Puzzle_Piece3.tres" id="14_1wun8"]
+[ext_resource type="Resource" uid="uid://cyt0gwjbm8sy0" path="res://Inventory/Items/Puzzle_Piece4.tres" id="15_im7ld"]
+[ext_resource type="AudioStream" uid="uid://xalptxoc5r1v" path="res://Music/Walking.mp3" id="22_ggkga"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otvov"]
+atlas = ExtResource("8_dm84k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuw8y"]
+atlas = ExtResource("8_dm84k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lmyb"]
+atlas = ExtResource("7_l35lo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du6vs"]
+atlas = ExtResource("7_l35lo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ed6p"]
+atlas = ExtResource("7_l35lo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj6jm"]
+atlas = ExtResource("7_l35lo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvjxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otvov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuw8y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lmyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ed6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj6jm")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur0sv"]
+radius = 4.0
+height = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2upip"]
+radius = 29.0
+
+[node name="Ash" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 241
+script = ExtResource("1_k6c7m")
+inv = ExtResource("2_pjynx")
+chest_key = ExtResource("2_trw4r")
+axe = ExtResource("2_ak1yd")
+wood = ExtResource("5_27ea1")
+yarn = ExtResource("4_nr5x1")
+claw = ExtResource("5_tvq75")
+door_key = ExtResource("6_0l67d")
+door2_key = ExtResource("8_n5l74")
+code_digit6 = ExtResource("8_g2ppp")
+code_digit9 = ExtResource("9_wpsfd")
+code_digit4 = ExtResource("12_sbtau")
+code_digit2 = ExtResource("12_mj6rg")
+puzzle_piece1 = ExtResource("11_ya767")
+puzzle_piece2 = ExtResource("13_kegij")
+puzzle_piece3 = ExtResource("14_1wun8")
+puzzle_piece4 = ExtResource("15_im7ld")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -19)
+scale = Vector2(1.6875, 1.6875)
+sprite_frames = SubResource("SpriteFrames_nvjxr")
+animation = &"Walk"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ur0sv")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 56
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_2upip")
+
+[node name="Inv_UI" parent="." instance=ExtResource("3_i1qjg")]
+z_index = 5
+offset_left = -84.0
+offset_top = -164.0
+offset_right = 0.0
+offset_bottom = -100.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_ggkga")
+volume_db = 22.0
+parameters/looping = true
+
+[connection signal="drop_yarn" from="Inv_UI" to="." method="drop_yarn"]

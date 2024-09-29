@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://mgv6vj1ofiwr"]
+
+[ext_resource type="Script" path="res://Script/HelpScreen.gd" id="1_4ykvm"]
+[ext_resource type="Texture2D" uid="uid://cjtww8krfdril" path="res://Art/Images/StartScreenPicBlurred.png" id="1_dtjg3"]
+[ext_resource type="Texture2D" uid="uid://dvcno78vmgrx" path="res://Art/Images/Test.jpg" id="2_toj76"]
+[ext_resource type="FontFile" uid="uid://dbgn13wk75ow1" path="res://Art/Godot_Fonts/fonts/connection/Connection.otf" id="3_t1m0u"]
+
+[node name="HelpScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ykvm")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_dtjg3")
+expand_mode = 1
+
+[node name="BlankBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 612.0
+offset_right = 620.0
+offset_bottom = 1686.0
+rotation = -1.5708
+texture = ExtResource("2_toj76")
+
+[node name="Title" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 70.0
+offset_right = 658.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("3_t1m0u")
+theme_override_font_sizes/font_size = 80
+text = "Key"
+
+[node name="Explaination" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 174.0
+offset_right = 1064.0
+offset_bottom = 572.0
+theme_override_fonts/font = ExtResource("3_t1m0u")
+theme_override_font_sizes/font_size = 50
+text = "WASD - Move around map
+
+E - Pick up objects and access chests
+
+\"TAB\" - Access your Inventory
+
+\"Click\" - Interact with buttons"
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 503.0
+offset_right = 1048.0
+offset_bottom = 559.0
+theme_override_fonts/font = ExtResource("3_t1m0u")
+theme_override_font_sizes/font_size = 21
+text = "Return to Home"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

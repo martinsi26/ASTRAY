@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6fa64daskbai"]
+
+[ext_resource type="Texture2D" uid="uid://cxlilyx6cpwkq" path="res://Art/Inventory_Art/inventory-background.png" id="1_60aym"]
+[ext_resource type="Script" path="res://CountCodeChest/Count_Code_UI.gd" id="1_hayxo"]
+[ext_resource type="PackedScene" uid="uid://q6ryaibb8glu" path="res://CountCodeChest/Count_UI_Slot.tscn" id="2_l0jfj"]
+[ext_resource type="PackedScene" uid="uid://dc2ie6wcsb3h2" path="res://CountCodeChest/Count_UI_Image.tscn" id="3_oouc6"]
+
+[node name="Count_Code_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -872.0
+offset_bottom = -481.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hayxo")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 167.0
+texture = ExtResource("1_60aym")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainerImages" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -134.0
+offset_top = 5.0
+offset_right = 134.0
+offset_bottom = 69.0
+grow_horizontal = 2
+columns = 4
+
+[node name="Count_UI_Image1" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+layout_mode = 2
+
+[node name="Count_UI_Image2" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+layout_mode = 2
+
+[node name="Count_UI_Image3" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+layout_mode = 2
+
+[node name="Count_UI_Image4" parent="NinePatchRect/GridContainerImages" instance=ExtResource("3_oouc6")]
+layout_mode = 2
+
+[node name="GridContainerNumbers" type="GridContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(269, 89)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -94.0
+offset_right = 135.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 4
+
+[node name="Count_UI_Slot1" parent="NinePatchRect/GridContainerNumbers" instance=ExtResource("2_l0jfj")]
+layout_mode = 2
+
+[node name="Count_UI_Slot2" parent="NinePatchRect/GridContainerNumbers" instance=ExtResource("2_l0jfj")]
+layout_mode = 2
+
+[node name="Count_UI_Slot3" parent="NinePatchRect/GridContainerNumbers" instance=ExtResource("2_l0jfj")]
+layout_mode = 2
+
+[node name="Count_UI_Slot4" parent="NinePatchRect/GridContainerNumbers" instance=ExtResource("2_l0jfj")]
+layout_mode = 2

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bflc7kflrcgu6"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_5e1oh"]
+[ext_resource type="Texture2D" uid="uid://c66faasumkvdo" path="res://Art/Images/number2.png" id="2_b0tcd"]
+
+[resource]
+script = ExtResource("1_5e1oh")
+name = "Code Digit 2"
+texture = ExtResource("2_b0tcd")
+tip = "Digit for a code"

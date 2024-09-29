@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8ri8ee7q22by"]
+
+[ext_resource type="Script" path="res://NumberCodeChest/NumberCodeChest.gd" id="1_lcnsj"]
+[ext_resource type="Texture2D" uid="uid://by8uhvkvalle4" path="res://Art/Images/Fantasy RPG (Toony) 32x32.png" id="3_hrlrl"]
+[ext_resource type="PackedScene" uid="uid://cyvvrbl464okg" path="res://NumberCodeChest/Number_Code_UI.tscn" id="3_m5b02"]
+[ext_resource type="AudioStream" uid="uid://b5u2rgoo1fmu" path="res://Music/TaDa.mp3" id="5_iwavc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jhj0"]
+size = Vector2(60, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4b4j"]
+atlas = ExtResource("3_hrlrl")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgmhu"]
+atlas = ExtResource("3_hrlrl")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcl6a"]
+atlas = ExtResource("3_hrlrl")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqge3"]
+atlas = ExtResource("3_hrlrl")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yupgu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4b4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgmhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcl6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqge3")
+}],
+"loop": false,
+"name": &"OpenChest",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4iavg"]
+size = Vector2(85, 85)
+
+[node name="NumberCodeChest" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_lcnsj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-138, -139)
+stream = ExtResource("5_iwavc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 39.5)
+shape = SubResource("RectangleShape2D_1jhj0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 13)
+scale = Vector2(2.3125, 2.3125)
+sprite_frames = SubResource("SpriteFrames_yupgu")
+animation = &"OpenChest"
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 13)
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_4iavg")
+
+[node name="Number_Code_UI" parent="." instance=ExtResource("3_m5b02")]
+z_index = 4
+offset_left = -138.0
+offset_top = -139.0
+offset_right = 138.0
+offset_bottom = -41.0
+
+[connection signal="close_number_code" from="." to="Number_Code_UI" method="close_number_code"]
+[connection signal="open_number_code" from="." to="Number_Code_UI" method="open_number_code"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
+[connection signal="open_number_chest" from="Number_Code_UI" to="." method="open_chest"]
