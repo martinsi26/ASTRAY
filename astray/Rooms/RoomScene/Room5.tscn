@@ -1016,6 +1016,7 @@ tile_set = SubResource("TileSet_nltse")
 
 [node name="Fruit" type="TileMapLayer" parent="."]
 z_index = 2
+tile_map_data = PackedByteArray("AAAhAA8AAQACAAEAAAAjABEAAQACAAEAAABDAB8AAQAAAAEAAAA=")
 tile_set = SubResource("TileSet_ylmon")
 
 [node name="Wood" type="TileMapLayer" parent="."]

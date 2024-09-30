@@ -7,7 +7,7 @@
 size = Vector2(160, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmhtx"]
-size = Vector2(160, 28.5)
+size = Vector2(160, 37)
 
 [node name="Door2" type="StaticBody2D"]
 script = ExtResource("1_ar3ll")
@@ -26,7 +26,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(70, 12.75)
+position = Vector2(70, 7.5)
 shape = SubResource("RectangleShape2D_dmhtx")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
