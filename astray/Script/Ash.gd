@@ -203,10 +203,24 @@ func use_axe():
 func open_number_chest():
 	collect(chest_key)
 	Global.chest_key_inv = true
+	
+	var chestKey_dialogue = [
+		"Great, we found another key!",
+		"Press 'E' to pick up",
+		"Maybe this can be used for one of the chests.",
+		"Press 'TAB' to check the key in your inventory."
+	]
+	emit_signal("start_dialogue", chestKey_dialogue)
 
 func open_count_chest():
 	collect(puzzle_piece4)
 	Global.puzzle_piece4_inv = true
+	
+	var CountChest_dialogue = [
+		"WOO-HOO, we found the last puzzle piece!",
+		"I feel like we're getting closer to my home!"
+	]
+	emit_signal("start_dialogue", CountChest_dialogue)
 	
 func open_key_chest():
 	use(chest_key)
@@ -214,6 +228,14 @@ func open_key_chest():
 	Global.chest_key_inv = false
 	collect(axe)
 	Global.axe_inv = true
+	
+	var axe_dialogue = [
+		"Great, we found an axe!",
+		"Press 'E' to pick up",
+		"This will help us cut down trees.",
+		"Press 'TAB' to check the axe in your inventory."
+	]
+	emit_signal("start_dialogue", axe_dialogue)
 		
 func collect(item):
 	inv.insert(item)

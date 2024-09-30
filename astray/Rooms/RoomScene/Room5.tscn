@@ -1100,5 +1100,3 @@ position = Vector2(1122, 143)
 [connection signal="area_exited" from="Cutting_Tree/Tree_Hitbox" to="." method="_on_tree_hitbox_area_exited"]
 [connection signal="area_entered" from="ToRoom3" to="." method="_on_to_room_3_area_entered"]
 [connection signal="area_entered" from="ToRoom6" to="." method="_on_to_room_6_area_entered"]
-[connection signal="close_number_code" from="NumberCodeChest" to="NumberCodeChest/Number_Code_UI" method="close_number_code"]
-[connection signal="open_number_code" from="NumberCodeChest" to="NumberCodeChest/Number_Code_UI" method="open_number_code"]

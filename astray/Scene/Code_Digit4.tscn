@@ -6,7 +6,7 @@
 size = Vector2(36, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2py1j"]
-size = Vector2(40, 49)
+size = Vector2(47, 58)
 
 [node name="Code_Digit4" type="StaticBody2D"]
 z_index = 2
@@ -16,7 +16,6 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_dt6nc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_cok52")
 
@@ -25,5 +24,5 @@ collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 0.5)
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_2py1j")

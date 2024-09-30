@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c66faasumkvdo" path="res://Art/Images/number2.png" id="2_dsig5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjm4u"]
-size = Vector2(27.5, 33)
+size = Vector2(37, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp3mh"]
 size = Vector2(36, 43)
@@ -22,7 +22,7 @@ collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(1.5, 2)
+position = Vector2(-1, 0.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_yjm4u")
 
