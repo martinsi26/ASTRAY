@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dlr0sb8epdjvr"]
+[gd_scene load_steps=31 format=3 uid="uid://c4qqbn4yk6hhg"]
 
 [ext_resource type="Script" path="res://Script/Door_Key.gd" id="1_mo8tn"]
 [ext_resource type="Texture2D" uid="uid://eq7f6620w3jf" path="res://Art/Images/free_rotating_key_frakassets/key_32x32_24f.png" id="3_c7cor"]

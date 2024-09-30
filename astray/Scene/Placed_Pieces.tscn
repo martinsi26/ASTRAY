@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bayqdgl3k7tgn"]
+[gd_scene load_steps=4 format=3 uid="uid://vpemjjhtxr37"]
 
 [ext_resource type="Script" path="res://Script/Placed_Pieces.gd" id="1_3iu8j"]
 [ext_resource type="Texture2D" uid="uid://c7lhfh7n1dx8u" path="res://Art/Images/Circle.png" id="2_th11m"]
@@ -21,18 +21,18 @@ position = Vector2(36, 55)
 [node name="Puzzle_Piece4" type="Sprite2D" parent="."]
 position = Vector2(53, 55)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(45, 48)
 shape = SubResource("CircleShape2D_l0ys1")
 
-[node name="Circle" type="Sprite2D" parent="Area2D"]
+[node name="Circle" type="Sprite2D" parent="Hitbox"]
 position = Vector2(45, 48)
 scale = Vector2(0.3105, 0.3105)
 texture = ExtResource("2_th11m")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_area_2d_area_exited"]

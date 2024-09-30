@@ -7,6 +7,10 @@ var door2_key_inv = false
 var used_door_key = false
 var used_door2_key = false
 
+var key_chest_open = false
+var count_chest_open = false
+var number_chest_open = false
+
 var chest_key_inv = false
 var used_chest_key = false
 

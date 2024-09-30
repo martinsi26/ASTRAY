@@ -44,6 +44,7 @@ signal room5_objects
 signal room6_objects
 signal room7_objects
 signal room8_objects
+signal room9_objects
 signal room10_objects
 signal yarn_room
 
@@ -277,6 +278,7 @@ func enter_room9(room_number):
 	instance9.connect(\"enter_room8\", enter_room)
 	instance9.connect(\"ending\", ending)
 	Global.room = \"Room9\"
+	emit_signal(\"room9_objects\")
 
 func enter_room10(room_number):
 	if room_number == 8:
@@ -325,5 +327,6 @@ parameters/looping = true
 [connection signal="room6_objects" from="." to="Ash" method="room6_objects"]
 [connection signal="room7_objects" from="." to="Ash" method="room7_objects"]
 [connection signal="room8_objects" from="." to="Ash" method="room8_objects"]
+[connection signal="room9_objects" from="." to="Ash" method="room9_objects"]
 [connection signal="yarn_room" from="." to="Ash" method="yarn_room"]
 [connection signal="start_dialogue" from="Ash" to="Dialogue" method="start_dialogue"]
