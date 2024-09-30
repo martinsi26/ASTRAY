@@ -1171,5 +1171,10 @@ scale = Vector2(0.5, 0.5)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(-203, 0, 1152, 0, 1152, 112, 1210, 112, 1210, 239, 1152, 239, 1152, 648, 0, 648, 0, 436, -31, 436, -31, 342, 0, 342, 0, 0, -203, 0, -213, 331, -221, 848, 1409, 859, 1384, -153, -200, -185)
 
+[node name="Water" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water"]
+polygon = PackedVector2Array(778, 521, 777, 629, 886, 629, 887, 522)
+
 [connection signal="area_entered" from="ToRoom2" to="." method="_on_to_room_2_area_entered"]
 [connection signal="area_entered" from="ToRoom0" to="." method="_on_to_room_0_area_entered"]

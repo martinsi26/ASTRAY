@@ -14,6 +14,7 @@ func _ready():
 	visible = false
 	
 func start_dialogue(dialogue):
+	stop_dialogue()
 	visible = true
 	messages = dialogue
 	current_message = 0

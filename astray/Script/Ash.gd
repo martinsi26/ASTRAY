@@ -37,6 +37,7 @@ var push_force = 40
 # signals
 signal move_orange_cat
 signal stop_moving
+signal start_dialogue(dialogue)
 #signal has_pickedup_key(pickedup_key)
 
 # Called when the node enters the scene tree for the first time.
@@ -150,11 +151,20 @@ func pickup_piece(piece_num):
 		collect(puzzle_piece4)
 		Global.puzzle_piece4_inv = true
 	
+var first = true
+
 func pickup_yarn():
 	if Global.yarn_room == "Room5":
 		emit_signal("stop_moving")
 	collect(yarn)
 	Global.yarn_inv = true
+	
+	if first:
+		dialogue = [
+			"Press 'E' on the yarn image in your inventory to drop it."
+		]
+		emit_signal("start_dialogue", dialogue)
+		first = false
 	
 func pickup_claw():
 	collect(claw)
@@ -202,10 +212,23 @@ func use_axe():
 func open_number_chest():
 	collect(chest_key)
 	Global.chest_key_inv = true
+	
+	var dialgoue = [
+		"Great, we found another key!",
+		"Maybe this can be used for one of the chests.",
+		"Press 'TAB' to check the key is in your inventory."
+	]
+	emit_signal("start_dialogue", dialogue)
 
 func open_count_chest():
 	collect(puzzle_piece4)
 	Global.puzzle_piece4_inv = true
+	
+	var dialgoue = [
+		"WOO-HOO, we found a puzzle piece!",
+		"I feel like we're getting closer to my home!"
+	]
+	emit_signal("start_dialogue", dialogue)
 	
 func open_key_chest():
 	use(chest_key)
@@ -213,6 +236,13 @@ func open_key_chest():
 	Global.chest_key_inv = false
 	collect(axe)
 	Global.axe_inv = true
+	
+	var dialgoue = [
+		"Great, we found an axe!",
+		"This could be useful.",
+		"Press 'TAB' to check the axe is in your inventory."
+	]
+	emit_signal("start_dialogue", dialogue)
 		
 func collect(item):
 	inv.insert(item)
@@ -270,7 +300,10 @@ func room10_objects() -> void:
 	]
 	emit_signal("start_dialogue", dialogue)
 	
+
+
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	print(body)
 	if body == get_parent().get_node("Room3/KeyChest"): 
 		dialogue = [
 			"You have found a chest!",
@@ -280,23 +313,23 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 			"Press 'E' to open"
 		]
 	elif body ==  get_parent().get_node("Room5/NumberCodeChest"):
-			dialogue = [
+		dialogue = [
 			"Maybe those numbers we collected", 
 			"have something to do with this chest?"
 		]
 	elif body ==  get_parent().get_node("Room7/CountCodeChest"):
-			dialogue = [
+		dialogue = [
 			"Hmmm, I wonder how many days I've been lost in this forest?",
 			"We should probably look at our surroundings."
 		]
-	elif body ==  get_parent().get_node("Room1/Door_Key"):
-			dialogue = [
+	elif body == get_parent().get_node("Room1/Door_Key"):
+		dialogue = [
 			"You have found a key!",
 			"What can it unlock?",
 			"Press 'E' to pick up."
 		]
 	elif body ==  get_parent().get_node("Room0/Door2_Key"):
-			dialogue = [
+		dialogue = [
 			"Nice, we got the second key!",
 			"Press 'E' to pick up."
 		]
@@ -326,7 +359,6 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		if Global.claw_inv:
 			dialogue = [
 				"You've found another number!", 
-				"Maybe this is someone's pin number to their bank info :)" 
 			]
 		else:
 			dialogue = [
@@ -336,23 +368,23 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	elif body ==  get_parent().get_node("Room5/Code_Digit9"):
 		if Global.claw_inv:
 			dialogue = [
-			"Great job friend,this is the last number!",
-			"Maybe I can use it to find out where you live hehehe."
-		]
+				"Great job friend,this is the last number!",
+				"Maybe I can use it to find out where you live hehehe."
+			]
 		else:
 			dialogue = [
 				"The code seems too high up in the tree to grab,",
 				"we should find something that can reach that height."
 			]
 	elif body ==  get_parent().get_node("Room4/Claw"):
-			dialogue = [
+		dialogue = [
 			"What's that? It looks like a claw!", 
 			"The clawwwwww!",
 			"Nice! Now that we have a claw,",
 			"we can pick up items located in trees."
 		]
-	elif body ==  get_parent().get_node("Room5/OrangeCat"):
-			dialogue = [
+	elif body ==  get_parent().get_node("Room5/OrangeCat/StaticBody2D"):
+		dialogue = [
 			"Oh no, it's the bad kitty, Ludacris!",
 			"There has to be some way around him!",
 			"I don't think we need to resort to fighting.",
@@ -373,8 +405,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	elif body ==  get_parent().get_node("Room6/Puzzle_Piece2"):
 		if Global.claw_inv:
 			dialogue = [
-			"Oh look! There's another puzzle piece." 
-		]
+				"Oh look! There's another puzzle piece." 
+			]
 		else:
 			dialogue = [
 				"The puzzle seems too high up in the tree to grab,",
@@ -383,19 +415,51 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	elif body ==  get_parent().get_node("Room7/Puzzle_Piece3"):
 		if Global.claw_inv:
 			dialogue = [
-			"Hey, there's another piece! We're so close to figuring this out!"
-		]
-	elif body ==  get_parent().get_node("Room7/Puzzle_Piece4"):
+				"Hey, there's another piece! We're so close to figuring this out!"
+			]
+		else:
 			dialogue = [
-			"YIPPIE! We found what looks to be the last puzzle piece. Terrific work!"
-		]
+				"The puzzle seems too high up in the tree to grab,",
+				"we should find something that can reach that height."
+			]
 	elif body ==  get_parent().get_node("Room0/MissingPoster"):
-			dialogue = [
+		dialogue = [
 			"Press 'E' to pick up.",
 			"Oh look, there's a piece of paper!",
 			"I wonder what's in it?",
 			"Could it be a map to get home or your deleted tweets online?",
 			"Oh no! My owner is looking for me, it's my missing cat poster :("
+		]
+	elif body == get_node("Yarn"):
+		dialogue = [
+			"I LOVE LOVE LOVE playing with yarn!",
+			"Let's pick it up to use later."
+		]
+	elif body == get_parent().get_node("Room2/Door"):
+		if Global.door_key_inv:
+			dialogue = [
+				"We found the first door!",
+				"Press 'E' to use the key to open it."
+			]
+		else:
+			dialogue = [
+				"We can't open this door without the key."
+			]
+	elif body == get_parent().get_node("Room8/Door2"):
+		if Global.door_key_inv:
+			dialogue = [
+				"We found the first door!",
+				"Press 'E' to use the key to open it."
+			]
+		else:
+			dialogue = [
+				"We can't open this door without the key."
+			]
+	elif body == get_parent().get_node("Room6/Place_Wood_Hitbox"):
+		dialogue = [
+			"Oh no! How'll we get across?",
+			"We need to build something.",
+			"Press 'E' when you have the materials."
 		]
 	else: 
 		return
