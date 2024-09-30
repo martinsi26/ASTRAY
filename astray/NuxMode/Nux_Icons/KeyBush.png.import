@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c20ll6kuoeoql"
-path="res://.godot/imported/Screenshot 2024-09-28 at 6.41.57 PM.png-ad4c5f2f9259f1bce54c9ad5b2ecfa4c.ctex"
+uid="uid://xxbdo0vmh0ge"
+path="res://.godot/imported/KeyBush.png-74ad9b57eb33cfce06a6af3e553cd236.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Nux_Icons/Screenshot 2024-09-28 at 6.41.57 PM.png"
-dest_files=["res://.godot/imported/Screenshot 2024-09-28 at 6.41.57 PM.png-ad4c5f2f9259f1bce54c9ad5b2ecfa4c.ctex"]
+source_file="res://NuxMode/Nux_Icons/KeyBush.png"
+dest_files=["res://.godot/imported/KeyBush.png-74ad9b57eb33cfce06a6af3e553cd236.ctex"]
 
 [params]
 

@@ -1,6 +1,8 @@
 extends StaticBody2D
 
-var on_chest
+@onready var audio_player = $AudioStreamPlayer2D
+
+var on_chest = false
 var chest_open = false
 
 signal open_count_code
@@ -23,7 +25,14 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	
 func _on_hitbox_area_exited(area: Area2D) -> void:
 	on_chest = false
+	audio_player.stop()
 	emit_signal("close_count_code")
 
 func open_chest() -> void:
 	$AnimatedSprite2D.play("OpenChest")
+	if audio_player:
+		audio_player.play()
+	else:
+		print("No aduioo")
+		pass
+		

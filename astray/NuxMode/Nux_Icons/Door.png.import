@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o7h8nc0fsmvr"
-path="res://.godot/imported/Door.png-306028e8cc62bb583f52306dbc1c5e82.ctex"
+path="res://.godot/imported/Door.png-2da24234b89bd0c812e1803c89f99b6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Nux_Icons/Door.png"
-dest_files=["res://.godot/imported/Door.png-306028e8cc62bb583f52306dbc1c5e82.ctex"]
+source_file="res://NuxMode/Nux_Icons/Door.png"
+dest_files=["res://.godot/imported/Door.png-2da24234b89bd0c812e1803c89f99b6e.ctex"]
 
 [params]
 

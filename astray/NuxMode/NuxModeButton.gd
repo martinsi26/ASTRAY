@@ -36,7 +36,7 @@ func _on_option_button_item_selected(index: int) -> void:
 	elif index == 5:
 		$Answer_Box.text = "Use this axe to cut down the different (pine)tree"
 	elif index == 6:
-		$Answer_Box.text = "I wonder how many fruit there are in the game... (ANSWER: 9462)"
+		$Answer_Box.text = "I wonder how many fruit there are in the room... (ANSWER: 9462)"
 	elif index == 7:
 		$Answer_Box.text = "Build the puzzle over the circle outline"
 	elif index == 8:

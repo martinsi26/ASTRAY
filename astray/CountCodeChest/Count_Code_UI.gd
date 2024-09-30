@@ -42,17 +42,17 @@ func update_slots():
 	if (digit.slots[0].value == 9 and digit.slots[1].value == 4 
 		and digit.slots[2].value == 6 and digit.slots[3].value == 2):
 			emit_signal("open_count_chest")
-			#disable_buttons()
+			disable_buttons()
 		
-#func disable_buttons():
-	#$NinePatchRect/GridContainer/Count_UI_Slot1/CenterContainer/Panel/ButtonLeft.disabled = true
-	#$NinePatchRect/GridContainer/Count_UI_Slot1/CenterContainer/Panel/ButtonRight.disabled = true
-	#$NinePatchRect/GridContainer/Count_UI_Slot2/CenterContainer/Panel/ButtonLeft.disabled = true
-	#$NinePatchRect/GridContainer/Count_UI_Slot2/CenterContainer/Panel/ButtonRight.disabled = true
-	#$NinePatchRect/GridContainer/Count_UI_Slot3/CenterContainer/Panel/ButtonLeft.disabled = true
-	#$NinePatchRect/GridContainer/Count_UI_Slot3/CenterContainer/Panel/ButtonRight.disabled = true
-	#$NinePatchRect/GridContainer/Count_UI_Slot4/CenterContainer/Panel/ButtonLeft.disabled = true
-	#$NinePatchRect/GridContainer/Count_UI_Slot4/CenterContainer/Panel/ButtonRight.disabled = true
+func disable_buttons():
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot1/CenterContainer/Panel/ButtonLeft.disabled = true
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot1/CenterContainer/Panel/ButtonRight.disabled = true
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot2/CenterContainer/Panel/ButtonLeft.disabled = true
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot2/CenterContainer/Panel/ButtonRight.disabled = true
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot3/CenterContainer/Panel/ButtonLeft.disabled = true
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot3/CenterContainer/Panel/ButtonRight.disabled = true
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot4/CenterContainer/Panel/ButtonLeft.disabled = true
+	$NinePatchRect/GridContainerNumbers/Count_UI_Slot4/CenterContainer/Panel/ButtonRight.disabled = true
 
 func open():
 	visible = true

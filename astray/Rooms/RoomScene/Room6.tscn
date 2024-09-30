@@ -2061,7 +2061,6 @@ script = ExtResource("1_qwvog")
 
 [node name="Fruit" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AAAEABkAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_khory")
 
 [node name="Ground" type="TileMapLayer" parent="."]
