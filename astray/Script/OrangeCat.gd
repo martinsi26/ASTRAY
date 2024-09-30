@@ -10,7 +10,7 @@ var animation_played = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$".".position = Global.ash_pos
+	$".".position = Global.orange_cat
 	get_parent().get_parent().get_node("Ash").connect("move_orange_cat", move_orange_cat)
 	get_parent().get_parent().get_node("Ash").connect("stop_moving", move_back)
 
@@ -61,13 +61,13 @@ func move_back():
 	$Timer.stop()
 	move = true
 	var back_pos = get_parent().get_node("BackPos")
-	Global.ash_pos = back_pos.position
+	Global.orange_cat = back_pos.position
 	make_path(back_pos)
 	
 func _on_navigation_agent_2d_target_reached() -> void:
 	$Timer.stop()
 	move = false
-	Global.ash_pos = $".".position
+	Global.orange_cat = $".".position
 	animation_played = false
 
 func _on_timer_timeout() -> void:

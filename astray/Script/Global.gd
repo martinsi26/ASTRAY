@@ -37,10 +37,9 @@ var puzzle_piece2_placed = false
 var puzzle_piece3_placed = false
 var puzzle_piece4_placed = false
 
-var room
+var room = 0
 
-var ash_pos = Vector2(1125, 147)
-
+var orange_cat = Vector2(1125, 147)
 var random_key: int
 
 # Predefined list of keys (add more as needed)
@@ -54,7 +53,7 @@ var key_list = [
 	KEY_P, KEY_Q, KEY_R, KEY_T,
 	KEY_U, KEY_V, KEY_X, KEY_Y,
 	KEY_Z,
-	KEY_SHIFT, KEY_CTRL, KEY_SPACE,
+	KEY_CTRL, KEY_SPACE,
 	KEY_ENTER, KEY_BACKSPACE
 ]
 
@@ -66,7 +65,6 @@ func _ready() -> void:
 	key_event.physical_keycode = random_key
 	InputMap.add_action("random_key")
 	InputMap.action_add_event("random_key", key_event)
-
 	print("Press this key to enable can_enter:", get_key_name(random_key))
 	
 func get_key_name(key_code: int) -> String:
@@ -108,3 +106,44 @@ func get_key_name(key_code: int) -> String:
 		KEY_ENTER: return "Enter"
 		KEY_BACKSPACE: return "Backspace"
 		_ : return str(key_code)  # Return the integer if not matched
+		
+func reset():
+	door_open = false
+	door2_open = false
+	door_key_inv = false
+	door2_key_inv = false
+	used_door_key = false
+	used_door2_key = false
+
+	chest_key_inv = false
+	used_chest_key = false
+
+	yarn_inv = false
+	yarn_room = "Room2"
+	yarn_posx = 557
+	yarn_posy = 56
+
+	claw_inv = false
+
+	axe_inv = false
+	axe_used = false
+	tree_down = false
+	wood_inv = false
+	wood_placed = false
+
+	code2_inv = false
+	code4_inv = false
+	code6_inv = false
+	code9_inv = false
+	
+	puzzle_piece1_inv = false
+	puzzle_piece2_inv = false
+	puzzle_piece3_inv = false
+	puzzle_piece4_inv = false
+	puzzle_piece1_placed = false
+	puzzle_piece2_placed = false
+	puzzle_piece3_placed = false
+	puzzle_piece4_placed = false
+
+	room = 0
+	orange_cat = Vector2(1125, 147)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://t216tx8fcj1r"]
+[gd_scene load_steps=6 format=3 uid="uid://t216tx8fcj1r"]
 
-[ext_resource type="PackedScene" path="res://Scene/Ash.tscn" id="2_rjy8c"]
+[ext_resource type="PackedScene" uid="uid://cuki4oddlotwx" path="res://Scene/Ash.tscn" id="2_rjy8c"]
 [ext_resource type="AudioStream" uid="uid://cumoqi775nbj2" path="res://Music/Game.mp3" id="3_qpgc7"]
-[ext_resource type="PackedScene" path="res://NuxMode/NuxModeButton.tscn" id="4_1dxu1"]
+[ext_resource type="PackedScene" uid="uid://b60aacyagkp18" path="res://NuxMode/NuxModeButton.tscn" id="4_1dxu1"]
+[ext_resource type="PackedScene" uid="uid://o3xl4lyfxvnq" path="res://Scene/PauseMenu.tscn" id="5_0ddna"]
 
 [sub_resource type="GDScript" id="GDScript_r8wcw"]
 script/source = "extends Node2D
@@ -42,6 +43,7 @@ signal room5_objects
 signal room6_objects
 signal room7_objects
 signal room8_objects
+signal room10_objects
 signal yarn_room
 
 # Called when the node enters the scene tree for the first time.
@@ -283,6 +285,7 @@ func enter_room10(room_number):
 		$Ash.position = instance10.get_node(\"FromR8\").position
 	instance10.connect(\"enter_room8\", enter_room)
 	Global.room = \"Room10\"
+	emit_signal(\"room10_objects\")
 	
 func ending():
 	get_tree().change_scene_to_file(\"res://Scene/EndingScreen.tscn\")
@@ -292,6 +295,15 @@ func ending():
 y_sort_enabled = true
 script = SubResource("GDScript_r8wcw")
 
+[node name="PauseMenu" parent="." instance=ExtResource("5_0ddna")]
+z_index = 6
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="NuxModeButton" parent="." instance=ExtResource("4_1dxu1")]
+z_index = 4
+position = Vector2(6, 7)
+
 [node name="Ash" parent="." instance=ExtResource("2_rjy8c")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -299,11 +311,8 @@ stream = ExtResource("3_qpgc7")
 autoplay = true
 parameters/looping = true
 
-[node name="NuxModeButton" parent="." instance=ExtResource("4_1dxu1")]
-z_index = 4
-position = Vector2(6, 7)
-
 [connection signal="room0_objects" from="." to="Ash" method="room0_objects"]
+[connection signal="room10_objects" from="." to="Ash" method="room10_objects"]
 [connection signal="room1_objects" from="." to="Ash" method="room1_objects"]
 [connection signal="room2_objects" from="." to="Ash" method="room2_objects"]
 [connection signal="room3_objects" from="." to="Ash" method="room3_objects"]

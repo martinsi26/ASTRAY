@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://mgv6vj1ofiwr"]
+[gd_scene load_steps=5 format=3 uid="uid://cdpkrvg2sdbfs"]
 
 [ext_resource type="Script" path="res://Script/HelpScreen.gd" id="1_4ykvm"]
 [ext_resource type="Texture2D" uid="uid://cjtww8krfdril" path="res://Art/Images/StartScreenPicBlurred.png" id="1_dtjg3"]
@@ -32,38 +32,40 @@ texture = ExtResource("2_toj76")
 
 [node name="Title" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 70.0
-offset_right = 658.0
-offset_bottom = 169.0
+offset_left = 513.0
+offset_top = 63.0
+offset_right = 648.0
+offset_bottom = 150.0
 theme_override_fonts/font = ExtResource("3_t1m0u")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 text = "Key"
 
 [node name="Explaination" type="TextEdit" parent="."]
 layout_mode = 0
 offset_left = 89.0
-offset_top = 174.0
+offset_top = 156.0
 offset_right = 1064.0
-offset_bottom = 572.0
+offset_bottom = 581.0
 theme_override_fonts/font = ExtResource("3_t1m0u")
-theme_override_font_sizes/font_size = 50
-text = "WASD - Move around map
+theme_override_font_sizes/font_size = 41
+text = "\"WASD\"- Move around map
 
-E - Pick up objects and access chests
+\"E\"- Pick up objects and access chests
 
-\"TAB\" - Access your Inventory
+\"TAB\"- Access your inventory
 
-\"Click\" - Interact with buttons"
+\"Click\"- Interact with buttons
+
+\"SHIFT\"- To sprint"
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 872.0
-offset_top = 503.0
-offset_right = 1048.0
-offset_bottom = 559.0
+offset_left = 794.0
+offset_top = 490.0
+offset_right = 1042.0
+offset_bottom = 546.0
 theme_override_fonts/font = ExtResource("3_t1m0u")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 30
 text = "Return to Home"
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

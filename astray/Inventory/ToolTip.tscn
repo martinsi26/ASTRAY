@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdtbkn0u30ieh"]
+[gd_scene load_steps=3 format=3 uid="uid://byunyc1ayx85r"]
 
 [ext_resource type="FontFile" uid="uid://cl2lhgti582t6" path="res://Art/Godot_Fonts/fonts/droid-sans/DroidSans.ttf" id="2_0vkjs"]
 [ext_resource type="Texture2D" uid="uid://cmtodd5a2bwl2" path="res://Art/Inventory_Art/inventory-slot.png" id="2_oc82f"]
