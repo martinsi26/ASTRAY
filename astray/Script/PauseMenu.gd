@@ -49,7 +49,7 @@ func _on_restart_pressed() -> void:
 
 func _on_quit_menu_pressed() -> void:
 	resume()
-	get_tree().change_scene_to_file("res://Scene/Main.tscn")
+	get_tree().change_scene_to_file("res://Scene/StartScreen.tscn")
 
 func _on_quit_desktop_pressed() -> void:
 	get_tree().quit()
