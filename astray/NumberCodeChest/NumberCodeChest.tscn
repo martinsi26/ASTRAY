@@ -57,6 +57,7 @@ position = Vector2(-138, -139)
 stream = ExtResource("5_iwavc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
 y_sort_enabled = true
 position = Vector2(0, 39.5)
 shape = SubResource("RectangleShape2D_1jhj0")
@@ -73,6 +74,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+z_index = 2
 shape = SubResource("RectangleShape2D_4iavg")
 
 [node name="Number_Code_UI" parent="." instance=ExtResource("3_m5b02")]

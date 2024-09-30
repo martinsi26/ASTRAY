@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bgtvcnj8v6l46"]
+[gd_scene load_steps=30 format=3 uid="uid://bgtvcnj8v6l46"]
 
 [ext_resource type="Script" path="res://Script/Ash.gd" id="1_k6c7m"]
 [ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
@@ -16,7 +16,6 @@
 [ext_resource type="Resource" path="res://Inventory/Items/Code_Digit9.tres" id="9_wpsfd"]
 [ext_resource type="Resource" uid="uid://b22qq0t2mkg3e" path="res://Inventory/Items/Puzzle_Piece1.tres" id="11_ya767"]
 [ext_resource type="Resource" uid="uid://bflc7kflrcgu6" path="res://Inventory/Items/Code_Digit2.tres" id="12_mj6rg"]
-[ext_resource type="Resource" path="res://Inventory/Items/Code_Digit4.tres" id="12_sbtau"]
 [ext_resource type="Resource" path="res://Inventory/Items/Puzzle_Piece2.tres" id="13_kegij"]
 [ext_resource type="Resource" path="res://Inventory/Items/Puzzle_Piece3.tres" id="14_1wun8"]
 [ext_resource type="Resource" path="res://Inventory/Items/Puzzle_Piece4.tres" id="15_im7ld"]
@@ -100,7 +99,6 @@ door_key = ExtResource("6_0l67d")
 door2_key = ExtResource("8_n5l74")
 code_digit6 = ExtResource("8_g2ppp")
 code_digit9 = ExtResource("9_wpsfd")
-code_digit4 = ExtResource("12_sbtau")
 code_digit2 = ExtResource("12_mj6rg")
 puzzle_piece1 = ExtResource("11_ya767")
 puzzle_piece2 = ExtResource("13_kegij")

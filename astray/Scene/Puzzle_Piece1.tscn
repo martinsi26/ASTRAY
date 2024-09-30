@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqxx4oky4ng6q"]
+[gd_scene load_steps=11 format=3 uid="uid://cqxx4oky4ng6q"]
 
 [ext_resource type="Script" path="res://Script/Puzzle_Piece1.gd" id="1_fgpkp"]
 [ext_resource type="Texture2D" uid="uid://h1ph6ot8lg46" path="res://Art/Images/puzzle piece 1.png" id="2_nr5g3"]
@@ -35,9 +35,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlvaq"]
-size = Vector2(348.5, 277)
+size = Vector2(173.333, 196.667)
 
-[node name="Puzzle_Piece1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7vot"]
+size = Vector2(47, 54)
+
+[node name="Puzzle_Piece1" type="StaticBody2D"]
 z_index = 2
 script = ExtResource("1_fgpkp")
 
@@ -52,8 +55,13 @@ collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 2.5)
 scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_rlvaq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_v7vot")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

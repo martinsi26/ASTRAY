@@ -42,7 +42,7 @@ signal stop_moving
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -264,13 +264,14 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body == get_parent().get_node("Room3/KeyChest"): 
 		dialogue = [
 			"You have found a chest!",
+			"Use the key to open the chest.",
+			"Press 'E' to open",
 			"I wonder if we found a pirate's hidden treasure,",
 			"I'd be able to buy all the fish and treats in the world!",
-			"Use the key to open the chest.",
-			"Press 'E' to open"
 		]
 	elif body ==  get_parent().get_node("Room5/NumberCodeChest"):
 			dialogue = [
+			"Cool you found a Code Chest",
 			"Maybe those numbers we collected", 
 			"have something to do with this chest?"
 		]
@@ -299,8 +300,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 			]
 		else:
 			dialogue = [
-				"The code seems too high up in the tree to grab,",
-				"we should find something that can reach that height."
+				"The number is too high up in the tree to grab.",
+				"We should find something that can reach that height."
 			]
 	elif body ==  get_parent().get_node("Room2/Code_Digit4"):
 		if Global.claw_inv:
@@ -309,30 +310,30 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 				]
 		else:
 			dialogue = [
-				"The code seems too high up in the tree to grab,",
-				"we should find something that can reach that height."
+				"The number is too high up in the tree to grab.",
+				"We should find something that can reach that height."
 			]
 	elif body ==  get_parent().get_node("Room4/Code_Digit2"):
 		if Global.claw_inv:
 			dialogue = [
-				"You've found another number!", 
-				"Maybe this is someone's pin number to their bank info :)" 
+				"You've found another number!" 
+				
 			]
 		else:
 			dialogue = [
-				"The code seems too high up in the tree to grab,",
-				"we should find something that can reach that height."
+				"The number is too high up in the tree to grab.",
+				"We should find something that can reach that height."
 			]
 	elif body ==  get_parent().get_node("Room5/Code_Digit9"):
 		if Global.claw_inv:
 			dialogue = [
-			"Great job friend,this is the last number!",
-			"Maybe I can use it to find out where you live hehehe."
+			"Great job partner,this looks like it's the last number!",
+			"Maybe this is someone's pin number to their bank info :)" 
 		]
 		else:
 			dialogue = [
-				"The code seems too high up in the tree to grab,",
-				"we should find something that can reach that height."
+				"The number is too high up in the tree to grab.",
+				"We should find something that can reach that height."
 			]
 	elif body ==  get_parent().get_node("Room4/Claw"):
 			dialogue = [
@@ -357,8 +358,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		]
 		else:
 			dialogue = [
-				"The puzzle seems too high up in the tree to grab,",
-				"we should find something that can reach that height."
+				"The puzzle is too high up in the tree to grab.",
+				"We should find something that can reach that height."
 			]
 	elif body ==  get_parent().get_node("Room6/Puzzle_Piece2"):
 		if Global.claw_inv:
@@ -367,18 +368,29 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		]
 		else:
 			dialogue = [
-				"The puzzle seems too high up in the tree to grab,",
-				"we should find something that can reach that height."
+				"The puzzle is too high up in the tree to grab.",
+				"We should find something that can reach that height."
 			]
 	elif body ==  get_parent().get_node("Room7/Puzzle_Piece3"):
 		if Global.claw_inv:
 			dialogue = [
 			"Hey, there's another piece! We're so close to figuring this out!"
 		]
+		else:
+			dialogue = [
+				"The puzzle is too high up in the tree to grab.",
+				"We should find something that can reach that height."
+			]
 	elif body ==  get_parent().get_node("Room7/Puzzle_Piece4"):
+		if Global.claw_inv:
 			dialogue = [
 			"YIPPIE! We found what looks to be the last puzzle piece. Terrific work!"
 		]
+		else:
+			dialogue = [
+				"The puzzle is too high up in the tree to grab.",
+				"We should find something that can reach that height."
+			]
 	elif body ==  get_parent().get_node("Room0/MissingPoster"):
 			dialogue = [
 			"Press 'E' to pick up.",
@@ -386,6 +398,27 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 			"I wonder what's in it?",
 			"Could it be a map to get home or your deleted tweets online?",
 			"Oh no! My owner is looking for me, it's my missing cat poster :("
+		]
+	elif body ==  get_parent().get_node("Room2/Yarn"):
+			dialogue = [
+			"I LOVE LOVE LOVE playing with yarn!",
+			"Let's pick it up to use later."
+		]
+	elif body ==  get_parent().get_node("Room2/Door"):
+		if Global.door_key_inv:
+			dialogue = [
+			"We found the first door!",
+			"Press 'E' to use key to open it."
+		]
+		else: 
+			dialogue = [
+				"We can't open this door without the key."
+			]
+	elif body ==  get_parent().get_node("Room6/Place_Wood"):
+			dialogue = [
+			"Oh no! How'll we get across?",
+			"We need wood to build a bridge.",
+			"Press 'E' to build bridge"
 		]
 	else: 
 		return

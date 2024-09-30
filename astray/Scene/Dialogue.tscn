@@ -1,24 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp8co0g5sqssp"]
 
 [ext_resource type="Script" path="res://Script/Dialogue.gd" id="1_rh1ey"]
-[ext_resource type="FontFile" uid="uid://d1c68b16rq1wp" path="res://Art/Images/at01.ttf" id="2_gedls"]
+[ext_resource type="FontFile" uid="uid://kvjndr6bs6ky" path="res://Art/Godot_Fonts/QuinqueFive_Font_1_1/QuinqueFive.otf" id="2_xog40"]
 
 [node name="Dialogue" type="Node2D"]
 script = ExtResource("1_rh1ey")
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = -576.0
 offset_top = -259.0
 offset_right = 576.0
 offset_bottom = 389.0
-grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_gedls")
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_xog40")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 

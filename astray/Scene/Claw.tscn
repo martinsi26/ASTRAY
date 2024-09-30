@@ -4,21 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://ctgxyujin7mac" path="res://Art/New_Assets/Claw.png" id="2_6d32u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lviux"]
-size = Vector2(65, 62)
+size = Vector2(61.5, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60o0o"]
-size = Vector2(95, 84.75)
+size = Vector2(80.5, 69)
 
 [node name="Claw" type="StaticBody2D"]
 script = ExtResource("1_6fxnx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 20)
+position = Vector2(1.75, 19)
 shape = SubResource("RectangleShape2D_lviux")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 19.5)
-scale = Vector2(2.0625, 2.1)
+position = Vector2(0.5, 19.385)
+scale = Vector2(1, 1.059)
 texture = ExtResource("2_6d32u")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -27,6 +27,7 @@ collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7.25, 0)
 shape = SubResource("RectangleShape2D_60o0o")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

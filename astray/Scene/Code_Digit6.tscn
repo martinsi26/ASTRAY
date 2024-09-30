@@ -1,24 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dik2s6xpt8k3g"]
+[gd_scene load_steps=5 format=3 uid="uid://dng7kjh22n6hb"]
 
 [ext_resource type="Script" path="res://Script/Code_Digit6.gd" id="1_rt7fd"]
 [ext_resource type="Texture2D" uid="uid://d1n2dieiva25k" path="res://Art/Images/number6.png" id="2_5kgyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1atu"]
-size = Vector2(200, 248)
+size = Vector2(40, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k0xx"]
-size = Vector2(348.5, 277)
+size = Vector2(220, 273.333)
 
-[node name="Code_Digit6" type="Node2D"]
+[node name="Code_Digit6" type="StaticBody2D"]
 script = ExtResource("1_rt7fd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.5, -0.618805)
-scale = Vector2(0.995049, 0.99505)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_5kgyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_x1atu")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -26,7 +26,8 @@ collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-scale = Vector2(2, 2)
+position = Vector2(-0.5, -1.5)
+scale = Vector2(0.15, 0.15)
 shape = SubResource("RectangleShape2D_3k0xx")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -49,9 +49,12 @@ size = Vector2(86, 86)
 [node name="CountCodeChest" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("1_e5feu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_irdbv")
 
@@ -67,6 +70,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+z_index = 2
 shape = SubResource("RectangleShape2D_fhglc")
 
 [node name="Count_Code_UI" parent="." instance=ExtResource("3_4h2m5")]
