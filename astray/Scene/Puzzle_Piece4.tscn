@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfm03qt3561uh"]
+[gd_scene load_steps=11 format=3 uid="uid://chppwojrbum0"]
 
 [ext_resource type="Texture2D" uid="uid://h1ph6ot8lg46" path="res://Art/Images/puzzle piece 1.png" id="1_0rumf"]
 [ext_resource type="Script" path="res://Script/Puzzle_Piece4.gd" id="1_v6nhr"]
@@ -53,14 +53,14 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nlo51")
 animation = &"idle"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(2, 2)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_8wxt4")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_area_2d_area_exited"]

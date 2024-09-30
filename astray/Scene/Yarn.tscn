@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvqysjcl4lr2d"]
+[gd_scene load_steps=5 format=3 uid="uid://d2q5dmwm5tgyi"]
 
 [ext_resource type="Texture2D" uid="uid://d33cksvicbqv0" path="res://Art/Images/yarn.png" id="1_3tnjc"]
 [ext_resource type="Script" path="res://Script/Yarn.gd" id="1_cjvee"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Rooms/RoomScript/Room3.gd" id="1_dxisv"]
 [ext_resource type="Texture2D" uid="uid://v8xp6oypx378" path="res://Art/New_Assets/vegetable &fruit（.png" id="2_5b38x"]
 [ext_resource type="Texture2D" uid="uid://bo6guh71y5w40" path="res://Art/32x32 tileset/assets_spritesheet_v2_free.png" id="3_8ftdq"]
-[ext_resource type="PackedScene" uid="uid://1ttwrf1dam2v" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
+[ext_resource type="PackedScene" uid="uid://c70d8xr4oyb3q" path="res://Scene/KeyChest.tscn" id="4_8aiku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8eqc"]
 texture = ExtResource("1_7g31s")

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal done
+
 var messages = []
 
 var typing_speed = .05
