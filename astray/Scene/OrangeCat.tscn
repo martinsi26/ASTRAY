@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqid30jd33wpt"]
+[gd_scene load_steps=15 format=3 uid="uid://5dmbxpg5s6gk"]
 
 [ext_resource type="Script" path="res://Script/OrangeCat.gd" id="1_x6vmy"]
 [ext_resource type="Texture2D" uid="uid://833cfft76d57" path="res://Art/New_Assets/Pixel Cat (Orange) - Sit.png" id="2_y22eh"]
@@ -97,7 +97,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_io15v")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

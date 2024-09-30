@@ -35,6 +35,7 @@ signal room5_objects
 signal room6_objects
 signal room7_objects
 signal room8_objects
+signal room10_objects
 signal yarn_room
 
 # Called when the node enters the scene tree for the first time.
@@ -276,6 +277,7 @@ func enter_room10(room_number):
 		$Ash.position = instance10.get_node("FromR8").position
 	instance10.connect("enter_room8", enter_room)
 	Global.room = "Room10"
+	emit_signal("room10_objects")
 	
 func ending():
 	get_tree().change_scene_to_file("res://Scene/EndingScreen.tscn")

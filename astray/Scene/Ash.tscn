@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Script/Ash.gd" id="1_k6c7m"]
 [ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
-[ext_resource type="Resource" uid="uid://cdkihtnkttrio" path="res://Inventory/Player_inv.tres" id="2_pjynx"]
+[ext_resource type="Resource" uid="uid://bqks1k4j0my4h" path="res://Inventory/Player_inv.tres" id="2_pjynx"]
 [ext_resource type="Resource" uid="uid://b2e2yoi01wscf" path="res://Inventory/Items/Chest_Key.tres" id="2_trw4r"]
-[ext_resource type="PackedScene" uid="uid://bdaex6esj5e4b" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
+[ext_resource type="PackedScene" uid="uid://bykesnv1ioc65" path="res://Inventory/Inv_UI.tscn" id="3_i1qjg"]
 [ext_resource type="Resource" uid="uid://nfl84h88krs3" path="res://Inventory/Items/Yarn.tres" id="4_nr5x1"]
 [ext_resource type="Resource" path="res://Inventory/Items/Wood.tres" id="5_27ea1"]
 [ext_resource type="Resource" uid="uid://xsrg4wlacujn" path="res://Inventory/Items/Claw.tres" id="5_tvq75"]

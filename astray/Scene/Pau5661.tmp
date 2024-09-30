@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=3 uid="uid://o3xl4lyfxvnq"]
+
+[ext_resource type="Script" path="res://Script/PauseMenu.gd" id="1_j24ev"]
+[ext_resource type="Theme" uid="uid://bmro6d22jkcf1" path="res://Art/Resources/StartTheme.tres" id="1_kjtqs"]
+[ext_resource type="Shader" path="res://Art/Resources/PauseMenu.gdshader" id="1_n3y2l"]
+[ext_resource type="PackedScene" uid="uid://cdpkrvg2sdbfs" path="res://Scene/HelpScreen.tscn" id="4_eroyk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p78qr"]
+shader = ExtResource("1_n3y2l")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_ks54m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pswp7"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr003"]
+_data = {
+"RESET": SubResource("Animation_ks54m"),
+"blur": SubResource("Animation_pswp7")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j24ev")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_p78qr")
+layout_mode = 0
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 1148.0
+offset_bottom = 649.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.429
+anchor_right = 0.5
+anchor_bottom = 0.429
+offset_left = -123.0
+offset_top = -67.992
+offset_right = 120.0
+offset_bottom = 68.008
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_kjtqs")
+text = "Resume"
+
+[node name="Help" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_kjtqs")
+text = "Help
+"
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_kjtqs")
+text = "Restart"
+
+[node name="QuitMenu" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_kjtqs")
+text = "Exit Menu"
+
+[node name="QuitDesktop" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_kjtqs")
+text = "Exit Desktop"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xr003")
+}
+
+[node name="HelpScreen" parent="." instance=ExtResource("4_eroyk")]
+visible = false
+layout_mode = 1
+
+[connection signal="help_button" from="." to="HelpScreen" method="_on_pause_menu_help_button"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitMenu" to="." method="_on_quit_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitDesktop" to="." method="_on_quit_desktop_pressed"]

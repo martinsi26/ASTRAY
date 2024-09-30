@@ -11,9 +11,10 @@ var current_char = 0
 
 
 func _ready():
-	pass
+	visible = false
 	
 func start_dialogue(dialogue):
+	visible = true
 	messages = dialogue
 	current_message = 0
 	display = ""
@@ -27,6 +28,7 @@ func stop_dialogue():
 	$Label.text = display
 	$NextChar.stop()
 	$NextMessage.stop()
+	visible = false
 
 func _on_next_char_timeout():
 	if (current_char < len(messages[current_message])):

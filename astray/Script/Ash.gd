@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var dialogue = preload("res://Scene/Dialogue.tscn")
+
 var is_walking = false
 var step_timer = 0.0
 var step_interval = 0.5  # Adjust for time between footstep sounds
@@ -282,18 +284,28 @@ func room7_objects() -> void:
 func room8_objects() -> void:
 	get_parent().get_node("Room8/PlacedPieces").connect("place_piece", place_piece)
 	
+func room10_objects() -> void:
+	dialogue = [
+		"There appears to be a riddle!",
+		"A map on the ground shows where you've been",
+		"At the start, a key you'll find within",
+		"Press " + Global.get_key_name(Global.random_key) + " and hold in mind",
+		"Only then the room's path will unwind",
+		"Hmm I guess we need to solve this riddle!"
+	]
+	emit_signal("start_dialogue", dialogue)
+	
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body == get_parent().get_node("Room3/KeyChest"): 
 		dialogue = [
 			"You have found a chest!",
-			"Use the key to open the chest.",
-			"Press 'E' to open",
 			"I wonder if we found a pirate's hidden treasure,",
 			"I'd be able to buy all the fish and treats in the world!",
+			"Use the key to open the chest.",
+			"Press 'E' to open"
 		]
 	elif body ==  get_parent().get_node("Room5/NumberCodeChest"):
 			dialogue = [
-			"Cool you found a Code Chest",
 			"Maybe those numbers we collected", 
 			"have something to do with this chest?"
 		]
@@ -339,7 +351,6 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		if Global.claw_inv:
 			dialogue = [
 				"You've found another number!" 
-				
 			]
 		else:
 			dialogue = [
