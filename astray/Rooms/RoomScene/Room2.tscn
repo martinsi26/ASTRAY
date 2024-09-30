@@ -1088,7 +1088,6 @@ tile_set = SubResource("TileSet_24ldi")
 [node name="Fruits" type="TileMapLayer" parent="."]
 z_index = 2
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAWAAgAAgAAAAEAAAA=")
 tile_set = SubResource("TileSet_spy4s")
 
 [node name="FromR1" type="Marker2D" parent="."]

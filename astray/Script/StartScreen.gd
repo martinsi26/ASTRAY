@@ -1,7 +1,5 @@
 extends Control
 
-
-
 func _on_start_button_pressed() -> void:
 	#changing scene when start button is pressed to main
 	get_tree().change_scene_to_file("res://Scene/Main.tscn")

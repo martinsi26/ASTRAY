@@ -78,11 +78,14 @@ z_index = 2
 shape = SubResource("RectangleShape2D_4iavg")
 
 [node name="Number_Code_UI" parent="." instance=ExtResource("3_m5b02")]
-z_index = 2
+z_index = 4
 offset_left = -138.0
 offset_top = -139.0
 offset_right = 138.0
 offset_bottom = -41.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Number_Code_UI"]
+stream = ExtResource("5_iwavc")
 
 [connection signal="close_number_code" from="." to="Number_Code_UI" method="close_number_code"]
 [connection signal="open_number_code" from="." to="Number_Code_UI" method="open_number_code"]

@@ -18,7 +18,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if on_chest and Input.is_action_pressed("Interact") and !chest_open:
-		chest_open = true
 		emit_signal("open_number_code")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
@@ -31,3 +30,8 @@ func _on_hitbox_area_exited(area: Area2D) -> void:
 
 func open_chest() -> void:
 	$AnimatedSprite2D.play("OpenChest")
+	if audio_player:
+		audio_player.play()
+	else:
+		pass
+	
