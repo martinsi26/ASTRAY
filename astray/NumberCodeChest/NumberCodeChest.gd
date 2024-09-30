@@ -30,3 +30,8 @@ func _on_hitbox_area_exited(area: Area2D) -> void:
 
 func open_chest() -> void:
 	$AnimatedSprite2D.play("OpenChest")
+	if audio_player:
+		audio_player.play()
+	else:
+		pass
+	

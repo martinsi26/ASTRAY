@@ -981,7 +981,6 @@ tile_set = SubResource("TileSet_f1633")
 
 [node name="Fruit" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AABDABkAAAACAAEAAAAlACcAAAACAAEAAAAcAB8AAAACAAAAAAAIAAgAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_8rc3v")
 
 [node name="KeyChest" parent="." instance=ExtResource("4_8aiku")]

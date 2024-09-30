@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cts1aukgpd0d5"]
+[gd_scene load_steps=12 format=3 uid="uid://cts1aukgpd0d5"]
 
 [ext_resource type="Script" path="res://CountCodeChest/CountCodeChest.gd" id="1_e5feu"]
 [ext_resource type="PackedScene" uid="uid://c6fa64daskbai" path="res://CountCodeChest/Count_Code_UI.tscn" id="3_4h2m5"]
 [ext_resource type="Texture2D" uid="uid://by8uhvkvalle4" path="res://Art/Images/Fantasy RPG (Toony) 32x32.png" id="3_8mdrb"]
+[ext_resource type="AudioStream" uid="uid://b5u2rgoo1fmu" path="res://Music/TaDa.mp3" id="4_alu5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irdbv"]
 size = Vector2(60, 16)
@@ -76,6 +77,10 @@ offset_left = -140.0
 offset_top = -209.0
 offset_right = -140.0
 offset_bottom = -209.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-140, -209)
+stream = ExtResource("4_alu5v")
 
 [connection signal="close_count_code" from="." to="Count_Code_UI" method="close_count_code"]
 [connection signal="open_count_code" from="." to="Count_Code_UI" method="open_count_code"]
