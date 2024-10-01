@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cuki4oddlotwx"]
+[gd_scene load_steps=32 format=3 uid="uid://cuki4oddlotwx"]
 
 [ext_resource type="Script" path="res://Script/Ash.gd" id="1_k6c7m"]
 [ext_resource type="Resource" uid="uid://dbnkbw8e8rf11" path="res://Inventory/Items/Axe.tres" id="2_ak1yd"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://c2oumvg3ob5xd" path="res://Inventory/Items/Puzzle_Piece2.tres" id="13_kegij"]
 [ext_resource type="Resource" uid="uid://cab2hsl3hrasq" path="res://Inventory/Items/Puzzle_Piece3.tres" id="14_1wun8"]
 [ext_resource type="Resource" uid="uid://cyt0gwjbm8sy0" path="res://Inventory/Items/Puzzle_Piece4.tres" id="15_im7ld"]
+[ext_resource type="AudioStream" uid="uid://cafus2ea5fvkt" path="res://Music/Unlock.mp3" id="22_aurkm"]
 [ext_resource type="AudioStream" uid="uid://xalptxoc5r1v" path="res://Music/Walking.mp3" id="22_ggkga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otvov"]
@@ -143,6 +144,9 @@ parameters/looping = true
 wait_time = 30.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_aurkm")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="drop_yarn" from="Inv_UI" to="." method="drop_yarn"]
