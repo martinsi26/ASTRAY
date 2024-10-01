@@ -568,7 +568,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			]
 		elif !Global.door2_key_inv:
 			dialogue = [
-				"I can't seem to be able to go back there yet.",
+				"It seem I can't go back there yet.",
 				"I should come back later."
 			]
 		else:
