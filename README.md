@@ -2,7 +2,13 @@
 
 #By Simon Martin, Kathrine Vu, Malory Morey, Kaitlyn Atalig
 
-#-----To play our game Astray-----
+#-----To Play Our Game Astray-----
+
+#Unzip the file and and find the ASTRAY.exe and ASTRAY.pck. Double click on the Astray.exe 
+
+#file to run the game. If asked, hit 'run anyway' and allow the program to make changes. 
+
+#-----How to Play-----
 
 #WASD -> Move in corresponding directions
 
