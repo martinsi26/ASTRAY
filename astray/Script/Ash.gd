@@ -272,11 +272,11 @@ func room1_objects() -> void:
 		set_physics_process(false)
 		dialogue = [
 			"Oh no I am lost! What am I going to do?",
-			"I bet my owner is worried sick. I better find my way home",
-			"Here are some basic rules:",
+			"I bet my owner is worried sick. I better find my way home.",
+			"Here are some basic controls:",
 			"Press 'ESC' to pause the game.",
 			"Use 'WASD' to move around.",
-			"Use 'E' to interact with objects.",
+			"Press 'E' to interact with objects.",
 			"Hold 'SHIFT' to run faster.",
 			"If you forget any controls use the 'Help' button when paused",
 			"Now have fun and get home!"
