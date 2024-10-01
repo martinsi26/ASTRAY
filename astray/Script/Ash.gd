@@ -28,6 +28,7 @@ var speed = 300
 
 
 @onready var audio_player = $AudioStreamPlayer2D
+@onready var audio_player3 = $AudioStreamPlayer2D3
 
 var yarn_ball = preload("res://Scene/Yarn.tscn")
 
@@ -210,6 +211,7 @@ func use_door_key(door_num):
 		use(door2_key)
 		Global.door2_open = true
 		Global.door2_key_inv = false
+	audio_player3.play()
 	
 func use_axe():
 	Global.tree_down = true
@@ -339,7 +341,8 @@ func room9_objects() -> void:
 		dialogue = [
 			"Look it's my home!",
 			"I bet my owner will be so happy to see me again.",
-			"Oooooh maybe there will be some food out for me!"
+			"Oooooh maybe there will be some food out for me!",
+			"Let's enter through the door!"
 		]
 		emit_signal("start_dialogue", dialogue)
 		room9_play = false

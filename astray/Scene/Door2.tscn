@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bckx46x3wvhrr"]
+[gd_scene load_steps=6 format=3 uid="uid://bckx46x3wvhrr"]
 
 [ext_resource type="Script" path="res://Script/Door2.gd" id="1_ar3ll"]
 [ext_resource type="Texture2D" uid="uid://b8xch6f0fbo3w" path="res://Art/New_Assets/Door.png" id="2_arb57"]
+[ext_resource type="AudioStream" uid="uid://cafus2ea5fvkt" path="res://Music/Unlock.mp3" id="3_wn3ew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2cw4"]
 size = Vector2(160, 32)
@@ -28,6 +29,9 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(70, 12.75)
 shape = SubResource("RectangleShape2D_dmhtx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wn3ew")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
